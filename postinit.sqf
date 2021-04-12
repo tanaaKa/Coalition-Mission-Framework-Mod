@@ -20,6 +20,7 @@ if (isServer) then {
          "readyup\JST_readyUp.sqf"
         ,"logging\session.sqf"
 		,"cleanup\JST_garbageCleanup.sqf"
+		,"patches\patchesinit.sqf"
     ] call CMF_LoadAll;
 };
 
@@ -29,4 +30,4 @@ if (hasInterface) then
 	"postinit_client.sqf" call CMF_Load;
 };
 
-diag_log [diag_tickTime, "STMF Log: Completed STMF PostInit in ", diag_tickTime - _poststart];
+diag_log [diag_tickTime, "[CMF]: Completed CMF PostInit in ", diag_tickTime - _poststart];
