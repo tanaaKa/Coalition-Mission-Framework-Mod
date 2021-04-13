@@ -141,3 +141,7 @@ class Extended_InitPost_EventHandlers
 		};
 	};
 };
+
+#include "JIP\f_JIP_common.h"
+#include "JIP\f_JIP_grpPicker.h"
+#include "JIP\f_JIP_kitPicker.h"

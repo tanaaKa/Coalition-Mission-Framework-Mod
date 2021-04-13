@@ -56,7 +56,7 @@ GrpPicker_Pick =
 	_grpNum = (count units _grp);
 	if (_grpNum >= 6) then {
 		hint "That group is full! Please  pick another.";
-		systemChat "[COA JIP] ERROR: Group is full. Pick another";
+		systemChat "[CMF JIP] ERROR: Group is full. Pick another";
 	} else {
 		closeDialog 0;
 		player setVariable ["f_var_JIP_grp", _grp];

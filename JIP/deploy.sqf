@@ -15,7 +15,7 @@ openMap [true, false];
 
 //Show tutorial notification and await deploy
 titleText["","BLACK IN",3];
-systemChat "[COA JIP] Alt-left click to teleport to desired team";
+systemChat "[CMF JIP] Alt-left click to teleport to desired team";
 
 onMapSingleClick "if (_alt) then {player setPosATL _pos; openMap false; deployed = true;};";
 

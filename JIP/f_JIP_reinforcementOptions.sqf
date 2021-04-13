@@ -28,7 +28,7 @@ _grp = (player getVariable "f_var_JIP_grp");
 
 f_var_JIP_state = 2;
 if (f_var_JIP_GearMenu) then {
-	systemChat "[COA JIP] Choose a kit";
+	systemChat "[CMF JIP] Choose a kit";
 
 	createDialog "KitPicker";
 	waitUntil {f_var_JIP_state == 3};
@@ -57,13 +57,13 @@ if (_grp != group player) then {
 	[player] joinSilent grpNull;
 
 	if (!isNull _grp) then {
-		[_grp,_joinDistance] execVM "scripts\JIP\f_JIP_nearTargetGroupCheck.sqf";
+		[_grp,_joinDistance] execVM "cmf\JIP\f_JIP_nearTargetGroupCheck.sqf";
 		systemChat format ["%1 selected. Deploy and get your orders from the leader: %2.", _grp, name leader _grp];
 	};
 };
 
 //player addaction ["<t color='#FF0000'>JIP Deploy</t>","scripts\JIP\deploy.sqf",[],6,true,false,"","_target == player"]; 
 
-[player] execVM "scripts\JIP\deploy.sqf";
+[player] execVM "cmf\JIP\deploy.sqf";
 
 
