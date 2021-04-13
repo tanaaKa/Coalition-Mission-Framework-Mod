@@ -34,7 +34,6 @@ player addEventHandler ["Respawn", {[player, "NoVoice"] remoteExecCall ["setSpea
 	,"EH\cbaEH.sqf"
 	,"fds\wha_dp_init.sqf"
 	,"earplugs\wh_earplugInit.sqf"
-	//,"patches\patches.sqf" - Rewrite in progress
 	,"vehiclespawner\factoryaction.sqf"
 ] call CMF_LoadAll;
 

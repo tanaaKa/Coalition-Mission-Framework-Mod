@@ -1,5 +1,3 @@
-diag_log "[CMF]: Starting CMF patches assignment";
-
 JKL_fnc_PatchAssignGrp = 
 {
 	{
@@ -139,7 +137,10 @@ JKL_fnc_PatchAssignGrp =
 			case"demol": {[_x,"ENG"] call BIS_fnc_setUnitInsignia;};
 			case"mine": {[_x,"ENG"] call BIS_fnc_setUnitInsignia;};
 		};
-	} forEach AllPlayers
+		
+	} forEach AllPlayers;
+	
+	"[CMF] Patches assigned based on group" remoteExec ["systemChat"];
 };
 
 JKL_fnc_PatchAssignClr = 
@@ -163,6 +164,8 @@ JKL_fnc_PatchAssignClr =
 			case"sm": {[_x,"MEDIC"] call BIS_fnc_setUnitInsignia;};
 		};
 	} forEach AllPlayers;
+	
+	"[CMF] Patches assigned based on color team" remoteExec ["systemChat"];
 };
 
 JKL_fnc_PatchAssignGS = 
@@ -176,15 +179,21 @@ JKL_fnc_PatchAssignGS =
 		private _configpatch = selectRandom getArray (_path >> "patch");
 		[_x,_configpatch] call BIS_fnc_setUnitInsignia;
 	} forEach AllPlayers;
+	
+	"[CMF] Patches assigned based on gearscript" remoteExec ["systemChat"];
 };
 
-//Runs FNCs based on Numbers defined in init.sqf, Options are -1,0,1,2
-Switch (patches) do { //Grabs from init.sqf somehow
-	case -1: {};// Exits 
-	case 0: { call JKL_fnc_PatchAssignGS }; // Assigns Patch from GS if Defined
-	case 1: { call JKL_fnc_PatchAssignGrp }; // Assigns Patch Based off of Group
-	case 2: { call JKL_fnc_PatchAssignClr }; // Assigns Patch Based offf of Color Team
-	default {}; // Exits
+[] spawn
+{
+    sleep 1;
+	if !(CMF_Mission) exitWith {};
+	
+	//Runs FNCs based on Numbers defined in init.sqf, Options are -1,0,1,2
+	Switch (patches) do { //Grabs from init.sqf somehow
+		case -1: {};// Exits 
+		case 0: { [] call JKL_fnc_PatchAssignGS }; // Assigns Patch from GS if Defined
+		case 1: { [] call JKL_fnc_PatchAssignGrp }; // Assigns Patch Based off of Group
+		case 2: { [] call JKL_fnc_PatchAssignClr }; // Assigns Patch Based offf of Color Team
+		default {}; // Exits
+	};
 };
-
-diag_log "[CMF]: CMF patch assignment completed";

@@ -1,7 +1,9 @@
 private "_poststart";
 _poststart = diag_tickTime;
 diag_log [_poststart, "[CMF]: Starting CMF PostInit"];
-
+//
+//Global post-inits
+//
 enableSaving [false, false];
 
 // Jesters readyup function library
@@ -14,7 +16,9 @@ if (!isNil "IND_MEV_1PL") then {JST_mevIndEnabled = true} else {JST_mevIndEnable
 if (!isNil "OPF_MEV_1PL") then {JST_mevOpfEnabled = true} else {JST_mevOpfEnabled = false};
 "mev\JST_init.sqf" call CMF_Load;
 
-// Server-only functions
+//
+// Server-only inits
+//
 if (isServer) then {
 	[
          "readyup\JST_readyUp.sqf"
@@ -24,7 +28,9 @@ if (isServer) then {
     ] call CMF_LoadAll;
 };
 
-// Run postinitclients only on clients
+//
+// Client only inits
+//
 if (hasInterface) then
 {
 	"postinit_client.sqf" call CMF_Load;
