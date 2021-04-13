@@ -8,6 +8,8 @@
 //		N/A
 //
 ///////////////////////////////////////////////////////////////
+if !(CMF_Mission) exitWith {};
+
 //Add mission title to attendance log
 if (isDedicated) then {
 	_title = getText (missionConfigFile >> "MissionSQM" >> "Mission" >> "Intel" >> "briefingName");
@@ -229,4 +231,8 @@ if (isDedicated) then {
 	};
 	[format ["ORBAT Complete"], "sessionLog"] call A3Log;
 	["--------------------------------------------", "sessionLog"] call A3Log;
+};
+
+if ((count allPlayers) >= 20) then {
+	"[CMF] Successfully logged ORBAT" remoteExec ["systemChat"];
 };

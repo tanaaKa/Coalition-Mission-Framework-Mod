@@ -12,6 +12,7 @@ _nul = [] spawn {
 	private _ruinsMinLife = 5;	
 	JST_garbage_tick = 0;
 	JST_garbage_list = [];
+	"[CMF] Garbage cleanup running" remoteExec ["systemChat"];
 	while {true} do
 	{
 		JST_garbage_tick = JST_garbage_tick + 1;
