@@ -20,10 +20,10 @@ if (!isServer) then
 	gameLive = false;
     [] spawn
     {
-        cutText ["Server initializing. Please wait.", "BLACK", 1];
+        cutText ["Server initializing. Please wait.", "BLACK", 10];
         //player enableSimulation false; // Disable simulation to prevent moving
 
-        sleep 15; 
+        sleep 10; 
         cutText ["Server Initialized. Read your briefing!", "PLAIN"];
         //player enableSimulation true; // Reenable sim to move
         player enableFatigue false; // disables stamina during SS
@@ -281,11 +281,9 @@ JST_pollForAdmins =
 // Wait for all sides ready then do gamestart with forced flag false ||| SERVER
 JST_fnc_waitForLeadersReady =
 {
-	_null = [] spawn {
-		waitUntil {blufor_ready and indfor_ready and opfor_ready};
-		private _forced = false;
-		[_forced] spawn JST_fnc_ReadyUp;
-	};
+	waitUntil {blufor_ready and indfor_ready and opfor_ready};
+	private _forced = false;
+	[_forced] spawn JST_fnc_ReadyUp;
 };
 
 // Removes arsenal from ace menu ||| LOCAL
@@ -317,7 +315,7 @@ JST_fnc_ReadyUp =
 		} forEach JST_admins;
 	};
 	// Countdown
-	"MISSION IS LIVE IN 30 SECONDS" remoteExec ["systemChat"];
+	"MISSION IS LIVE IN 30 SECONDS" remoteExec ["systemChat", -2];
 	sleep 15;
 	// If unforced check if still ready, if not ready then exit and go back to waiting
 	if ((!blufor_ready or !indfor_ready or !opfor_ready) and !_forced) exitWith
@@ -325,14 +323,14 @@ JST_fnc_ReadyUp =
 		JST_waitForLeadersReadyHandle = [] spawn JST_fnc_waitForLeadersReady;
 		JST_pollForAdminsHandle = [] spawn JST_pollForAdmins;
 	};
-	"MISSION IS LIVE IN 15 SECONDS" remoteExec ["systemChat"];
+	"MISSION IS LIVE IN 15 SECONDS" remoteExec ["systemChat", -2];
 	sleep 10;
 	if ((!blufor_ready or !indfor_ready or !opfor_ready) and !_forced) exitWith
 	{
 		JST_waitForLeadersReadyHandle = [] spawn JST_fnc_waitForLeadersReady;
 		JST_pollForAdminsHandle = [] spawn JST_pollForAdmins;
 	};
-	"MISSION IS LIVE IN 5 SECONDS" remoteExec ["systemChat"];
+	"MISSION IS LIVE IN 5 SECONDS" remoteExec ["systemChat", -2];
 	sleep 4;
 	if ((!blufor_ready or !indfor_ready or !opfor_ready) and !_forced) exitWith
 	{
@@ -341,9 +339,7 @@ JST_fnc_ReadyUp =
 	};
 	"MISSION IS LIVE" remoteExec ["systemChat"];
 	// Remove icons
-	if (CMF_Mission) then {
-		[] execVM "cmf\readyup\removeIcons.sqf";
-	};
+	[] execVM "cmf\readyup\removeIcons.sqf";
 	// Handle players actions/stamina/etc. going live
 	remoteExec ["JST_fnc_playersGoHot", -2, true];
 	// Remove safe start

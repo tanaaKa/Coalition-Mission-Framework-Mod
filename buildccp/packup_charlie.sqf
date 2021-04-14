@@ -22,7 +22,7 @@ params["_site"];
 	deleteVehicle _site;
 	
 	// Add 'Unpack' action back to person who picked it up.
-	_CCP_Unpack_Action = ["unpackCCP","Unpack CCP","",{[] execVM "scripts\buildccp\unpack_charlie.sqf";},{true}] call ace_interact_menu_fnc_createAction;  
+	_CCP_Unpack_Action = ["unpackCCP","Unpack CCP","",{[] execVM "cmf\buildccp\unpack_charlie.sqf";},{true}] call ace_interact_menu_fnc_createAction;  
 	[player, 1, ["ACE_SelfActions"], _CCP_Unpack_Action] call ace_interact_menu_fnc_addActionToObject;
 	
 	// End animation at end of action.

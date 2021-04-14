@@ -35,9 +35,7 @@ JST_waitForLeadersReadyHandle = [] spawn JST_fnc_waitForLeadersReady;
 JST_pollForAdminsHandle = [] spawn JST_pollForAdmins;
 
 // Add leader arrows
-if (CMF_Mission) then {
-	[] execVM "cmf\readyup\addIcons.sqf";
-};
+[] execVM "cmf\readyup\addIcons.sqf";
 
 // Add player connected handler to give safe start heal only while unready
 JST_safeStartHealHandler = addMissionEventHandler ["PlayerConnected",

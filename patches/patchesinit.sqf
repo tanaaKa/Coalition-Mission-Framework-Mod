@@ -186,7 +186,6 @@ JKL_fnc_PatchAssignGS =
 [] spawn
 {
     sleep 1;
-	if !(CMF_Mission) exitWith {};
 	
 	//Runs FNCs based on Numbers defined in init.sqf, Options are -1,0,1,2
 	Switch (patches) do { //Grabs from init.sqf somehow
