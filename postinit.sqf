@@ -18,7 +18,7 @@ enableSaving [false, false];
 if (!isNil "BLU_MEV_1PL") then {JST_mevBluEnabled = true} else {JST_mevBluEnabled = false};
 if (!isNil "IND_MEV_1PL") then {JST_mevIndEnabled = true} else {JST_mevIndEnabled = false};
 if (!isNil "OPF_MEV_1PL") then {JST_mevOpfEnabled = true} else {JST_mevOpfEnabled = false};
-"mev\JST_init.sqf" call CMF_Load;
+"mev\JST_mev_init.sqf" call CMF_Load;
 
 //
 // Server-only inits
