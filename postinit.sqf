@@ -1,21 +1,10 @@
-// Backwards support for older missions to prevent duplication
-[] spawn 
-{
-	// Let init options initialize
-	if (hasInterface) then
-    {
-        waitUntil {!isNull player};
-    };
-    waitUntil {time > 1};
-};
-// Editor check
-if (isDedicated) then {
-	if (isNil "CMF_Mission") exitWith {"[CMF] Old or non-CMF2 mission detected. Reverting to mission files only." remoteExec ["systemChat"];};
-};
+diag_log "[CMF]: Starting CMF Post Init";
 
-private "_poststart";
-_poststart = diag_tickTime;
-diag_log [_poststart, "[CMF]: Starting CMF PostInit"];
+// Backwards support for older missions to prevent duplication
+_version = getText (missionConfigFile >> "cmfVers");
+systemChat format ["[CMF] Version: %1",_version];
+if (_version != "CMF2 1.0") exitWith {systemChat "[CMF] Old or non-CMF2 mission detected. Reverting to mission files only.";};
+
 //
 //Global post-inits
 //
@@ -36,7 +25,7 @@ if (!isNil "OPF_MEV_1PL") then {JST_mevOpfEnabled = true} else {JST_mevOpfEnable
 //
 if (isServer) then {
 	[
-         "readyup\JST_readyUp.sqf"
+		"readyup\JST_readyUp.sqf"
 		,"logging\session.sqf"
 		,"cleanup\JST_garbageCleanup.sqf"
 		,"patches\patchesinit.sqf"
@@ -51,4 +40,4 @@ if (hasInterface) then
 	"postinit_client.sqf" call CMF_Load;
 };
 
-diag_log [diag_tickTime, "[CMF]: Completed CMF PostInit in ", diag_tickTime - _poststart];
+diag_log "[CMF]: Completed CMF Post Init";

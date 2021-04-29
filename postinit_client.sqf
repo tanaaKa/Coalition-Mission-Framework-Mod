@@ -5,9 +5,7 @@ player addRating 10000;
 player addEventHandler ["HandleRating", {0 max (_this select 1)}];
 
 // Set weapons to safe on spawn in
-if (vehicle(player) == player) then {
-	player switchMove "AmovPercMstpSlowWrflDnon";
-};
+player switchMove "AmovPercMstpSlowWrflDnon";
 
 // Disable random animals
 enableEnvironment [false, true];
@@ -30,10 +28,9 @@ player addEventHandler ["Respawn", {[player, "NoVoice"] remoteExecCall ["setSpea
 
 // Client only scripts
 [
-	 "miniarsenal\addarsenal.sqf"
-	,"EH\cbaEH.sqf"
+	//"miniarsenal\addarsenal.sqf" - working on a fix
+	"EH\cbaEH.sqf"
 	,"fds\wha_dp_init.sqf"
-	,"earplugs\wh_earplugInit.sqf"
 	,"vehiclespawner\factoryaction.sqf"
 ] call CMF_LoadAll;
 

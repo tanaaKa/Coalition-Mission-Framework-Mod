@@ -1,6 +1,4 @@
-private "_prestart";
-_prestart = diag_tickTime;
-diag_log [_prestart, "[CMF]: Starting CMF PreInit"];
+diag_log "[CMF]: Starting CMF Pre Init";
 
 // Load script function
 CMF_Load =
@@ -16,4 +14,4 @@ CMF_LoadAll =
     {_x call CMF_Load} forEach(_this);
 };
 
-diag_log [diag_tickTime, "[CMF]: Completed CMF PreInit in ", diag_tickTime - _prestart];
+diag_log "[CMF]: Completed CMF Pre Init";

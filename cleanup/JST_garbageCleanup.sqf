@@ -4,6 +4,8 @@ Will delete all vehicle wrecks, building wrecks, dead units, abandoned ammo, wea
 ... if not near living player or static weapon
 ... and if been existant long enough
 */
+diag_log "[CMF]: Running Server Cleanup Loop";
+
 if (!isServer) exitWith {};
 _nul = [] spawn {
 	private _minDis = 50;		

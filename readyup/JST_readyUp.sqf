@@ -17,6 +17,7 @@
 //			Todo:
 //
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
+diag_log "[CMF]: Starting Server CMF Ready Up System";
 
 // Initial state
 blufor_ready = false;
@@ -40,6 +41,7 @@ JST_pollForAdminsHandle = [] spawn JST_pollForAdmins;
 // Add player connected handler to give safe start heal only while unready
 JST_safeStartHealHandler = addMissionEventHandler ["PlayerConnected",
 {
+	private _owner = _this select 4;
 	if !(blufor_ready || indfor_ready || opfor_ready) then
 	{
 		remoteExec ["JST_addSafeStartHeal", _owner];
@@ -110,11 +112,11 @@ addMissionEventHandler ["HandleDisconnect",
 	params ["_unit"];
 	if (_unit in JST_leaders) then
 	{
-		sleep 2;
 		private _index = JST_leaders find _unit;
 		JST_leaders deleteAt _index;
-		sleep 2;
 		[] call JST_fnc_handleCurrentLeaders;
 	};
 	false
 }];
+
+diag_log "[CMF]: CMF Server Ready Up System Complete";

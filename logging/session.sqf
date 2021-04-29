@@ -8,6 +8,7 @@
 //		N/A
 //
 ///////////////////////////////////////////////////////////////
+diag_log "[CMF]: Starting Server Logging";
 if !(CMF_Mission) exitWith {};
 
 //Add mission title to attendance log
@@ -20,9 +21,6 @@ if (isDedicated) then {
 	
 //Leadership orbat printed to sessionLog
 if (isDedicated) then {
-
-	waitUntil {time > 0};
-
 	_title = getText (missionConfigFile >> "MissionSQM" >> "Mission" >> "Intel" >> "briefingName");
 	//Blu leaders
 	_bCoyName = name BLU_COY;
@@ -233,6 +231,4 @@ if (isDedicated) then {
 	["--------------------------------------------", "sessionLog"] call A3Log;
 };
 
-if ((count allPlayers) >= 20) then {
-	"[CMF] Successfully logged ORBAT" remoteExec ["systemChat"];
-};
+diag_log "[CMF]: Server Logging Complete";

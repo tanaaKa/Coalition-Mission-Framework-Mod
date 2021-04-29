@@ -10,6 +10,7 @@
 //			Todo: reorder and categorize for readibility
 //
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
+diag_log "[CMF]: Starting Readyup Library";
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 //		Local Operations at start
@@ -116,8 +117,8 @@ JST_fnc_handleCurrentLeaders =
 {
 	JST_leaders = [];
 	{
-		missionNameSpace setVariable [("JST_" + _x + "leader"), [_x] call JST_fnc_findLeader];
-		private _leader = missionNameSpace getVariable [("JST_" + _x + "leader"), objNull];
+		private _leader = [_x] call JST_fnc_findLeader;
+		missionNameSpace setVariable [("JST_" + _x + "leader"), _leader];
 		if !(isNull _leader) then
 		{
 			JST_leaders pushBackUnique _leader;
@@ -315,7 +316,7 @@ JST_fnc_ReadyUp =
 		} forEach JST_admins;
 	};
 	// Countdown
-	"MISSION IS LIVE IN 30 SECONDS" remoteExec ["systemChat", -2];
+	"MISSION IS LIVE IN 30 SECONDS" remoteExec ["systemChat"];
 	sleep 15;
 	// If unforced check if still ready, if not ready then exit and go back to waiting
 	if ((!blufor_ready or !indfor_ready or !opfor_ready) and !_forced) exitWith
@@ -323,14 +324,14 @@ JST_fnc_ReadyUp =
 		JST_waitForLeadersReadyHandle = [] spawn JST_fnc_waitForLeadersReady;
 		JST_pollForAdminsHandle = [] spawn JST_pollForAdmins;
 	};
-	"MISSION IS LIVE IN 15 SECONDS" remoteExec ["systemChat", -2];
+	"MISSION IS LIVE IN 15 SECONDS" remoteExec ["systemChat"];
 	sleep 10;
 	if ((!blufor_ready or !indfor_ready or !opfor_ready) and !_forced) exitWith
 	{
 		JST_waitForLeadersReadyHandle = [] spawn JST_fnc_waitForLeadersReady;
 		JST_pollForAdminsHandle = [] spawn JST_pollForAdmins;
 	};
-	"MISSION IS LIVE IN 5 SECONDS" remoteExec ["systemChat", -2];
+	"MISSION IS LIVE IN 5 SECONDS" remoteExec ["systemChat"];
 	sleep 4;
 	if ((!blufor_ready or !indfor_ready or !opfor_ready) and !_forced) exitWith
 	{
@@ -368,3 +369,5 @@ JST_fnc_ReadyUp =
 		[format ["Now beginning mission: %1", _title], "sessionLog"] call A3Log;
 	};
 };
+
+diag_log "[CMF]: Readyup Library Complete";
