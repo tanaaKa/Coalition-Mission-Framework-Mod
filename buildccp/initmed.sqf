@@ -27,13 +27,13 @@ if (_playerClass in _medics) then {
 			FH_Unpack_Action = ["unpackCCP","Unpack Field Hospital","",{[] execVM "cmf\buildccp\unpack_platoon.sqf";},{true}] call ace_interact_menu_fnc_createAction;
 			[player, 1, ["ACE_SelfActions"], FH_Unpack_Action] call ace_interact_menu_fnc_addActionToObject;
 			//Notify
-			systemChat "[COA Medical] You are a medical officer and have been assigned a field hospital kit";
+			systemChat "[CMF Medical] You are a medical officer and have been assigned a field hospital kit";
 			if (FHVeh) then {
-				systemChat format ["[COA Medical] Your FH will also spawn a %1 medical vehicle",FHVehicle];
+				systemChat format ["[CMF Medical] Your FH will also spawn a %1 medical vehicle",FHVehicle];
 			} else {
-				systemChat "[COA Medical] Your FH will not spawn a medical vehicle";
+				systemChat "[CMF Medical] Your FH will not spawn a medical vehicle";
 			};
-			systemChat "[COA Medical] Self Interact -> Unpack Field Hospital";			
+			systemChat "[CMF Medical] Self Interact -> Unpack Field Hospital";			
 		};
 		[player] call tnk_add_med_mo;
 	};
@@ -44,8 +44,8 @@ if (_playerClass in _medics) then {
 			CCP_Unpack_Action_A = ["unpackCCP","Unpack CCP","",{[] execVM "cmf\buildccp\unpack_alpha.sqf";},{true}] call ace_interact_menu_fnc_createAction;
 			[player, 1, ["ACE_SelfActions"], CCP_Unpack_Action_A] call ace_interact_menu_fnc_addActionToObject;
 			//Notify
-			systemChat "[COA Medical] You are alpha squad medic and have been assigned a CCP kit";
-			systemChat "[COA Medical] Self Interact -> Unpack CCP";			
+			systemChat "[CMF Medical] You are alpha squad medic and have been assigned a CCP kit";
+			systemChat "[CMF Medical] Self Interact -> Unpack CCP";			
 		};
 		[player] call tnk_add_med_a;
 	};
@@ -56,8 +56,8 @@ if (_playerClass in _medics) then {
 			CCP_Unpack_Action_B = ["unpackCCP","Unpack CCP","",{[] execVM "cmf\buildccp\unpack_bravo.sqf";},{true}] call ace_interact_menu_fnc_createAction;
 			[player, 1, ["ACE_SelfActions"], CCP_Unpack_Action_B] call ace_interact_menu_fnc_addActionToObject;
 			//Notify
-			systemChat "[COA Medical] You are bravo squad medic and have been assigned a CCP kit";
-			systemChat "[COA Medical] Self Interact -> Unpack CCP";
+			systemChat "[CMF Medical] You are bravo squad medic and have been assigned a CCP kit";
+			systemChat "[CMF Medical] Self Interact -> Unpack CCP";
 		};	
 		[player] call tnk_add_med_b;
 	};
@@ -68,8 +68,8 @@ if (_playerClass in _medics) then {
 			CCP_Unpack_Action_C = ["unpackCCP","Unpack CCP","",{[] execVM "cmf\buildccp\unpack_charlie.sqf";},{true}] call ace_interact_menu_fnc_createAction;
 			[player, 1, ["ACE_SelfActions"], CCP_Unpack_Action_C] call ace_interact_menu_fnc_addActionToObject;
 			//Notify
-			systemChat "[COA Medical] You are charlie squad medic and have been assigned a CCP kit";
-			systemChat "[COA Medical] Self Interact -> Unpack CCP";
+			systemChat "[CMF Medical] You are charlie squad medic and have been assigned a CCP kit";
+			systemChat "[CMF Medical] Self Interact -> Unpack CCP";
 		};
 		[player] call tnk_add_med_c;
 	};
@@ -80,8 +80,8 @@ if (_playerClass in _medics) then {
 			CCP_Unpack_Action_D = ["unpackCCP","Unpack CCP","",{[] execVM "cmf\buildccp\unpack_delta.sqf";},{true}] call ace_interact_menu_fnc_createAction;
 			[player, 1, ["ACE_SelfActions"], CCP_Unpack_Action_D] call ace_interact_menu_fnc_addActionToObject;
 			//Notify
-			systemChat "[COA Medical] You are delta squad medic and have been assigned a CCP kit";
-			systemChat "[COA Medical] Self Interact -> Unpack CCP";
+			systemChat "[CMF Medical] You are delta squad medic and have been assigned a CCP kit";
+			systemChat "[CMF Medical] Self Interact -> Unpack CCP";
 		};
 		[player] call tnk_add_med_d;
 	};

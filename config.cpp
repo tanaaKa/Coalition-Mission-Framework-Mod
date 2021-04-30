@@ -92,14 +92,16 @@ class CfgMPGameTypes
 	};
 };
 
-class Extended_PreInit_EventHandlers
-{
-	CMF_PreInit="call compile preProcessFileLineNumbers 'cmf\preinit.sqf'";
+class Extended_PreInit_EventHandlers {
+    class CMF_PreInit {
+        init = "call compile preProcessFileLineNumbers 'cmf\preinit.sqf'";
+    };
 };
 
-class Extended_PostInit_EventHandlers
-{
-	CMF_PostInit="call compile preProcessFileLineNumbers 'cmf\postinit.sqf'";
+class Extended_PostInit_EventHandlers {
+    class CMF_PostInit {
+        init = "call compile preProcessFileLineNumbers 'cmf\postinit.sqf'";
+    };
 };
 
 class Extended_InitPost_EventHandlers

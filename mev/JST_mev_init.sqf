@@ -12,7 +12,7 @@
 - Do not change the vehicles' variable names unless you know what you're doing (you probably don't)
 */
 
-waitUntil {UIsleep 1; (!isNil "JST_opfFH")};
+waitUntil {!isNull player};
 
 // compile medical vehicle based field hospitals functions
 JST_fnc_mev_deployFH = compileFinal preprocessFile "cmf\mev\JST_fnc_mev_deployFH.sqf";
@@ -35,7 +35,7 @@ switch (side player) do
 		{
 			if !(isNil "BLU_MEV_1PL") then {[WEST, BLU_MEV_1PL, JST_bluFH, "1PL"] spawn JST_fnc_mev_addBuildAction};
 			if !(isNil "BLU_MEV_2PL") then {[WEST, BLU_MEV_2PL, JST_bluFH, "2PL"] spawn JST_fnc_mev_addBuildAction};
-			systemChat "[COA Medical] You have a mobile FH that unpacks from your MEV.";
+			systemChat "[CMF Medical] You have a mobile FH that unpacks from your MEV.";
 		};
 	};
 	case INDEPENDENT:
@@ -45,7 +45,7 @@ switch (side player) do
 			[JST_indFH] execVM "cmf\mev\JST_mev_init.sqf";
 			if !(isNil "IND_MEV_1PL") then {[INDEPENDENT, IND_MEV_1PL, JST_indFH, "1PL"] spawn JST_fnc_mev_addBuildAction};
 			if !(isNil "IND_MEV_2PL") then {[INDEPENDENT, IND_MEV_2PL, JST_indFH, "2PL"] spawn JST_fnc_mev_addBuildAction};
-			systemChat "[COA Medical] You have a mobile FH that unpacks from your MEV.";
+			systemChat "[CMF Medical] You have a mobile FH that unpacks from your MEV.";
 		};
 	};
 	case EAST:
@@ -55,7 +55,7 @@ switch (side player) do
 			[JST_opfFH] execVM "cmf\mev\JST_mev_init.sqf";
 			if !(isNil "OPF_MEV_1PL") then {[EAST, OPF_MEV_1PL, JST_opfFH, "1PL"] spawn JST_fnc_mev_addBuildAction};
 			if !(isNil "OPF_MEV_2PL") then {[EAST, OPF_MEV_2PL, JST_opfFH, "2PL"] spawn JST_fnc_mev_addBuildAction};
-			systemChat "[COA Medical] You have a mobile FH that unpacks from your MEV.";
+			systemChat "[CMF Medical] You have a mobile FH that unpacks from your MEV.";
 		};
 	};
 };
