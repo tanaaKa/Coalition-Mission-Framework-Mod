@@ -23,12 +23,12 @@
 #define COMPILE_FINAL compileFinal preprocessFileLineNumbers
 
 //	Establishing functions.
-wha_dp_fnc_addDeploy = COMPILE_FINAL "cmf\fds\functions\wha_dp_addDeploy.sqf";
-wha_dp_fnc_addDeployGroup = COMPILE_FINAL "cmf\fds\functions\wha_dp_addDeployGroup.sqf";
-wha_dp_fnc_deployLocal = COMPILE_FINAL "cmf\fds\functions\wha_dp_deployLocal.sqf";
-wha_dp_fnc_teleportGroup = COMPILE_FINAL "cmf\fds\functions\wha_dp_teleportGroup.sqf";
-wha_dp_fnc_teleportUnit = COMPILE_FINAL "cmf\fds\functions\wha_dp_teleportUnit.sqf";
-wha_dp_fnc_teleportLocal = COMPILE_FINAL "cmf\fds\functions\wha_dp_teleportLocal.sqf";
+wha_dp_fnc_addDeploy = COMPILE_FINAL "x\cmf\addons\framework\fds\functions\wha_dp_addDeploy.sqf";
+wha_dp_fnc_addDeployGroup = COMPILE_FINAL "x\cmf\addons\framework\fds\functions\wha_dp_addDeployGroup.sqf";
+wha_dp_fnc_deployLocal = COMPILE_FINAL "x\cmf\addons\framework\fds\functions\wha_dp_deployLocal.sqf";
+wha_dp_fnc_teleportGroup = COMPILE_FINAL "x\cmf\addons\framework\fds\functions\wha_dp_teleportGroup.sqf";
+wha_dp_fnc_teleportUnit = COMPILE_FINAL "x\cmf\addons\framework\fds\functions\wha_dp_teleportUnit.sqf";
+wha_dp_fnc_teleportLocal = COMPILE_FINAL "x\cmf\addons\framework\fds\functions\wha_dp_teleportLocal.sqf";
 
 //-------------------------------------------------------------------------------------
 //	Preprocess and compile functions that vary depending on mod presence.

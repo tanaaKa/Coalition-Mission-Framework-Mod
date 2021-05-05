@@ -49,7 +49,7 @@ if ( !WHA_DP_DEPLOY ) exitWith
 
 //	Construct & compile functions.
 //	Uses local variables collected earlier to determine which functions to use.
-CALL_NOSAVE "cmf\fds\wha_dp_functions.sqf";
+CALL_NOSAVE "x\cmf\addons\framework\fds\wha_dp_functions.sqf";
 
 //	Imports settings if CBA is not present,
 //	sets up an options menu if it is.

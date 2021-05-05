@@ -7,7 +7,7 @@ class KitPicker
     enableSimulation = 1;
     enableDisplay = 1;
 
-    onLoad = "if (isNil 'KitPickInit') then {call compile preprocessFileLineNumbers 'cmf\JIP\f_JIP_kitPicker.sqf'}; _this call KitPickInit;";
+    onLoad = "if (isNil 'KitPickInit') then {call compile preprocessFileLineNumbers 'x\cmf\addons\framework\JIP\f_JIP_kitPicker.sqf'}; _this call KitPickInit;";
 
     class controlsBackground
     {

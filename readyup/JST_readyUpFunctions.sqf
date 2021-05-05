@@ -18,7 +18,6 @@ diag_log "[CMF]: Starting Readyup Library";
 if (!isServer) then
 {
     // Cutscene for the start of the game
-	gameLive = false;
     [] spawn
     {
         cutText ["Server initializing. Please wait.", "BLACK", 10];
@@ -48,7 +47,7 @@ else
 JST_fnc_addSafeStartHeal =
 {
 	if (time < 600) then {
-		JST_SSHeal = player addaction ["<t color='#0B6623'>Treat Yo Self (heal)</t>","cmf\ssheal\heal.sqf",[],-1,true,false,"","_target == player"];
+		JST_SSHeal = player addaction ["<t color='#0B6623'>Treat Yo Self (heal)</t>","\x\cmf\addons\framework\ssheal\heal.sqf",[],-1,true,false,"","_target == player"];
 	};
 };
 
@@ -253,7 +252,6 @@ JST_fnc_removeLeaderActions =
 JST_fnc_playersGoHot =
 {
 	player enableFatigue true;
-	gameLive = true; publicVariable "gameLive";
 	[] spawn JST_fnc_removeAdminAction;
 	[] spawn JST_fnc_removeLeaderActions;
 	if (!isNil "JST_SSHeal") then {player removeAction JST_SSHeal};
@@ -299,6 +297,7 @@ JST_fnc_ReadyUp =
 {
 	params ["_forced"];
 	terminate JST_pollForAdminsHandle;
+	gameLive = true; publicVariable "gameLive";
 	if (_forced) then
 	{
 		terminate JST_waitForLeadersReadyHandle;
@@ -340,7 +339,7 @@ JST_fnc_ReadyUp =
 	};
 	"MISSION IS LIVE" remoteExec ["systemChat"];
 	// Remove icons
-	[] execVM "cmf\readyup\removeIcons.sqf";
+	[] execVM "\x\cmf\addons\framework\readyup\removeIcons.sqf";
 	// Handle players actions/stamina/etc. going live
 	remoteExec ["JST_fnc_playersGoHot", -2, true];
 	// Remove safe start

@@ -57,13 +57,13 @@ if (_grp != group player) then {
 	[player] joinSilent grpNull;
 
 	if (!isNull _grp) then {
-		[_grp,_joinDistance] execVM "cmf\JIP\f_JIP_nearTargetGroupCheck.sqf";
+		[_grp,_joinDistance] execVM "x\cmf\addons\framework\JIP\f_JIP_nearTargetGroupCheck.sqf";
 		systemChat format ["%1 selected. Deploy and get your orders from the leader: %2.", _grp, name leader _grp];
 	};
 };
 
 //player addaction ["<t color='#FF0000'>JIP Deploy</t>","scripts\JIP\deploy.sqf",[],6,true,false,"","_target == player"]; 
 
-[player] execVM "cmf\JIP\deploy.sqf";
+[player] execVM "x\cmf\addons\framework\JIP\deploy.sqf";
 
 

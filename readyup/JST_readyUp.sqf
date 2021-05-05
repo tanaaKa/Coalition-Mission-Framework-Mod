@@ -23,7 +23,6 @@ diag_log "[CMF]: Starting Server CMF Ready Up System";
 blufor_ready = false;
 indfor_ready = false;
 opfor_ready = false;
-gameLive = false; publicVariable "gameLive";
 JST_admins = [];
 JST_leaders = [];
 
@@ -36,7 +35,7 @@ JST_waitForLeadersReadyHandle = [] spawn JST_fnc_waitForLeadersReady;
 JST_pollForAdminsHandle = [] spawn JST_pollForAdmins;
 
 // Add leader arrows
-[] execVM "cmf\readyup\addIcons.sqf";
+[] execVM "\x\cmf\addons\framework\readyup\addIcons.sqf";
 
 // Add player connected handler to give safe start heal only while unready
 JST_safeStartHealHandler = addMissionEventHandler ["PlayerConnected",

@@ -9,7 +9,6 @@
 //
 ///////////////////////////////////////////////////////////////
 diag_log "[CMF]: Starting Server Logging";
-if !(CMF_Mission) exitWith {};
 
 //Add mission title to attendance log
 if (isDedicated) then {

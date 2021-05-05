@@ -10,6 +10,9 @@ private _allMedicsOnSide = [];
 	(
 		(side _x isEqualTo _side) and
 		(
+			(typeOf player isEqualTo "potato_w_cm") or
+			(typeOf player isEqualTo "potato_i_cm") or
+			(typeOf player isEqualTo "potato_e_cm") or
 			(typeOf player isEqualTo "potato_w_plm") or
 			(typeOf player isEqualTo "potato_i_plm") or
 			(typeOf player isEqualTo "potato_e_plm") or

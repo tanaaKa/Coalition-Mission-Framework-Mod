@@ -7,7 +7,7 @@ class GrpPicker
     enableSimulation = 1;
     enableDisplay = 1;
 
-    onLoad = "if (isNil 'GrpPickInit') then {call compile preprocessFileLineNumbers 'cmf\JIP\f_JIP_grpPicker.sqf'}; _this call GrpPickInit;";
+    onLoad = "if (isNil 'GrpPickInit') then {call compile preprocessFileLineNumbers 'x\cmf\addons\framework\JIP\f_JIP_grpPicker.sqf'}; _this call GrpPickInit;";
 
     class controlsBackground
     {
@@ -32,7 +32,7 @@ class GrpPicker
             y = SafeZoneY + 0.2;
             text = "Select group to join";
         };
-    }
+    };
 
     class controls
     {

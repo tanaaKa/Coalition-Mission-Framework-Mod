@@ -29,11 +29,11 @@ if ((player distance _pos)>6) exitWith {
 	_site setDir (getDir _site)+_rot;
 
 	// Add ACE interact to construct CCP packs into a tent.
-	_constructAction = ["constructCCP","Construct","",{_target execVM "cmf\buildccp\construct_bravo.sqf";},{true},{},_site] call ace_interact_menu_fnc_createAction;  
+	_constructAction = ["constructCCP","Construct","",{_target execVM "x\cmf\addons\framework\buildccp\construct_bravo.sqf";},{true},{},_site] call ace_interact_menu_fnc_createAction;  
 	[_site, 0, ["ACE_MainActions"], _constructAction] remoteExecCall ["ace_interact_menu_fnc_addActionToObject",0];
 	
 	// Add ACE interact to pack up ccp backpacks ONLY for the person that placed it.
-	_packupAction = ["packupCCP","Pack Up","",{_target execVM "scripts\buildccp\packup_bravo.sqf";},{true}] call ace_interact_menu_fnc_createAction;  
+	_packupAction = ["packupCCP","Pack Up","",{_target execVM "x\cmf\addons\framework\buildccp\packup_bravo.sqf";},{true}] call ace_interact_menu_fnc_createAction;  
 	[_site, 0, ["ACE_MainActions"], _packupAction] call ace_interact_menu_fnc_addActionToObject;
 
 	// Remove 'unpack CCP' action from inventory.

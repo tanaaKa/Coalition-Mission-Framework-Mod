@@ -92,6 +92,8 @@ tnk_closeMA =
 		["potato_adminMsg", [format ["%1 attempted to take too many magazines. Resetting gear. Reset manually for good measure.", (name player)]]] call CBA_fnc_globalEvent;
 	};
 	// LAT Rocket Check
+	// Not needed - LATs should all be disposable
+	/*
 	_atClass = ["potato_w_lat","potato_e_lat","potato_i_lat"];
 	if ((typeOf player) in _atClass) then {
 		private _rocketmagazines = _magazinesArray param [3,""]; 
@@ -107,6 +109,7 @@ tnk_closeMA =
 			["potato_adminMsg", [format ["%1 attempted to take too many rockets. Resetting gear. Reset manually for good measure.", (name player)]]] call CBA_fnc_globalEvent;
 		};
 	};
+	*/
 	// MAT Rocket/Missile Check
 	_matClass = ["potato_w_matg","potato_e_matg","potato_i_matg"
 	,"potato_w_matl","potato_e_matl","potato_i_matl","potato_w_matag","potato_e_matag","potato_i_matag"];

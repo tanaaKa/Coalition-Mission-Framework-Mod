@@ -1,6 +1,6 @@
 class CfgPatches
 {
-	class cmf
+	class ADDON
 	{
 		units[]=
 		{
@@ -16,28 +16,6 @@ class CfgPatches
 		};
 		author="tanaKa";
 		authorUrl="http://coalitiongroup.net";
-	};
-};
-class CfgAddons
-{
-	class PreloadAddons
-	{
-		class cmf
-		{
-			list[]=
-			{
-				"cmf"
-			};
-		};
-	};
-};
-
-class CBA_Extended_EventHandlers;
-class CfgDiary
-{
-	class FixedPages
-	{
-		delete Statistics;
 	};
 };
 
@@ -92,56 +70,7 @@ class CfgMPGameTypes
 	};
 };
 
-class Extended_PreInit_EventHandlers
-{
-	CMF_PreInit="call compile preProcessFileLineNumbers 'cmf\preinit.sqf'";
-};
-
-class Extended_PostInit_EventHandlers
-{
-	CMF_PostInit="call compile preProcessFileLineNumbers 'cmf\postinit.sqf'";
-};
-
-class Extended_InitPost_EventHandlers
-{
-	class Car 
-	{
-		class cmf_noeject 
-		{ 
-			init = "(_this select 0) allowCrewInImmobile true;"; 
-		};
-		class cmf_nothermals 
-		{ 
-			init = "(_this select 0) disableTIEquipment true;"; exclude = "LSV_01_AT_base_F";  
-		};
-	};
-	class Tank
-	{
-		class cmf_noeject 
-		{ 
-			init = "(_this select 0) allowCrewInImmobile true;"; 
-		};
-		class cmf_nothermals 
-		{ 
-			init = "(_this select 0) disableTIEquipment true;"; 
-		};
-	};
-	class Helicopter 
-	{
-		class cmf_nothermals 
-		{ 
-			init = "(_this select 0) disableTIEquipment true;"; 
-		};
-	};
-	class Plane 
-	{
-		class cmf_nothermals 
-		{ 
-			init = "(_this select 0) disableTIEquipment true;"; 
-		};
-	};
-};
-
+#include "CfgEventhandlers.hpp"
 #include "JIP\f_JIP_common.h"
 #include "JIP\f_JIP_grpPicker.h"
 #include "JIP\f_JIP_kitPicker.h"
