@@ -42,7 +42,6 @@ switch (side player) do
 	{
 		if ((JST_mevIndEnabled) and ((typeOf player isEqualTo "potato_i_cm") or (typeOf player isEqualTo "potato_i_plm") or (typeOf player isEqualTo "potato_i_sm"))) then
 		{
-			[JST_indFH] execVM "\x\cmf\addons\framework\mev\JST_mev_init.sqf";
 			if !(isNil "IND_MEV_1PL") then {[INDEPENDENT, IND_MEV_1PL, JST_indFH, "1PL"] spawn JST_fnc_mev_addBuildAction};
 			if !(isNil "IND_MEV_2PL") then {[INDEPENDENT, IND_MEV_2PL, JST_indFH, "2PL"] spawn JST_fnc_mev_addBuildAction};
 			systemChat "[CMF Medical] You have a mobile FH that unpacks from your MEV.";
@@ -52,7 +51,6 @@ switch (side player) do
 	{
 		if ((JST_mevOpfEnabled) and ((typeOf player isEqualTo "potato_e_cm") or (typeOf player isEqualTo "potato_e_plm") or (typeOf player isEqualTo "potato_e_sm"))) then
 		{
-			[JST_opfFH] execVM "\x\cmf\addons\framework\mev\JST_mev_init.sqf";
 			if !(isNil "OPF_MEV_1PL") then {[EAST, OPF_MEV_1PL, JST_opfFH, "1PL"] spawn JST_fnc_mev_addBuildAction};
 			if !(isNil "OPF_MEV_2PL") then {[EAST, OPF_MEV_2PL, JST_opfFH, "2PL"] spawn JST_fnc_mev_addBuildAction};
 			systemChat "[CMF Medical] You have a mobile FH that unpacks from your MEV.";

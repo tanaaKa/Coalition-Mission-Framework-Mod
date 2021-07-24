@@ -104,7 +104,7 @@ KitPicker_Pick =
 			_loadout = [missionConfigFile >> "CfgLoadouts" >> toLower faction player >> "plm"] call potato_assignGear_fnc_getLoadoutFromConfig;
 			player setUnitLoadout _loadout;
 			player setUnitTrait ["Medic",true];
-			[player] execVM "scripts\buildccp\initmed.sqf";
+			[player] execVM "x\cmf\addons\framework\buildccp\initmed.sqf";
 			["potato_adminMsg", [format ["%1 JIP'd as a medical officer on %2", (name player),(side player)]]] call CBA_fnc_globalEvent;
 		};
 		case "sm": 
@@ -112,7 +112,7 @@ KitPicker_Pick =
 			_loadout = [missionConfigFile >> "CfgLoadouts" >> toLower faction player >> "sm"] call potato_assignGear_fnc_getLoadoutFromConfig;
 			player setUnitLoadout _loadout;
 			player setUnitTrait ["Medic",true];
-			[player] execVM "scripts\buildccp\initmed.sqf";
+			[player] execVM "x\cmf\addons\framework\buildccp\initmed.sqf";
 			["potato_adminMsg", [format ["%1 JIP'd as a squad medic on %2", (name player),(side player)]]] call CBA_fnc_globalEvent;
 		};
 		case "ftl": 

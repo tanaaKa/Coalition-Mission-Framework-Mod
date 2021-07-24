@@ -23,13 +23,3 @@ if (!isServer) then {
     }
 ] call cba_fnc_addEventhandler;
 };
-
-//EH to remove medical items for EI
-["CAManBase", "Killed", {
-    params ["_unit"];
-    if (!isPlayer _unit) then {
-        //Delete medical items from AI only
-        _medicalItems = ["FirstAidKit","ACE_packingBandage","ACE_morphine","ACE_epinephrine","ACE_tourniquet","ACE_salineIV","ACE_elasticBandage","ACE_fieldDressing"];
-		{_unit removeItems _x} forEach _medicalItems;
-    };
-}, true, [], true] call CBA_fnc_addClassEventHandler;

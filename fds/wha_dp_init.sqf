@@ -38,7 +38,7 @@ if (!hasInterface) exitWith {};
 ///_modsArray params [ ["_cbaPresent",false], ["_acePresent",true] ];
 
 //	Allows for missionmaker configuration of important settings.
-CALL_NOSAVE "cmf\fds\wha_dp_CONFIG.sqf";
+CALL_NOSAVE "x\cmf\addons\framework\fds\wha_dp_CONFIG.sqf";
 
 //	Emergency exit if the deploy system is disabled.
 if ( !WHA_DP_DEPLOY ) exitWith 

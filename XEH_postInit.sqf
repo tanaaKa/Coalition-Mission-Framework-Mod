@@ -25,8 +25,8 @@ if (isNil "gameLive") then
 	if (!isNil "IND_MEV_1PL") then {JST_mevIndEnabled = true} else {JST_mevIndEnabled = false};
 	if (!isNil "OPF_MEV_1PL") then {JST_mevOpfEnabled = true} else {JST_mevOpfEnabled = false};
 	"mev\JST_mev_init.sqf" call CMF_Load;
+	
+	medicalLoaded = true;
 };
-
-"readyup\JST_readyUp.sqf" call CMF_Load;
 
 diag_log "[CMF]: Completed CMF Post Init";

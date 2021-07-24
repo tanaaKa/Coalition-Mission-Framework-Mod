@@ -79,13 +79,7 @@ params["_site"];
 	_marker setMarkerAlpha 0;
 	
 	// Alert the appropriate players that a MASH has been constructed
-	private _notificationTargets = player;
-	if (FHSideMarkers) then
-	{
-		_notificationTargets = side player;
-	} else {
-		_notificationTargets = 0;
-	};
+	_notificationTargets = side player;
 	_hintString remoteExec ["hint", _notificationTargets];
 	[_marker,1] remoteExec ["setMarkerAlpha", _notificationTargets];
 	

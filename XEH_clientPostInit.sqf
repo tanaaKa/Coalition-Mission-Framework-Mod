@@ -36,17 +36,30 @@ diag_log "[CMF]: Starting CMF PostInit Client";
 	[
 		"miniarsenal\addarsenal.sqf"
 		,"EH\cbaEH.sqf"
+		,"misc\mapfixaction.sqf"
 		,"fds\wha_dp_init.sqf"
 		,"vehiclespawner\factoryaction.sqf"
 	] call CMF_LoadAll;
+	
+	//EH to remove medical items for EI
+	["CAManBase", "Killed", {
+		params ["_unit"];
+		if (!isPlayer _unit) then {
+			//Delete medical items from AI only
+			_medicalItems = ["FirstAidKit","ACE_packingBandage","ACE_morphine","ACE_epinephrine","ACE_tourniquet","ACE_salineIV","ACE_elasticBandage","ACE_fieldDressing"];
+			{_unit removeItems _x} forEach _medicalItems;
+		};
+	}, true, [], true] call CBA_fnc_addClassEventHandler;
 
 	// Medical system choice for mission maker
+	waitUntil {!isNil "medicalLoaded"};
 	switch (side player) do
 	{
 		case WEST:			{if (!JST_mevBluEnabled) then {"buildccp\initmed.sqf" call CMF_Load;}};
 		case INDEPENDENT:	{if (!JST_mevIndEnabled) then {"buildccp\initmed.sqf" call CMF_Load;}};
 		case EAST:			{if (!JST_mevOpfEnabled) then {"buildccp\initmed.sqf" call CMF_Load;}};
 	};
+	
 };
 
 diag_log "[CMF]: Completed CMF PostInit Client";

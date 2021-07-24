@@ -22,7 +22,11 @@ class Extended_InitPost_EventHandlers
 		};
 		class cmf_nothermals 
 		{ 
-			init = "(_this select 0) disableTIEquipment true;"; exclude = "LSV_01_AT_base_F";  
+			init = "(_this select 0) disableTIEquipment true;"; 
+		};
+		class jst_vehCrewDeath
+		{ 
+		  init = "((_this select 0) addMPEventHandler ['MPKilled', {params ['_unit', '_killer', '_instigator', '_useEffects']; if !(isServer) exitWith {}; {_x setDamage 1;} forEach crew _unit}])";
 		};
 	};
 	class Tank
@@ -34,6 +38,10 @@ class Extended_InitPost_EventHandlers
 		class cmf_nothermals 
 		{ 
 			init = "(_this select 0) disableTIEquipment true;"; 
+		};
+		class jst_vehCrewDeath
+		{ 
+		  init = "((_this select 0) addMPEventHandler ['MPKilled', {params ['_unit', '_killer', '_instigator', '_useEffects']; if !(isServer) exitWith {}; {_x setDamage 1;} forEach crew _unit}])";
 		};
 	};
 	class Helicopter 
