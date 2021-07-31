@@ -1,10 +1,10 @@
 class CfgPatches
 {
-	class ADDON
+	class CMF
 	{
 		units[]=
 		{
-			
+			"cmfADModule"
 		};
 		weapons[]={};
 		requiredVersion=1;
@@ -71,6 +71,10 @@ class CfgMPGameTypes
 };
 
 #include "CfgEventhandlers.hpp"
+#include "CfgModuleCategories.hpp"
+#include "CfgFunctions.hpp"
+#include "CfgVehicles.hpp"
+#include "Displays.hpp"
 #include "JIP\f_JIP_common.h"
 #include "JIP\f_JIP_grpPicker.h"
 #include "JIP\f_JIP_kitPicker.h"
