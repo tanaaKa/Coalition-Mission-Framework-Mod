@@ -15,7 +15,7 @@ class CfgVehicles {
         category = "CMF";
         scope = 2;
 		scopeCurator = 1;
-        displayName = "Game Mode: Attack and Defend";
+        displayName = "TVT Game Mode: Attack and Defend";
         icon = "\a3\Modules_F\Data\iconTaskCreate_ca.paa";
         isGlobal = 0;
         isTriggerActivated = 0;
