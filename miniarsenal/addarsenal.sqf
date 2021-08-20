@@ -18,7 +18,7 @@
 
 // If safestart disabled, exit (for jips)
 waitUntil {player getVariable ["potato_assigngear_gearSetup", true]};
-if (time > 10) exitWith {systemChat "[COA MA] MiniArsenal is disabled due to JIPing"}
+if (time > 10) exitWith {systemChat "[COA MA] MiniArsenal is disabled due to JIPing"};
 if (gameLive) exitWith {};
 if (ArsenalEnabled == 0) exitWith {systemChat "[COA MA] MiniArsenal is disabled in this mission"};
 startingMags = count magazines player;
