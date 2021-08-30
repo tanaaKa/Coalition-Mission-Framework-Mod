@@ -14,6 +14,11 @@ class CfgFunctions
 			class clientTime{};
 			class showTimeOnMap{};
 		};
+		class VehicleKill
+		{
+			file = "\x\cmf\addons\framework\misc\vehiclekill";
+			class handleDamage{};
+		};
 		// TODO: Implement these
 		/* class GameModeCON
 		{

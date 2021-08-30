@@ -26,7 +26,7 @@ class Extended_InitPost_EventHandlers
 		};
 		class jst_vehCrewDeath
 		{ 
-		  init = "((_this select 0) addMPEventHandler ['MPKilled', {params ['_unit', '_killer', '_instigator', '_useEffects']; if !(isServer) exitWith {}; {_x setDamage 1;} forEach crew _unit}])";
+			serverInit = "((_this select 0) addEventHandler ['Killed', {params ['_unit', '_killer', '_instigator', '_useEffects']; [_unit] spawn CMF_fnc_handleDamage;}])";
 		};
 	};
 	class Tank
@@ -41,7 +41,7 @@ class Extended_InitPost_EventHandlers
 		};
 		class jst_vehCrewDeath
 		{ 
-		  init = "((_this select 0) addMPEventHandler ['MPKilled', {params ['_unit', '_killer', '_instigator', '_useEffects']; if !(isServer) exitWith {}; {_x setDamage 1;} forEach crew _unit}])";
+			serverInit = "((_this select 0) addEventHandler ['Killed', {params ['_unit', '_killer', '_instigator', '_useEffects']; [_unit] spawn CMF_fnc_handleDamage;}])";
 		};
 	};
 	class Helicopter 
