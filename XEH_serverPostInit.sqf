@@ -6,10 +6,13 @@ if (_version != "CMF2 1.0") exitWith {};
 	waitUntil {!isNil "initRan"};
 
 	// Server-only scripts
-	[
+	/* [
 		 "readyup\JST_readyUp.sqf"
-		,"logging\session.sqf"
-		,"cleanup\JST_garbageCleanup.sqf"
-		,"patches\patchesinit.sqf"
-	] call CMF_LoadAll;
+	] call CMF_LoadAll; */
+	
+	call CMF_fnc_readyUp;
+	call CMF_fnc_garbageCleanup;
+	call CMF_fnc_sessionLog;
+	call CMF_fnc_patchInit;
+	call CMF_fnc_webhookBrief;
 };

@@ -14,9 +14,17 @@
 //
 ///////////////////////////////////////////////////////////////
 // Vars for picking medic class
-private _medics = ["BLU_PLM","BLU_2PLM","OPF_PLM","OPF_2PLM","IND_PLM","IND_2PLM","BLU_ASLM","OPF_ASLM","IND_ASLM","BLU_BSLM","OPF_BSLM","IND_BSLM",
-					"BLU_CSLM","OPF_CSLM","IND_CSLM","BLU_DSLM","OPF_DSLM","IND_DSLM"];
-ccpUsed = false;
+private _medics = 
+[
+	"BLU_PLM","BLU_2PLM"
+	,"OPF_PLM","OPF_2PLM"
+	,"IND_PLM","IND_2PLM"
+	,"BLU_ASLM","OPF_ASLM","IND_ASLM"
+	,"BLU_BSLM","OPF_BSLM","IND_BSLM"
+	,"BLU_CSLM","OPF_CSLM","IND_CSLM"
+	,"BLU_DSLM","OPF_DSLM","IND_DSLM"
+];
+					
 private _playerClass = vehicleVarName player;
 
 if (_playerClass in _medics) then {

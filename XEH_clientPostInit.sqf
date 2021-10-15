@@ -33,13 +33,11 @@ diag_log "[CMF]: Starting CMF PostInit Client";
 	player addEventHandler ["Respawn", {[player, "NoVoice"] remoteExecCall ["setSpeaker"];}];
 
 	// Client only scripts
-	[
-		"miniarsenal\addarsenal.sqf"
-		,"EH\cbaEH.sqf"
-		,"misc\mapfixaction.sqf"
-		,"fds\wha_dp_init.sqf"
-		,"vehiclespawner\factoryaction.sqf"
-	] call CMF_LoadAll;
+	call CMF_fnc_addArsenal;
+	call CMF_fnc_cbaEH;
+	call CMF_fnc_fdsInit;
+	call CMF_fnc_factoryaction;
+	[{time > 0}, {call CMF_fnc_limitVD}] call CBA_fnc_waitUntilAndExecute;
 	
 	//EH to remove medical items for EI
 	["CAManBase", "Killed", {
@@ -59,7 +57,6 @@ diag_log "[CMF]: Starting CMF PostInit Client";
 		case INDEPENDENT:	{if (!JST_mevIndEnabled) then {"buildccp\initmed.sqf" call CMF_Load;}};
 		case EAST:			{if (!JST_mevOpfEnabled) then {"buildccp\initmed.sqf" call CMF_Load;}};
 	};
-	
 };
 
 diag_log "[CMF]: Completed CMF PostInit Client";

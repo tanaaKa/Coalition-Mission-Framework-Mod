@@ -35,7 +35,7 @@ missionTimeUI_PFH = [{
 		_timeLeft = (format ["Time Left: %1", [_missionTime - CBA_missionTime, "MM:SS"] call BIS_fnc_secondsToString]);
 		_setText ctrlSetStructuredText parseText _timeLeft;
 		
-		if (_timeLeft isEqualTo "Time Left: 00:00") exitWith {
+		if (_timeLeft == "Time Left: 00:00") exitWith {
 			tnk_timesUp = true;
 			hint "Mission time has expired";
 			systemChat format ["[CMF] Mission time has expired after %1 minutes",missionTimeLimit];

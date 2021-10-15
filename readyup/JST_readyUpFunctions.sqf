@@ -344,6 +344,8 @@ JST_fnc_ReadyUp =
 	[] execVM "\x\cmf\addons\framework\readyup\removeIcons.sqf";
 	// Handle players actions/stamina/etc. going live
 	remoteExec ["JST_fnc_playersGoHot", -2, true];
+	// Call the starting webhook
+	call CMF_fnc_webhookStart;
 	// Remove safe start
 	[false] call potato_safeStart_fnc_toggleSafeStart;
 	// Remove arsenal

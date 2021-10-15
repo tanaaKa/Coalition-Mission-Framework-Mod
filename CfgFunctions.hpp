@@ -19,6 +19,65 @@ class CfgFunctions
 			file = "\x\cmf\addons\framework\misc\vehiclekill";
 			class handleDamage{};
 		};
+		class notifications
+		{
+			file = "\x\cmf\addons\framework\misc\notifs";
+			class notify{};
+		};
+		class webhooks
+		{
+			file = "\x\cmf\addons\framework\logging";
+			class sessionLog{};
+			class webhookBrief{};
+			class webhookEnd{};
+			class webhookStart{};
+		};
+		class patches
+		{
+			file = "\x\cmf\addons\framework\patches";
+			class patchInit{};
+		};
+		class garbageCleanup
+		{
+			file = "\x\cmf\addons\framework\cleanup";
+			class garbageCleanup{};
+		};
+		class readyup
+		{
+			file = "\x\cmf\addons\framework\readyup";
+			class readyUp{};
+		};
+		class mev
+		{
+			file = "\x\cmf\addons\framework\mev";
+			class mevInit{};
+		};
+		class miniArsenal
+		{
+			file = "\x\cmf\addons\framework\miniarsenal";
+			class addArsenal{};
+			class removeArsenal{};
+		};
+		class EH
+		{
+			file = "\x\cmf\addons\framework\EH";
+			class cbaEH{};
+		};
+		class FDS
+		{
+			file = "\x\cmf\addons\framework\fds";
+			class fdsInit{};
+		};
+		class vehiclespawner
+		{
+			file = "\x\cmf\addons\framework\vehiclespawner";
+			class factoryaction{};
+		};
+		class vd
+		{
+			file = "\x\cmf\addons\framework\misc\vd"; 
+			class limitVD{};
+		};
 		// TODO: Implement these
 		/* class GameModeCON
 		{

@@ -11,9 +11,12 @@ diag_log "[CMF]: Starting CMF Post Init";
 enableSaving [false, false];
 
 //Var to check if game is live
+//Otherwise ensure timer is shown
 if (isNil "gameLive") then 
 {
 	gameLive = false;
+} else {
+	call CMF_fnc_showTimeOnMap;
 };
 
 [] spawn {
@@ -24,7 +27,7 @@ if (isNil "gameLive") then
 	if (!isNil "BLU_MEV_1PL") then {JST_mevBluEnabled = true} else {JST_mevBluEnabled = false};
 	if (!isNil "IND_MEV_1PL") then {JST_mevIndEnabled = true} else {JST_mevIndEnabled = false};
 	if (!isNil "OPF_MEV_1PL") then {JST_mevOpfEnabled = true} else {JST_mevOpfEnabled = false};
-	"mev\JST_mev_init.sqf" call CMF_Load;
+	call CMF_fnc_mevInit;
 	
 	medicalLoaded = true;
 };
