@@ -7,8 +7,8 @@ class Extended_PreInit_EventHandlers {
 class Extended_PostInit_EventHandlers {
 	class ADDON {
         init = "call compile preprocessFileLineNumbers '\x\cmf\addons\framework\XEH_postInit.sqf'";
-		clientInit = "call compile preprocessFileLineNumbers '\x\cmf\addons\framework\XEH_clientPostInit.sqf'";
 		serverInit = "call compile preprocessFileLineNumbers '\x\cmf\addons\framework\XEH_serverPostInit.sqf'";
+		clientInit = "call compile preprocessFileLineNumbers '\x\cmf\addons\framework\XEH_clientPostInit.sqf'";
 	};
 };
 
