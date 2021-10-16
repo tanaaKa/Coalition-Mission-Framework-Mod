@@ -11,12 +11,9 @@ diag_log "[CMF]: Starting CMF Post Init";
 enableSaving [false, false];
 
 //Var to check if game is live
-//Otherwise ensure timer is shown
 if (isNil "gameLive") then 
 {
 	gameLive = false;
-} else {
-	call CMF_fnc_showTimeOnMap;
 };
 
 [] spawn {
