@@ -5,7 +5,7 @@ if (_version != "CMF2 1.0") exitWith {};
 diag_log "[CMF]: Starting CMF PostInit Client";
 
 [] spawn {
-	waitUntil {!isNil "initRan"};
+	//waitUntil {!isNil "initRan"};
 	// Prevent players from losing side status
 	player addRating 10000;
 	player addEventHandler ["HandleRating", {0 max (_this select 1)}];
@@ -36,7 +36,7 @@ diag_log "[CMF]: Starting CMF PostInit Client";
 	call CMF_fnc_addArsenal;
 	call CMF_fnc_cbaEH;
 	call CMF_fnc_fdsInit;
-	call CMF_fnc_factoryaction;
+	//call CMF_fnc_factoryaction; -- Pending rewrite
 	[{time > 0}, {call CMF_fnc_limitVD}] call CBA_fnc_waitUntilAndExecute;
 	if (gameLive) then {
 		call CMF_fnc_showTimeOnMap;

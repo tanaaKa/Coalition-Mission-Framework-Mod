@@ -3,13 +3,9 @@ _version = getText (missionConfigFile >> "cmfVers");
 if (_version != "CMF2 1.0") exitWith {};
 
 [] spawn {
-	waitUntil {!isNil "initRan"};
+	//waitUntil {!isNil "initRan"};
 
-	// Server-only scripts
-	/* [
-		 "readyup\JST_readyUp.sqf"
-	] call CMF_LoadAll; */
-	
+	// Server-only scripts	
 	call CMF_fnc_readyUp;
 	call CMF_fnc_garbageCleanup;
 	call CMF_fnc_sessionLog;

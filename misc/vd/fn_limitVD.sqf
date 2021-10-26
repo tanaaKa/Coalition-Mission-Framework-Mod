@@ -1,8 +1,9 @@
 viewDistanceHandler = [{
-	if (maxViewDistance isEqualTo -1) exitWith {};
+	private _maxVD = parseNumber getMissionConfigValue "potato_missionTesting_maxViewDistance";
+	if (_maxVD isEqualTo -1) exitWith {};
 
-	if (viewDistance > maxViewDistance) then {
-		setViewDistance maxViewDistance;
+	if (viewDistance > _maxVD) then {
+		setViewDistance _maxVD;
 	};
   
 	if (getTerrainGrid > 25) then {

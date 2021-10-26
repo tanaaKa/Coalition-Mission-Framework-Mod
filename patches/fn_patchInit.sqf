@@ -188,7 +188,7 @@ JKL_fnc_PatchAssignGS =
     sleep 1;
 	
 	//Runs FNCs based on Numbers defined in init.sqf, Options are -1,0,1,2
-	Switch (patches) do { //Grabs from init.sqf somehow
+	Switch (getMissionConfigValue "potato_missionTesting_armPatches") do { 
 		case -1: {};// Exits 
 		case 0: { [] call JKL_fnc_PatchAssignGS }; // Assigns Patch from GS if Defined
 		case 1: { [] call JKL_fnc_PatchAssignGrp }; // Assigns Patch Based off of Group

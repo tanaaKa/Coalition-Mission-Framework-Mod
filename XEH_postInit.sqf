@@ -17,15 +17,49 @@ if (isNil "gameLive") then
 };
 
 [] spawn {
-	waitUntil {!isNil "initRan"};
-
-	// Jesters medical rewrite
-	// Auto enable medical vehicle based system per side if required vehicles present
-	if (!isNil "BLU_MEV_1PL") then {JST_mevBluEnabled = true} else {JST_mevBluEnabled = false};
-	if (!isNil "IND_MEV_1PL") then {JST_mevIndEnabled = true} else {JST_mevIndEnabled = false};
-	if (!isNil "OPF_MEV_1PL") then {JST_mevOpfEnabled = true} else {JST_mevOpfEnabled = false};
-	call CMF_fnc_mevInit;
+	//waitUntil {!isNil "initRan"};
+	// Jesters medical rewrite	
+	// Define hospital models
+	JST_bluFH = "RU_WarfareBFieldhHospital";
+	JST_indFH = "RU_WarfareBFieldhHospital";
+	JST_opfFH = "RU_WarfareBFieldhHospital";
 	
+	// If the MM chooses the MEV system
+	switch (getMissionConfigValue "potato_missionTesting_medSystem") do
+	{
+		case 99: // System not selected in the editor
+		{
+			JST_mevBluEnabled = false;
+			JST_mevIndEnabled = false;
+			JST_mevOpfEnabled = false;
+		};
+		case 1: // CCP and FHs
+		{
+			JST_mevBluEnabled = false;
+			JST_mevIndEnabled = false;
+			JST_mevOpfEnabled = false;
+		};
+		case 0:	// MEVs
+		{
+			if (!isNil "BLU_MEV_1PL") then { 	// Check for MEV
+				JST_mevBluEnabled = true;
+			} else {
+				JST_mevBluEnabled = false;		// Else revert to CCP system
+			};
+			if (!isNil "IND_MEV_1PL") then { 
+				JST_mevIndEnabled = true;
+			} else {
+				JST_mevIndEnabled = false;	
+			};
+			if (!isNil "OPF_MEV_1PL") then { 
+				JST_mevOpfEnabled = true;
+			} else {
+				JST_mevOpfEnabled = false;
+			};
+		};
+	};
+	// Initialize with the settings above
+	call CMF_fnc_mevInit;
 	medicalLoaded = true;
 };
 

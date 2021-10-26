@@ -14,7 +14,8 @@
 //	Initial setup.
 //------------------------------------------------------------------------------------
 
-if (!ForwardDeploy) exitWith {};
+private _fdsEnabled = getMissionConfigValue "potato_missionTesting_forwardDeploy";
+if !(_fdsEnabled) exitWith {};
 
 //	Used so that I don't have to use actual #include command, which can create issues.
 #define CALL_NOSAVE call compile preprocessFileLineNumbers

@@ -18,7 +18,7 @@
  */
 
 disableSerialization;
-private _missionTime = (missionTimelimit * 60) + tnk_ssTime; //add variable safestart time
+private _missionTime = (parseNumber getMissionConfigValue "potato_missionTesting_missionTimeLength" * 60) + tnk_ssTime; //add variable safestart time
 //Create displays in bottom left
 ("timeRsc" call BIS_fnc_rscLayer) cutRsc ["mapTimeLeft", "PLAIN"];
 
@@ -29,7 +29,7 @@ missionTimeUI_PFH = [{
 	_display = uiNameSpace getVariable "mapTimeLeft";
 	_setText = _display displayCtrl 1003;
   
-	if (missionTimeLimit isEqualTo -1) then {
+	if (_missionTime isEqualTo -1) then {
 		_setText ctrlSetStructuredText parseText "No Time Limit";
 	} else {
 		_t = [_missionTime - CBA_missionTime, "MM:SS"] call BIS_fnc_secondsToString;

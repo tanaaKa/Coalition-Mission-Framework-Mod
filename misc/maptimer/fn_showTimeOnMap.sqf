@@ -18,8 +18,8 @@
  */
  
 // Old CMF missions support
-if (isNil "missionTimeLimit") then {
-	missionTimeLimit = -1; // aka no time limit
+if (isNil "potato_missionTesting_missionTimeLength") then {
+	potato_missionTesting_missionTimeLength = -1; // aka no time limit
 };
 
 mapTimeShown = false;
