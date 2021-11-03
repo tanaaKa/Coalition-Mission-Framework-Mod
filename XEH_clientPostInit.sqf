@@ -6,10 +6,6 @@ diag_log "[CMF]: Starting CMF PostInit Client";
 
 [] spawn {
 	//waitUntil {!isNil "initRan"};
-	// Prevent players from losing side status
-	player addRating 10000;
-	player addEventHandler ["HandleRating", {0 max (_this select 1)}];
-
 	// Set weapons to safe on spawn in
 	player switchMove "AmovPercMstpSlowWrflDnon";
 

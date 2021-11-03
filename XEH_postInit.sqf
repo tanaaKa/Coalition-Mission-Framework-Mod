@@ -27,22 +27,10 @@ if (isNil "gameLive") then
 	// If the MM chooses the MEV system
 	switch (getMissionConfigValue "potato_missionTesting_medSystem") do
 	{
-		case 99: // System not selected in the editor
-		{
-			JST_mevBluEnabled = false;
-			JST_mevIndEnabled = false;
-			JST_mevOpfEnabled = false;
-		};
-		case 1: // CCP and FHs
-		{
-			JST_mevBluEnabled = false;
-			JST_mevIndEnabled = false;
-			JST_mevOpfEnabled = false;
-		};
 		case 0:	// MEVs
 		{
 			if (!isNil "BLU_MEV_1PL") then { 	// Check for MEV
-				JST_mevBluEnabled = true;
+				JST_mevBluEnabled = true;		// Set to MEV mode if MEV exists
 			} else {
 				JST_mevBluEnabled = false;		// Else revert to CCP system
 			};
@@ -56,6 +44,12 @@ if (isNil "gameLive") then
 			} else {
 				JST_mevOpfEnabled = false;
 			};
+		};
+		default 
+		{
+			JST_mevBluEnabled = false;
+			JST_mevIndEnabled = false;
+			JST_mevOpfEnabled = false;
 		};
 	};
 	// Initialize with the settings above
