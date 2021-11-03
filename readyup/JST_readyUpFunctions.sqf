@@ -255,7 +255,7 @@ JST_fnc_playersGoHot =
 	[] spawn JST_fnc_removeAdminAction;
 	[] spawn JST_fnc_removeLeaderActions;
 	if (!isNil "JST_SSHeal") then {player removeAction JST_SSHeal};
-	if (useSpawners) then {
+	/* if (useSpawners) then {
 		{
 			private _factory = missionNameSpace getVariable [_x, objNull];
 			if (!isNull _factory) then
@@ -263,7 +263,7 @@ JST_fnc_playersGoHot =
 				removeAllActions _factory
 			};
 		} forEach ["vehfac1", "vehfac2", "vehfac3", "airfac1", "airfac2", "airfac3"];
-	};
+	}; */
 };
 
 // Poll for admins at intervals, in case changes hands ||| SERVER
