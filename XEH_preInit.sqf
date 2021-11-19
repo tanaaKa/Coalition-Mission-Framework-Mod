@@ -17,3 +17,6 @@ _version = getText (missionConfigFile >> "cmfVers");
 if (_version != "CMF2 1.0") exitWith {};
 
 #include "\x\cmf\addons\framework\readyup\JST_readyUpFunctions.sqf"
+
+// Radio system support only
+//radiosAssigned = false;

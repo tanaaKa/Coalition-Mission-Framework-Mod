@@ -36,10 +36,10 @@ missionTimeUI_PFH = [{
 		_timeLeft = (format ["Time Left: %1", _t]);
 		_setText ctrlSetStructuredText parseText _timeLeft;
 		
-		if (_t == "00:00") exitWith {
+		/* if (_t == "00:00") exitWith {
 			tnk_timesUp = true;
 			hint "Mission time has expired";
 			systemChat format ["[CMF] Mission time has expired after %1 minutes",missionTimeLimit];
-		};
+		}; */
 	};	
 }, 1, _missionTime] call CBA_fnc_addPerFrameHandler;
