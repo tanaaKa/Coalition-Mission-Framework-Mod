@@ -21,6 +21,8 @@ onMapSingleClick "if (_alt) then {player setPosATL _pos; openMap false; deployed
 
 //wait until player deploys
 waitUntil {deployed};
+_newG = player getVariable "f_var_JIP_grp";
+["potato_adminMsg", [format ["%1 has JIP deployed to %2", (name player),_newG]]] call CBA_fnc_globalEvent;
 onMapSingleClick '';
 
 //re-enable stamina for JIP

@@ -78,6 +78,14 @@ class CfgFunctions
 			file = "\x\cmf\addons\framework\misc\vd"; 
 			class limitVD{};
 		};
+		class radios
+		{
+			file = "\x\cmf\addons\framework\radios"; 
+			class initRadios{};
+			class ftRadios{};
+			class sqdRadios{};
+			class ldrRadios{};
+		};
 		// TODO: Implement these
 		/* class GameModeCON
 		{

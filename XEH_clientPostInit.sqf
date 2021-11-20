@@ -34,9 +34,9 @@ diag_log "[CMF]: Starting CMF PostInit Client";
 	call CMF_fnc_fdsInit;
 	//call CMF_fnc_factoryaction; -- Pending rewrite
 	[{time > 0}, {call CMF_fnc_limitVD}] call CBA_fnc_waitUntilAndExecute;
-	if (gameLive) then {
+	/* if (gameLive) then {
 		call CMF_fnc_showTimeOnMap;
-	};
+	}; */
 	
 	//EH to remove medical items for EI
 	["CAManBase", "Killed", {

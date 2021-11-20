@@ -12,7 +12,8 @@ class CfgPatches
 		{
 			"A3_Modules_F",
 			"CBA_MAIN",
-			"A3_UI_F"
+			"A3_UI_F",
+			"acre_sys_sounds"
 		};
 		author="tanaKa";
 		authorUrl="http://coalitiongroup.net";
@@ -75,6 +76,7 @@ class CfgMPGameTypes
 #include "CfgFunctions.hpp"
 #include "CfgSounds.hpp"
 #include "CfgVehicles.hpp"
+#include "CfgAcreSounds.hpp"
 #include "Displays.hpp"
 #include "JIP\f_JIP_common.h"
 #include "JIP\f_JIP_grpPicker.h"

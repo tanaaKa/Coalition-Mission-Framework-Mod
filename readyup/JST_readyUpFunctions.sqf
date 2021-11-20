@@ -339,7 +339,7 @@ JST_fnc_ReadyUp =
 	};
 	"MISSION IS LIVE" remoteExec ["systemChat"];
 	tnk_ssTime = CBA_missionTime; publicVariable "tnk_ssTime";
-	remoteExec ["CMF_fnc_showTimeOnMap", -2]; // start game timer
+	remoteExec ["CMF_fnc_showTimeOnMap", 0, true]; // start game timer
 	// Remove icons
 	[] execVM "\x\cmf\addons\framework\readyup\removeIcons.sqf";
 	// Handle players actions/stamina/etc. going live
