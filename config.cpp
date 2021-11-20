@@ -73,6 +73,7 @@ class CfgMPGameTypes
 #include "CfgEventhandlers.hpp"
 #include "CfgModuleCategories.hpp"
 #include "CfgFunctions.hpp"
+#include "CfgSounds.hpp"
 #include "CfgVehicles.hpp"
 #include "Displays.hpp"
 #include "JIP\f_JIP_common.h"
