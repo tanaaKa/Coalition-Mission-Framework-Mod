@@ -74,6 +74,7 @@ class CfgMPGameTypes
 #include "CfgEventhandlers.hpp"
 #include "CfgModuleCategories.hpp"
 #include "CfgFunctions.hpp"
+#include "CfgSounds.hpp"
 #include "CfgVehicles.hpp"
 #include "CfgAcreSounds.hpp"
 #include "Displays.hpp"
