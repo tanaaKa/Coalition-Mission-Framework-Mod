@@ -88,7 +88,7 @@ switch (_radioType) do {
 	{
 		[_coyLeaders,_pltLeaders,_squadLeaders,_ftLeaders,_medics,_specialties] call CMF_fnc_ftRadios;
 	};
-	case 1:	//GI dont have radios
+	case 2:	//GI dont have radios
 	{
 		[_coyLeaders,_pltLeaders,_squadLeaders,_ftLeaders,_medics,_specialties] call CMF_fnc_ldrRadios;
 	};

@@ -56,6 +56,10 @@ diag_log "[CMF]: Starting CMF PostInit Client";
 		case INDEPENDENT:	{if (!JST_mevIndEnabled) then {"buildccp\initmed.sqf" call CMF_Load;}};
 		case EAST:			{if (!JST_mevOpfEnabled) then {"buildccp\initmed.sqf" call CMF_Load;}};
 	};
+	
+	// Welcome message
+	waitUntil {CBA_missionTime > 5};
+	call CMF_fnc_initWelcome;
 };
 
 diag_log "[CMF]: Completed CMF PostInit Client";

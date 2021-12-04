@@ -36,7 +36,7 @@ if (typeof player in _squadLeaders || typeof player in _pltLeaders || typeof pla
 	player additem "ACRE_PRC117F";
 };
 
-// Set signals tab, maybe???
+//Choose channels for infantry
 
 
 // Set radios to assigned so potato calls the channel setup

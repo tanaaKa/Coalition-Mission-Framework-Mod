@@ -86,6 +86,12 @@ class CfgFunctions
 			class sqdRadios{};
 			class ldrRadios{};
 		};
+		class welcome
+		{
+			file = "\x\cmf\addons\framework\misc\welcome"; 
+			class initWelcome{};
+			class initJIP{};
+		};
 		// TODO: Implement these
 		/* class GameModeCON
 		{
