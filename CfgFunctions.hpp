@@ -31,6 +31,7 @@ class CfgFunctions
 			class webhookBrief{};
 			class webhookEnd{};
 			class webhookStart{};
+			class tkMsg{};
 		};
 		class patches
 		{

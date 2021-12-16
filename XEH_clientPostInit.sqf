@@ -47,6 +47,18 @@ diag_log "[CMF]: Starting CMF PostInit Client";
 			{_unit removeItems _x} forEach _medicalItems;
 		};
 	}, true, [], true] call CBA_fnc_addClassEventHandler;
+	
+	player addEventHandler ["Killed", {
+		params ["_unit", "_killer", "_instigator", "_useEffects"];
+		
+		if (!isNull _instigator && (side (group _instigator) == playerSide) && (_unit != _instigator)) exitWith {
+			[_unit, _instigator] call CMF_fnc_tkMsg;
+		};
+		
+		if (side (group _killer) == playerSide && (_unit != _killer)) exitWith {
+			[_unit, _killer] call CMF_fnc_tkMsg;
+		};
+	}];
 
 	// Medical system choice for mission maker
 	waitUntil {!isNil "medicalLoaded"};
