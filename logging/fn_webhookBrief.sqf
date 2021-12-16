@@ -48,6 +48,5 @@ if (isDedicated) then {
 			]  
 		] 
 	] call DiscordEmbedBuilder_fnc_buildSqf;
-};
 
 diag_log "[CMF]: Mission Brief Webhook Complete";

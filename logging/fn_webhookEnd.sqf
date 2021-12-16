@@ -31,7 +31,7 @@ if (isDedicated) then {
 	};
 
 	_missionDuration = format["%1:%2:%3", _durationHours, _durationMins, _durationSecs];
-	
+ 
 	playersAlive = [];
 	{ 
 		if (alive _x) then {
@@ -45,15 +45,15 @@ if (isDedicated) then {
 		"", 
 		"", 
 		false, 
+		[ 
 			[ 
-				[ 
-					format ["%1 has now ended",briefingName], 
-					format ["Slotting for the next mission is now starting\n\nJoin the 'Waiting to JIP / Slotting' channel to take part",briefingName], 
-					"https://aar.coalitiongroup.net/", 
-					"FF0000", 
-					true, 
-					"", 
-					"", 
+				format ["%1 has now ended",briefingName], 
+				format ["Slotting for the next mission is now starting\n\nJoin the 'Waiting to JIP / Slotting' channel to take part",briefingName], 
+				"", 
+				"FF0000", 
+				true, 
+				"", 
+				"", 
 				[ 
 					"", 
 					"", 
