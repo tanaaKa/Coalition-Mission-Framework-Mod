@@ -12,20 +12,15 @@
  * Nothing
  *
  * Example:
- * [((victim name), (killer name)] call CMF_fnc_tkMsg;
+ * [victimObject, killerObject] call CMF_fnc_tkMsg;
  *
  * Public: False
  */
  
-if (!isServer) exitWith {};
-
 params ["_killed", "_killer"];
 
-if (isNil "DiscordEmbedBuilder_fnc_buildCfg") exitWith {diag_log text "Failed to send Teamkill webhook -- mod not loaded!"};
-// if (count allPlayers < 14) exitWith {diag_log text "Less than 14 players connected -- skipping RoundPrep Discord post"};
+if (!isServer) exitWith {};
 
-private _systemTimeFormat = ["%1-%2-%3 %4:%5:%6"];
-_systemTimeFormat append (systemTimeUTC apply {if (_x < 10) then {"0" + str _x} else {str _x}});
 private _inVehicle = "N/A";
 if (vehicle _killer != _killer) then {
 	_inVehicle = getText(configFile >> "CfgVehicles" >> (typeOf (vehicle _killer)) >> "displayName");

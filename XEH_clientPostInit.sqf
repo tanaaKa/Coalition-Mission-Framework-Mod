@@ -34,9 +34,9 @@ diag_log "[CMF]: Starting CMF PostInit Client";
 	call CMF_fnc_fdsInit;
 	//call CMF_fnc_factoryaction; -- Pending rewrite
 	[{time > 0}, {call CMF_fnc_limitVD}] call CBA_fnc_waitUntilAndExecute;
-	/* if (gameLive) then {
+	if (gameLive) then {
 		call CMF_fnc_showTimeOnMap;
-	}; */
+	};
 	
 	//EH to remove medical items for EI
 	["CAManBase", "Killed", {
@@ -52,12 +52,23 @@ diag_log "[CMF]: Starting CMF PostInit Client";
 		params ["_unit", "_killer", "_instigator", "_useEffects"];
 		
 		if (!isNull _instigator && (side (group _instigator) == playerSide) && (_unit != _instigator)) exitWith {
-			[_unit, _instigator] call CMF_fnc_tkMsg;
+			[_unit, _instigator] remoteExecCall ["CMF_fnc_tkMsg", 2];
 		};
 		
 		if (side (group _killer) == playerSide && (_unit != _killer)) exitWith {
-			[_unit, _killer] call CMF_fnc_tkMsg;
+			[_unit, _instigator] remoteExecCall ["CMF_fnc_tkMsg", 2];
 		};
+		
+		// Set discord rich presence text
+		[ 
+			["UpdateDetails","Spectating (KIA)"], 
+			["UpdateLargeImageText","Died in combat"],
+			["UpdateSmallImageKey",""], 
+			["UpdateSmallImageText",""],
+			["UpdatePartySize",{isPlayer _x && alive _x} count allUnits], 
+			["UpdatePartyMax",count (allPlayers - entities "HeadlessClient_F")],
+			["UpdateStartTimestamp",[0,0]]
+		] call (missionNameSpace getVariable ["DiscordRichPresence_fnc_update",{}]);
 	}];
 
 	// Medical system choice for mission maker

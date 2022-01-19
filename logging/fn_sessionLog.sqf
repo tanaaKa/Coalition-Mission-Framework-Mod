@@ -88,6 +88,21 @@ if (isDedicated) then {
 	
 	[format ["ORBAT Complete"], "sessionLog"] call A3Log;
 	["--------------------------------------------", "sessionLog"] call A3Log;
+	
+	// Role information log
+	{
+		_name = name _x;
+		_uid = getPlayerUID _x;
+		_role = (roleDescription _x) splitString '@' select 0;
+		_leaderCheck = _role find "Lead"; 
+		if (_leaderCheck isEqualTo -1) then {
+			_leaderCheck = "false";
+		} else {
+			_leaderCheck = "true";
+		};
+		
+		[format ["%1, %2, %3, %4", _name, _uid, _role, _leaderCheck], "RoleLog"] call A3Log;
+	} forEach allPlayers;
 };
 
 diag_log "[CMF]: Server Logging Complete";

@@ -26,7 +26,7 @@ params["_site"];
 	deleteVehicle _site;
 	
 	// Creates physical MASH at location of construction site
-	_ccp = FHBuilding createVehicle _pos;
+	_ccp = getMissionConfigValue "potato_missionTesting_FHBuilding" createVehicle _pos;
 	_ccp addItemCargoGlobal ["ACE_epinephrine", 40];
 	_ccp addItemCargoGlobal ["ACE_morphine", 40];
 	_ccp addItemCargoGlobal ["ACE_Bodybag", 20];
@@ -91,9 +91,9 @@ params["_site"];
 }, "Constructing FH..."] call ace_common_fnc_progressBar;
 
 	// Spawn veh for adv med purposes
-	if (FHVeh) then {
-		sleep 10;
-		_veh1 = createVehicle [FHVehicle, player modelToWorld [10, 0, 0], [], 0, "NONE"];
+	if (getMissionConfigValue "potato_missionTesting_FHVeh") then {
+		uiSleep 10;
+		_veh1 = createVehicle [getMissionConfigValue "potato_missionTesting_FHVehicle", player modelToWorld [10, 0, 0], [], 0, "NONE"];
 		_veh1 addItemCargoGlobal ["ACE_epinephrine", 10];
 		_veh1 addItemCargoGlobal ["ACE_morphine", 10];
 		_veh1 addItemCargoGlobal ["ACE_Bodybag", 5];

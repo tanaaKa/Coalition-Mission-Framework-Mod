@@ -36,8 +36,8 @@ if (_playerClass in _medics) then {
 			[player, 1, ["ACE_SelfActions"], FH_Unpack_Action] call ace_interact_menu_fnc_addActionToObject;
 			//Notify
 			systemChat "[CMF Medical] You are a medical officer and have been assigned a field hospital kit";
-			if (FHVeh) then {
-				systemChat format ["[CMF Medical] Your FH will also spawn a %1 medical vehicle",FHVehicle];
+			if (getMissionConfigValue "potato_missionTesting_FHVeh") then {
+				systemChat format ["[CMF Medical] Your FH will also spawn a %1 medical vehicle",getMissionConfigValue "potato_missionTesting_FHVehicle"];
 			} else {
 				systemChat "[CMF Medical] Your FH will not spawn a medical vehicle";
 			};

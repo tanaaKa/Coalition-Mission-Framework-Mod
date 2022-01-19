@@ -32,6 +32,9 @@ class CfgFunctions
 			class webhookEnd{};
 			class webhookStart{};
 			class tkMsg{};
+			class rpBrief{};
+			class rpEnd{};
+			class rpStart{};
 		};
 		class patches
 		{

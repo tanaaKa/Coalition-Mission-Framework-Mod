@@ -77,6 +77,7 @@ class CfgMPGameTypes
 #include "CfgSounds.hpp"
 #include "CfgVehicles.hpp"
 #include "CfgAcreSounds.hpp"
+#include "CfgDiscordRichPresence.hpp"
 #include "Displays.hpp"
 #include "JIP\f_JIP_common.h"
 #include "JIP\f_JIP_grpPicker.h"
