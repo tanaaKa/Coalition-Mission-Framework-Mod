@@ -94,14 +94,20 @@ if (isDedicated) then {
 		_name = name _x;
 		_uid = getPlayerUID _x;
 		_role = (roleDescription _x) splitString '@' select 0;
-		_leaderCheck = _role find "Lead"; 
-		if (_leaderCheck isEqualTo -1) then {
-			_leaderCheck = "false";
+		_role = trim _role;
+		if (_role isEqualTo "") then { //Check if they have no role so it avoids empty string
+			_role = "N/A";
+			leaderCheck = "N/A";
 		} else {
-			_leaderCheck = "true";
+			leaderCheck = _role find "Lead"; 
+			if (leaderCheck isEqualTo -1) then {
+				leaderCheck = "false";
+			} else {
+				leaderCheck = "true";
+			};
 		};
 		
-		[format ["%1, %2, %3, %4", _name, _uid, _role, _leaderCheck], "RoleLog"] call A3Log;
+		[format ["%1, %2, %3, %4", _name, _uid, _role, leaderCheck], "RoleLog"] call A3Log;
 	} forEach allPlayers;
 };
 

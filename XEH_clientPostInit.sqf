@@ -1,6 +1,5 @@
-// Backwards support for older missions to prevent duplication
 _version = getText (missionConfigFile >> "cmfVers");
-if (_version != "CMF2 1.0") exitWith {};
+if (_version isEqualTo "") exitWith {};
 
 diag_log "[CMF]: Starting CMF PostInit Client";
 
@@ -36,6 +35,7 @@ diag_log "[CMF]: Starting CMF PostInit Client";
 	[{time > 0}, {call CMF_fnc_limitVD}] call CBA_fnc_waitUntilAndExecute;
 	if (gameLive) then {
 		call CMF_fnc_showTimeOnMap;
+		player removeAction JST_SSHeal;
 	};
 	
 	//EH to remove medical items for EI

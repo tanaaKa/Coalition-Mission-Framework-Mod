@@ -26,7 +26,7 @@ params["_site"];
 	deleteVehicle _site;
 	
 	// Creates physical MASH at location of construction site
-	_ccp = getMissionConfigValue "potato_missionTesting_FHBuilding" createVehicle _pos;
+	_ccp = (getMissionConfigValue "potato_missionTesting_FHBuilding") createVehicle _pos;
 	_ccp addItemCargoGlobal ["ACE_epinephrine", 40];
 	_ccp addItemCargoGlobal ["ACE_morphine", 40];
 	_ccp addItemCargoGlobal ["ACE_Bodybag", 20];
