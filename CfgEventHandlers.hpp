@@ -22,7 +22,7 @@ class Extended_InitPost_EventHandlers
 		};
 		class cmf_nothermals 
 		{ 
-			init = "(_this select 0) disableTIEquipment true;"; 
+			init = "(_this select 0) disableTIEquipment true;"; exclude = "LSV_01_AT_base_F";
 		};
 		class jst_vehCrewDeath
 		{ 

@@ -12,3 +12,6 @@ if (_version isEqualTo "") exitWith {};
 	call CMF_fnc_patchInit;
 	call CMF_fnc_webhookBrief;
 };
+
+// Stat tracking test
+shotsFired = 0;

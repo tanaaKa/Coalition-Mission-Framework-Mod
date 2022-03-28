@@ -35,6 +35,7 @@ class CfgFunctions
 			class rpBrief{};
 			class rpEnd{};
 			class rpStart{};
+			class playerGroupNames{};
 		};
 		class patches
 		{
@@ -95,6 +96,12 @@ class CfgFunctions
 			file = "\x\cmf\addons\framework\misc\welcome"; 
 			class initWelcome{};
 			class initJIP{};
+		};
+		class stamina
+		{
+			file = "\x\cmf\addons\framework\stamina"; 
+			class staminaHandler{};
+			class stamina{};
 		};
 		// TODO: Implement these
 		/* class GameModeCON

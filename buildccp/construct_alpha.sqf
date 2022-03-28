@@ -66,12 +66,15 @@ params["_site"];
 	] remoteExecCall ["BIS_fnc_holdActionAdd",0]; // syncs across clients */
 	
 	// Creates a marker for the new physical MASH
-	_marker = createMarker [format["A CCP %1", time], _ccp];
-	_marker setMarkerShape "ICON";
-	_marker setMarkerType "loc_hospital";
-	_marker setMarkerColor "ColorWhite";
-	_marker setMarkerText "A CCP";
-	_marker setMarkerAlpha 0;
+	{
+		if (side _x isEqualTo side player) then {
+			_marker = createMarkerLocal [format["A CCP %1", time], _ccp];
+			_marker setMarkerShapeLocal "ICON";
+			_marker setMarkerTypeLocal "loc_hospital";
+			_marker setMarkerColorLocal "ColorWhite";
+			_marker setMarkerTextLocal "A CCP";
+		};
+	} forEach allPlayers;
 	
 	// Alert the appropriate players that a MASH has been constructed
 	_notificationTargets = side player;

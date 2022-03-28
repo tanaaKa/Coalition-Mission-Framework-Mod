@@ -251,10 +251,10 @@ JST_fnc_removeLeaderActions =
 // Reset players when safe start turns off ||| LOCAL
 JST_fnc_playersGoHot =
 {
-	player enableFatigue true;
 	[] spawn JST_fnc_removeAdminAction;
 	[] spawn JST_fnc_removeLeaderActions;
-	if (!isNil "JST_SSHeal") then {player removeAction JST_SSHeal};
+	player enableFatigue true;
+	player removeAction JST_SSHeal;
 	/* if (useSpawners) then {
 		{
 			private _factory = missionNameSpace getVariable [_x, objNull];
@@ -297,7 +297,6 @@ JST_fnc_ReadyUp =
 {
 	params ["_forced"];
 	terminate JST_pollForAdminsHandle;
-	gameLive = true; publicVariable "gameLive";
 	if (_forced) then
 	{
 		terminate JST_waitForLeadersReadyHandle;
@@ -343,14 +342,14 @@ JST_fnc_ReadyUp =
 	// Remove icons
 	[] execVM "\x\cmf\addons\framework\readyup\removeIcons.sqf";
 	// Handle players actions/stamina/etc. going live
-	remoteExec ["JST_fnc_playersGoHot", -2, true];
+	remoteExec ["JST_fnc_playersGoHot", 0, true];
 	// Call the starting webhook
 	call CMF_fnc_webhookStart;
 	// Remove safe start
 	[false] call potato_safeStart_fnc_toggleSafeStart;
 	// Remove arsenal
 	remoteExec ["tnk_removeArsenal", -2, true];
-	sleep 5;
+	uiSleep 5;
 	// Do title
 	_title = getText (missionConfigFile >> "MissionSQM" >> "Mission" >> "Intel" >> "briefingName");
 	_author = getMissionConfigValue ["Author",0];
@@ -371,6 +370,7 @@ JST_fnc_ReadyUp =
 	{
 		[format ["Now beginning mission: %1", _title], "sessionLog"] call A3Log;
 	};
+	gameLive = true; publicVariable "gameLive";
 };
 
 diag_log "[CMF]: Readyup Library Complete";

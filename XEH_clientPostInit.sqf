@@ -18,9 +18,9 @@ diag_log "[CMF]: Starting CMF PostInit Client";
 	disableRemoteSensors true;
 
 	// Set player recoil higher
-	player setUnitRecoilCoefficient 1.5;
+	player setUnitRecoilCoefficient 1.3;
 	player setCustomAimCoef 0.80;
-	player addEventHandler ["Respawn", {player setUnitRecoilCoefficient 1.5}];
+	player addEventHandler ["Respawn", {player setUnitRecoilCoefficient 1.3}];
 	player addEventHandler ["Respawn", {player setCustomAimCoef 0.80}];
 
 	// Ensure NoVoice
@@ -33,10 +33,6 @@ diag_log "[CMF]: Starting CMF PostInit Client";
 	call CMF_fnc_fdsInit;
 	//call CMF_fnc_factoryaction; -- Pending rewrite
 	[{time > 0}, {call CMF_fnc_limitVD}] call CBA_fnc_waitUntilAndExecute;
-	if (gameLive) then {
-		call CMF_fnc_showTimeOnMap;
-		player removeAction JST_SSHeal;
-	};
 	
 	//EH to remove medical items for EI
 	["CAManBase", "Killed", {
@@ -48,6 +44,7 @@ diag_log "[CMF]: Starting CMF PostInit Client";
 		};
 	}, true, [], true] call CBA_fnc_addClassEventHandler;
 	
+	// Killed EH for teamkills and discord rich presence
 	player addEventHandler ["Killed", {
 		params ["_unit", "_killer", "_instigator", "_useEffects"];
 		
@@ -79,6 +76,9 @@ diag_log "[CMF]: Starting CMF PostInit Client";
 		case INDEPENDENT:	{if (!JST_mevIndEnabled) then {"buildccp\initmed.sqf" call CMF_Load;}};
 		case EAST:			{if (!JST_mevOpfEnabled) then {"buildccp\initmed.sqf" call CMF_Load;}};
 	};
+	
+	// Initialize stamina system
+	call CMF_fnc_staminaHandler;
 	
 	// Welcome message
 	waitUntil {CBA_missionTime > 5};
