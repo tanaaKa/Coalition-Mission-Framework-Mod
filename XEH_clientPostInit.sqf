@@ -4,10 +4,10 @@ if (_version isEqualTo "") exitWith {};
 diag_log "[CMF]: Starting CMF PostInit Client";
 
 [] spawn {
-	//waitUntil {!isNil "initRan"};
 	// Set weapons to safe on spawn in
-	player switchMove "AmovPercMstpSlowWrflDnon";
-
+	waitUntil {time > 0};
+	player action ["SwitchWeapon", player, player, 299];
+	
 	// Disable random animals
 	enableEnvironment [false, true];
 
@@ -19,9 +19,9 @@ diag_log "[CMF]: Starting CMF PostInit Client";
 
 	// Set player recoil higher
 	player setUnitRecoilCoefficient 1.3;
-	player setCustomAimCoef 0.80;
+	player setCustomAimCoef 0.8;
 	player addEventHandler ["Respawn", {player setUnitRecoilCoefficient 1.3}];
-	player addEventHandler ["Respawn", {player setCustomAimCoef 0.80}];
+	player addEventHandler ["Respawn", {player setCustomAimCoef 0.8}];
 
 	// Ensure NoVoice
 	player setSpeaker "NoVoice";

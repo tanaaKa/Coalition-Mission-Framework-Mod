@@ -19,13 +19,20 @@
 CMF_Stamina = true;
 
 // Max threshold for sprinting
-CMF_sprint_disabled = 0.8;
+CMF_sprint_disabled = 0.85;
 
 // Max threshold for jogging
 CMF_jogging_disabled = 0.99;
 
+// Animation slowdown thresholds
+CMF_min_slow = 0.65;
+CMF_max_slow = 0.85;
+
+// Minimum animation slowdown
+CMF_min_speed = 0.85;
+
 // Debug
-CMF_Stamina_debug = true;
+CMF_Stamina_debug = false;
 
 // Main driver loop
 waitUntil {gameLive}; // wait for safestart
