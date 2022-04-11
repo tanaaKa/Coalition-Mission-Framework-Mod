@@ -66,7 +66,8 @@ class CfgFunctions
 		class EH
 		{
 			file = "\x\cmf\addons\framework\EH";
-			class cbaEH{};
+			class localEHs{};
+			class serverEHs{};
 		};
 		class FDS
 		{

@@ -17,6 +17,9 @@
  * Public: Yes
  */
  
+// Remove if no interface
+if (!hasInterface) exitWith {};
+ 
 // Old CMF missions support
 if (isNil "potato_missionTesting_missionTimeLength") then {
 	potato_missionTesting_missionTimeLength = -1; // aka no time limit

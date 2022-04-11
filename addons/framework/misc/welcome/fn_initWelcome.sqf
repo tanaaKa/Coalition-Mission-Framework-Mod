@@ -17,6 +17,9 @@
 // Exit if a JIP
 if (gameLive) exitWith {call CMF_fnc_initJIP;};
 
+// Wait a few seconds for init
+waitUntil {time > 3};
+
 // Grab role and convert to readable role
 _role = [typeOf player, 9] call BIS_fnc_trimString;
 _roleT = "Undefined Entity";
@@ -370,7 +373,7 @@ switch (_role) do {
 ] call CMF_fnc_notify;
 
 // Loadout
-private _thisCfg = currentWeapon player call CBA_fnc_getItemConfig;
+private _thisCfg = primaryWeapon player call CBA_fnc_getItemConfig;
 private _dispName = [_thisCfg] call BIS_fnc_displayName;
 private _desc = getText(_thisCfg >> "descriptionShort");
 private _pic = getText(_thisCfg >> "picture");

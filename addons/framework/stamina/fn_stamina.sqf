@@ -30,7 +30,7 @@ _currentAnim = animationState player;
 _minSpeed = CMF_min_speed max getNumber(configFile >> "CfgMovesMaleSdr" >> "States" >> _currentAnim >> "relSpeedMin");
 _speedAdj = linearConversion [CMF_min_slow, CMF_max_slow, _fatigue, 1.0, _minSpeed, true];
 // Ensure animation is full speed if transitioning
-if (((_current_anim find "_") isNotEqualTo -1) || {_current_anim select [0, 4] isEqualTo "Aovr"}) exitWith
+if (((_currentAnim find "_") isNotEqualTo -1) || {_currentAnim select [0, 4] isEqualTo "Aovr"}) exitWith
 {
 	player setAnimSpeedCoef 1;
 };
@@ -48,7 +48,7 @@ if (isForcedWalk player) exitWith { // Recursive function to force walking for a
 if (CMF_Stamina_debug) then {
 	if (!CMF_Stamina_debug) exitWith {systemChat "Debug disabled"};
 	
-	hint format ["Fatigue: %1\nCurrent Anim: %2\nWalk Forced: %3\nAnim speed: %4",
+	hintSilent format ["Fatigue: %1\nCurrent Anim: %2\nWalk Forced: %3\nAnim speed: %4",
 				_fatigue,
 				_currentAnim,
 				isForcedWalk player,

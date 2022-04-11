@@ -9,7 +9,6 @@ diag_log "[CMF]: Starting CMF Post Init";
 //
 //Global post-inits
 //
-enableSaving [false, false];
 
 //Var to check if game is live
 if (isNil "gameLive") then 

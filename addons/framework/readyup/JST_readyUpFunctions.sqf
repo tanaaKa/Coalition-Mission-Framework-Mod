@@ -26,7 +26,7 @@ if (!isServer) then
         sleep 10; 
         cutText ["Server Initialized. Read your briefing!", "PLAIN"];
         //player enableSimulation true; // Reenable sim to move
-        player enableFatigue false; // disables stamina during SS
+        player enableStamina false; // disables stamina during SS
         [] spawn JST_fnc_addSafeStartHeal;
     };
 }
@@ -34,7 +34,7 @@ else
 {
     [] spawn
     {
-        player enableFatigue false; // disables stamina during SS
+        player enableStamina false; // disables stamina during SS
         [] spawn JST_fnc_addSafeStartHeal;
     };
 };
@@ -253,7 +253,7 @@ JST_fnc_playersGoHot =
 {
 	[] spawn JST_fnc_removeAdminAction;
 	[] spawn JST_fnc_removeLeaderActions;
-	player enableFatigue true;
+	player enableStamina true;
 	player removeAction JST_SSHeal;
 	/* if (useSpawners) then {
 		{
@@ -342,7 +342,7 @@ JST_fnc_ReadyUp =
 	// Remove icons
 	[] execVM "\x\cmf\addons\framework\readyup\removeIcons.sqf";
 	// Handle players actions/stamina/etc. going live
-	remoteExec ["JST_fnc_playersGoHot", 0, true];
+	remoteExec ["JST_fnc_playersGoHot", -2, true];
 	// Call the starting webhook
 	call CMF_fnc_webhookStart;
 	// Remove safe start
