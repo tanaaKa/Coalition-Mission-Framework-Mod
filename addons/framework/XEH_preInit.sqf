@@ -14,5 +14,7 @@ CMF_LoadAll =
 
 #include "\x\cmf\addons\framework\readyup\JST_readyUpFunctions.sqf"
 
+#include "\x\cmf\addons\framework\loadouts\CMF_Loadout_Functions.sqf"
+
 // Radio system support only
 //radiosAssigned = false;
