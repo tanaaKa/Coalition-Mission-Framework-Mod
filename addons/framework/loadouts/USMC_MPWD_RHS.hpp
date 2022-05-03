@@ -4,44 +4,44 @@
 // Camo set
 #ifdef CAMO_UNIFORM
 #else
-#define CAMO_UNIFORM "UK3CB_KDF_O_U_CombatUniform_01_VSR","UK3CB_KDF_B_U_CombatUniform_01_VSR","UK3CB_KDF_B_U_CombatUniform_02_VSR"
+#define CAMO_UNIFORM "rhs_uniform_FROG01_wd"
 #endif
 
 #ifdef CAMO_VEST
 #else
-#define CAMO_VEST "rhs_6b3_AK","rhs_6b3_AK_3","rhs_6b3_AK_2","rhs_6b3_VOG_2","rhs_6b3_VOG","rhs_6b3_RPK"
+#define CAMO_VEST "rhsusf_spc_iar","rhsusf_spc_mg","rhsusf_spc_light","rhsusf_spc_teamleader","rhsusf_spc_marksman","rhsusf_spc_rifleman"
 #endif
 
 #ifdef CAMO_BACKPACK
 #else
-#define CAMO_BACKPACK "UK3CB_KDF_O_B_Sidor_RIF_OLI"
+#define CAMO_BACKPACK "rhsusf_assault_eagleaiii_coy"
 #endif
 
 #ifdef CAMO_HEADGEAR
 #else
-#define CAMO_HEADGEAR "rhsgref_ssh68_vsr"
+#define CAMO_HEADGEAR "rhsusf_lwh_helmet_marpatwd_ess","rhsusf_lwh_helmet_marpatwd_headset","rhsusf_lwh_helmet_marpatwd_headset_blk","rhsusf_lwh_helmet_marpatwd_headset_blk2","rhsusf_lwh_helmet_marpatwd_blk_ess","rhsusf_lwh_helmet_marpatwd"
 #endif
 
 // Rifle
 
 #ifdef RIFLE
 #else
-#define RIFLE "rhs_weap_aks74n_2"
+#define RIFLE "rhs_weap_m27iar_grip"
 #endif
 
 #ifdef RIFLE_MAG
 #else
-#define RIFLE_MAG "rhs_30Rnd_545x39_7N6M_plum_AK:6","rhs_30Rnd_545x39_AK_plum_green:4"
+#define RIFLE_MAG "rhs_mag_30Rnd_556x45_M855A1_PMAG:6","rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red:4"
 #endif
 
 #ifdef RIFLE_ATTACHMENTS
 #else
-#define RIFLE_ATTACHMENTS "rhs_acc_dtk1983"
+#define RIFLE_ATTACHMENTS "rhsusf_acc_anpeq16a","rhsusf_acc_eotech_552"
 #endif
 
 #ifdef AR_ATTACHMENTS
 #else
-#define AR_ATTACHMENTS RIFLE_ATTACHMENTS
+#define AR_ATTACHMENTS RIFLE_ATTACHMENTS,"rhsusf_acc_kac_grip_saw_bipod"
 #endif
  
 #ifdef ALT_OPTICS
@@ -52,7 +52,7 @@
 
 #ifdef GLRIFLE
 #else
-#define GLRIFLE "rhs_weap_ak74n_2_gp25"
+#define GLRIFLE "rhs_weap_m16a4_carryhandle_M203"
 #endif
 
 #ifdef GLRIFLE_MAG
@@ -67,7 +67,7 @@
 
 #ifdef GLRIFLE_MAG_SMOKE
 #else
-#define GLRIFLE_MAG_SMOKE "1Rnd_Smoke_Grenade_shell:6","1Rnd_SmokeRed_Grenade_shell:4","1Rnd_SmokePurple_Grenade_shell:4",GLRIFLE_MAG_FLARE
+#define GLRIFLE_MAG_SMOKE "1Rnd_Smoke_Grenade_shell:6","1Rnd_SmokeRed_Grenade_shell:4","1Rnd_SmokeBlue_Grenade_shell:4",GLRIFLE_MAG_FLARE
 #endif
 
 #ifdef GLRIFLE_MAG_HE
@@ -78,7 +78,7 @@
 // Carbine
 #ifdef CARBINE
 #else
-#define CARBINE "rhs_weap_aks74_2"
+#define CARBINE RIFLE
 #endif
 
 #ifdef CARBINE_MAG
@@ -88,48 +88,48 @@
 // AR
 #ifdef AR
 #else
-#define AR "UK3CB_RPK_74N_PLUM"
+#define AR "rhs_weap_m249_pip_L"
 #endif
 
 #ifdef AR_MAG
 #else
-#define AR_MAG "UK3CB_RPK74_60rnd_545x39_GM:7"
+#define AR_MAG "rhsusf_100Rnd_556x45_mixed_soft_pouch:4"
 #endif
 // AT
 #ifdef AT
 #else
-#define AT "rhs_weap_rpg26"
+#define AT "rhs_weap_m72a7"
 #endif
 
 #ifdef AT_MAG
 #else
-#define AT_MAG 
+#define AT_MAG "rhs_m72a7_mag:1"
 #endif
 // MMG
 #ifdef MMG
 #else
-#define MMG "rhs_weap_pkm"
+#define MMG "rhs_weap_m240B"
 #endif
 
 #ifdef MMG_MAG
 #else
-#define MMG_MAG "rhs_100Rnd_762x54mmR_green:5"
+#define MMG_MAG "rhsusf_100Rnd_762x51_m62_tracer:5"
 #endif
 
 #ifdef MMG_ATT
 #else
-#define MMG_ATT ""
+#define MMG_ATT "rhsusf_acc_acog_mdo"
 #endif
 
 // MAT
 #ifdef MAT
 #else
-#define MAT "rhs_weap_rpg7"
+#define MAT "rhs_weap_smaw_green"
 #endif
 
 #ifdef MAT_MAG
 #else
-#define MAT_MAG "rhs_rpg7_PG7VL_mag:2","rhs_rpg7_OG7V_mag:1"
+#define MAT_MAG "rhs_mag_smaw_HEDP:2","rhs_mag_smaw_HEAA","rhs_mag_smaw_SR:3"
 #endif
 
 #ifdef MAT_MAG2
@@ -139,7 +139,7 @@
 
 #ifdef MAT_OPTIC
 #else
-#define MAT_OPTIC ""
+#define MAT_OPTIC "rhs_weap_optic_smaw"
 #endif
 // -------------------- PASTE ABOVE THIS LINE
 //HMG
@@ -187,52 +187,52 @@
 // SAM
 #ifdef SAM
 #else
-#define SAM "rhs_weap_igla"
+#define SAM "rhs_weap_fim92"
 #endif
 
 #ifdef SAM_MAG
 #else
-#define SAM_MAG "rhs_mag_9k38_rocket:3"
+#define SAM_MAG "rhs_fim92_mag:2"
 #endif
 
 #ifdef SAM_MAG2
 #else
-#define SAM_MAG2 "rhs_mag_9k38_rocket:2"
+#define SAM_MAG2 SAM_MAG
 #endif
 // Sniper Rifle
 #ifdef SNIPER
 #else
-#define SNIPER "UK3CB_SVD_OLD"
+#define SNIPER "rhs_weap_m40a5_wd"
 #endif
 
 #ifdef SNIPER_MAG
 #else
-#define SNIPER_MAG "rhs_10Rnd_762x54mmR_7N1:10"
+#define SNIPER_MAG "rhsusf_10Rnd_762x51_m118_special_Mag"
 #endif
 
 #ifdef SNIPER_ATTACHMENTS
 #else
-#define SNIPER_ATTACHMENTS "rhs_acc_pso1m2"
+#define SNIPER_ATTACHMENTS "rhsusf_acc_m8541_low_wd","rhsusf_acc_harris_swivel"
 #endif
 // Spotter Rifle
 #ifdef SPOTTER
 #else
-#define SPOTTER "rhs_weap_ak74n_2"
+#define SPOTTER "rhs_weap_m16a4_carryhandle"
 #endif
 
 #ifdef SPOTTER_MAG
 #else
-#define SPOTTER_MAG "rhs_30Rnd_545x39_7N6M_plum_AK:10"
+#define SPOTTER_MAG "rhs_mag_30Rnd_556x45_M855A1_Stanag_Ranger:10"
 #endif
 
 #ifdef SPOTTER_ATTACHMENTS
 #else
-#define SPOTTER_ATTACHMENTS "rhs_acc_1p29"
+#define SPOTTER_ATTACHMENTS "rhsusf_acc_anpeq16a","rhsusf_acc_acog_usmc"
 #endif
 // SMG
 #ifdef SMG
 #else
-#define SMG CARBINE
+#define SMG "rhs_weap_m4_carryhandle"
 #endif
 
 #ifdef SMG_MAG
@@ -242,13 +242,19 @@
 // Pistol
 #ifdef PISTOL
 #else
-#define PISTOL "rhs_weap_pya"
+#define PISTOL "rhsusf_weap_m9"
 #endif
 
 #ifdef PISTOL_MAG
 #else
-#define PISTOL_MAG "rhs_mag_9x19_17:3"
+#define PISTOL_MAG "rhsusf_mag_15Rnd_9x19_FMJ:3"
 #endif
+
+#ifdef NODS
+#else
+#define NODS "rhsusf_ANPVS_15"
+#endif
+
 // Grenades
 #ifdef LEADER_GRENADES
 #else
@@ -267,7 +273,7 @@
 
 #ifdef LINKED
 #else
-#define LINKED BASE_LINKED
+#define LINKED BASE_LINKED,NODS
 #endif
 
 #ifdef LEADER_LINKED
@@ -287,29 +293,24 @@
 
 #ifdef MTR_TUBE
 #else
-#define MTR_TUBE "RHS_Podnos_Gun_Bag"
+#define MTR_TUBE "rhs_M252_Gun_Bag"
 #endif
 
 #ifdef MTR_PLATE
 #else
-#define MTR_PLATE "RHS_Podnos_Bipod_Bag"
+#define MTR_PLATE "rhs_M252_Bipod_Bag"
 #endif
 
-#define CREW_HEADGEAR "rhs_tsh4","rhs_tsh4_ess_bala","rhs_tsh4_ess","rhs_tsh4_bala"
+#define CREW_HEADGEAR "rhsusf_cvc_green_helmet","rhsusf_cvc_green_ess","rhsusf_cvc_green_alt_helmet"
 
 #define PILOT_UNIFORM CAMO_UNIFORM
 #define PILOT_BACKPACK "B_Battle_Belt_XL_F"
-#define PILOT_VEST "rhs_6b5_officer_vsr"
-#define PILOT_HEADGEAR "UK3CB_TKA_O_H_zsh7a_mike_Des_alt","UK3CB_TKA_O_H_zsh7a_mike_Des"
+#define PILOT_VEST "rhsusf_spc_crewman"
+#define PILOT_HEADGEAR "rhsusf_hgu56p_visor_mask_skull","rhsusf_hgu56p_visor_mask","rhsusf_hgu56p_visor","rhsusf_hgu56p_mask_skull","rhsusf_hgu56p_mask","rhsusf_hgu56p"
 
-#define SIDE_FACE F_MED
+#define SIDE_FACE F_USA
 // Specialized Resupply Vehicle Loadouts
 // Ammo Truck
-class RHS_Ural_Flat_MSV_01 {
-	TransportWeapons[] = {AT,AT,AT};
-	TransportMagazines[] = {RIFLE_MAG,RIFLE_MAG,RIFLE_MAG,RIFLE_MAG,CARBINE_MAG,CARBINE_MAG,GLRIFLE_MAG,GLRIFLE_MAG,AR_MAG,AR_MAG,AR_MAG,AR_MAG,MMG_MAG,MMG_MAG,GLRIFLE_MAG_HE,GLRIFLE_MAG_HE,GLRIFLE_MAG_SMOKE,GLRIFLE_MAG_SMOKE,MAT_MAG,BASE_GRENADES,BASE_GRENADES,BASE_GRENADES,BASE_GRENADES};
-	TransportItems[] = {TOOLKIT};
-};
 
 
 #include "base.hpp" // includes the base defines

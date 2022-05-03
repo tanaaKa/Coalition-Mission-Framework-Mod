@@ -4,12 +4,12 @@
 // ------------------- PASTE BELOW THIS LINE
 #ifdef CAMO_UNIFORM
 #else
-#define CAMO_UNIFORM "CUP_U_B_BAF_MTP_UBACSLONG","CUP_U_B_BAF_MTP_UBACSTSHIRTKNEE","CUP_U_B_BAF_MTP_UBACSTSHIRT_Gloves","CUP_U_B_BAF_MTP_UBACSTSHIRT","CUP_U_B_BAF_MTP_UBACSROLLEDKNEE","CUP_U_B_BAF_MTP_UBACSROLLED_Gloves","CUP_U_B_BAF_MTP_UBACSROLLED","CUP_U_B_BAF_MTP_UBACSLONGKNEE_Gloves","CUP_U_B_BAF_MTP_UBACSLONGKNEE","CUP_U_B_BAF_MTP_UBACSLONG_Gloves","CUP_U_B_BAF_MTP_UBACSSEAL"
+#define CAMO_UNIFORM "CUP_U_B_BAF_DPM_UBACSTSHIRTKNEE","CUP_U_B_BAF_DPM_UBACSTSHIRT_Gloves","CUP_U_B_BAF_DPM_UBACSTSHIRT","CUP_U_B_BAF_DPM_UBACSROLLEDKNEE","CUP_U_B_BAF_DPM_UBACSROLLED_Gloves","CUP_U_B_BAF_DPM_UBACSROLLED","CUP_U_B_BAF_DPM_UBACSLONGKNEE_Gloves","CUP_U_B_BAF_DPM_UBACSLONGKNEE","CUP_U_B_BAF_DPM_UBACSLONG_Gloves","CUP_U_B_BAF_DPM_UBACSSEAL","CUP_U_B_BAF_DPM_UBACSLONG"
 #endif
 
 #ifdef CAMO_VEST
 #else
-#define CAMO_VEST "CUP_V_B_BAF_MTP_Osprey_Mk4_Rifleman","CUP_V_B_BAF_MTP_Osprey_Mk4_AutomaticRifleman","CUP_V_B_BAF_MTP_Osprey_Mk4_Engineer","CUP_V_B_BAF_MTP_Osprey_Mk4_Grenadier","CUP_V_B_BAF_MTP_Osprey_Mk4_Scout"
+#define CAMO_VEST "CUP_V_B_BAF_DPM_Osprey_Mk3_Scout","CUP_V_B_BAF_DPM_Osprey_Mk3_Rifleman","CUP_V_B_BAF_DPM_Osprey_Mk3_Officer","CUP_V_B_BAF_DPM_Osprey_Mk3_Medic","CUP_V_B_BAF_DPM_Osprey_Mk3_Grenadier","CUP_V_B_BAF_DPM_Osprey_Mk3_AutomaticRifleman","CUP_V_B_BAF_DPM_Osprey_Mk3_Engineer"
 #endif
 
 #ifdef CAMO_BACKPACK
@@ -19,29 +19,29 @@
 
 #ifdef CAMO_HEADGEAR
 #else
-#define CAMO_HEADGEAR "CUP_H_BAF_MTP_Mk7","CUP_H_BAF_MTP_Mk6_NETTING_PRR","CUP_H_BAF_MTP_Mk6_GOGGLES_PRR","CUP_H_BAF_MTP_Mk6_GLASS_PRR","CUP_H_BAF_MTP_Mk6_EMPTY_PRR","CUP_H_BAF_MTP_Mk7_PRR","CUP_H_BAF_MTP_Mk7_PRR_SCRIM_B","CUP_H_BAF_MTP_Mk7_PRR_SCRIM_A","CUP_H_BAF_MTP_Mk6_EMPTY"
+#define CAMO_HEADGEAR "CUP_H_BAF_DPM_Mk6_NETTING_PRR","CUP_H_BAF_DPM_Mk6_GOGGLES_PRR","CUP_H_BAF_DPM_Mk6_GLASS_PRR","CUP_H_BAF_DPM_Mk6_EMPTY_PRR","CUP_H_BAF_DPM_Mk6_EMPTY"
 #endif
 
 // Rifle
 
 #ifdef RIFLE
 #else
-#define RIFLE "CUP_arifle_L85A2"
+#define RIFLE "CUP_arifle_L85A2_G","CUP_arifle_L85A2_NG"
 #endif
 
 #ifdef RIFLE_MAG
 #else
-#define RIFLE_MAG "potato_magazine_556x45_30rnd_tracer_Red:6","potato_magazine_556x45_30rnd_reload_tracer_Red:4"
+#define RIFLE_MAG "CUP_30Rnd_556x45_Stanag_L85:6","CUP_30Rnd_556x45_Stanag_L85_Tracer_Red:4"
 #endif
 
 #ifdef RIFLE_ATTACHMENTS
 #else
-#define RIFLE_ATTACHMENTS ""
+#define RIFLE_ATTACHMENTS "cup_acc_llm"
 #endif
 
 #ifdef AR_ATTACHMENTS
 #else
-#define AR_ATTACHMENTS ""
+#define AR_ATTACHMENTS RIFLE_ATTACHMENTS
 #endif
  
 #ifdef ALT_OPTICS
@@ -66,7 +66,7 @@
 
 #ifdef GLRIFLE_MAG_SMOKE
 #else
-#define GLRIFLE_MAG_SMOKE "1Rnd_Smoke_Grenade_shell:6","1Rnd_SmokeRed_Grenade_shell:4",GLRIFLE_MAG_FLARE
+#define GLRIFLE_MAG_SMOKE "1Rnd_Smoke_Grenade_shell:6","1Rnd_SmokeRed_Grenade_shell:4","1Rnd_SmokeGreen_Grenade_shell:4",GLRIFLE_MAG_FLARE
 #endif
 
 #ifdef GLRIFLE_MAG_HE
@@ -86,12 +86,12 @@
 // AR
 #ifdef AR
 #else
-#define AR "CUP_arifle_L86A2"
+#define AR "CUP_lmg_minimipara"
 #endif
 
 #ifdef AR_MAG
 #else
-#define AR_MAG "potato_magazine_556x45_100rnd_tracer_Red:4"
+#define AR_MAG "CUP_200Rnd_TE4_Red_Tracer_556x45_M249:2"
 #endif
 // AT
 #ifdef AT
@@ -101,7 +101,7 @@
 
 #ifdef AT_MAG
 #else
-#define AT_MAG ""
+#define AT_MAG "CUP_M136_M:1"
 #endif
 // MMG
 #ifdef MMG
@@ -111,12 +111,12 @@
 
 #ifdef MMG_MAG
 #else
-#define MMG_MAG "potato_box_762x51_100rnd_tracer_Red:4"
+#define MMG_MAG "CUP_100Rnd_TE4_LRT4_Red_Tracer_762x51_Belt_M:4"
 #endif
 
 #ifdef MMG_ATT
 #else
-#define MMG_ATT "rhsusf_acc_acog"
+#define MMG_ATT "cup_optic_acog"
 #endif
 // MAT
 #ifdef MAT
@@ -188,7 +188,7 @@
 
 #ifdef SAM_MAG
 #else
-#define SAM_MAG ""
+#define SAM_MAG "CUP_Stinger_M:1"
 #endif
 
 #ifdef SAM_MAG2
@@ -250,7 +250,13 @@
 #else
 #define LEADER_GRENADES BASE_FRAG,LEADER_SMOKES,SIDE_CHEM_LIGHT
 #endif
+
 // Gear
+#ifdef NODS
+#else
+#define NODS "CUP_NVG_1PN138"
+#endif
+
 #ifdef TOOLS
 #else
 #define TOOLS BASE_TOOLS
@@ -263,7 +269,7 @@
 
 #ifdef LINKED
 #else
-#define LINKED BASE_LINKED
+#define LINKED BASE_LINKED,NODS
 #endif
 
 #ifdef LEADER_LINKED
@@ -291,11 +297,11 @@
 #define MTR_PLATE "CUP_B_L16A2_Bipod_Bag"
 #endif
 
-#define CREW_HEADGEAR "CUP_H_BAF_MTP_Mk6_CREW_PRR"
+#define CREW_HEADGEAR "CUP_H_BAF_DPM_Mk6_CREW_PRR"
 
 #define PILOT_UNIFORM CAMO_UNIFORM
 #define PILOT_BACKPACK "B_Battle_Belt_XL_F"
-#define PILOT_VEST "CUP_V_B_BAF_MTP_Osprey_Mk4_Officer"
+#define PILOT_VEST "CUP_V_B_BAF_DPM_Osprey_Mk3_Pilot"
 #define PILOT_HEADGEAR "CUP_H_SPH4","CUP_H_SPH4_visor"
 
 #define SIDE_FACE F_GBR

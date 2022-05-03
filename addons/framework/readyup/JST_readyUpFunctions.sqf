@@ -134,6 +134,8 @@ JST_fnc_handleCurrentLeaders =
 		{
 			missionNameSpace setVariable [(_x + "for_ready"), true];
 		};
+		
+		[_leader] remoteExec ["CMF_fnc_AddSetGearAction", _leader];
 	} forEach ["blu", "ind", "op"];
 	JST_leaders
 };
@@ -246,6 +248,7 @@ JST_fnc_removeLeaderActions =
 {
 	if (!isNil "JST_readyAction") then {player removeAction JST_readyAction; JST_readyAction = nil;};
 	if (!isNil "JST_unReadyAction") then {player removeAction JST_unReadyAction; JST_unReadyAction = nil};
+	[player,1,["ACE_SelfActions","gearSelect"]] call ace_interact_menu_fnc_removeActionFromObject;
 };
 
 // Reset players when safe start turns off ||| LOCAL
@@ -297,6 +300,7 @@ JST_fnc_ReadyUp =
 {
 	params ["_forced"];
 	terminate JST_pollForAdminsHandle;
+	gameLive = true; publicVariable "gameLive";
 	if (_forced) then
 	{
 		terminate JST_waitForLeadersReadyHandle;
@@ -349,7 +353,7 @@ JST_fnc_ReadyUp =
 	[false] call potato_safeStart_fnc_toggleSafeStart;
 	// Remove arsenal
 	remoteExec ["tnk_removeArsenal", -2, true];
-	uiSleep 5;
+	uisleep 5;
 	// Do title
 	_title = getText (missionConfigFile >> "MissionSQM" >> "Mission" >> "Intel" >> "briefingName");
 	_author = getMissionConfigValue ["Author",0];
