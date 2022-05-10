@@ -80,7 +80,111 @@ class CfgSounds
 		// how the sound is referred to in the editor (e.g. trigger effects)
 		name = "youhavelost";
 		// filename, volume, pitch, distance (optional)
-		sound[] = {"x\cmf\addons\framework\sounds\hannah\youhavelost.ogg", 2.5, 1, 3000};
+		sound[] = {"x\cmf\addons\framework\sounds\hannah\youhavelost.ogg", 6, 1, 3000};
+		titles[] = {};
+	};
+	class music_china_march
+	{
+		// how the sound is referred to in the editor (e.g. trigger effects)
+		name = "music_china_march";
+		// filename, volume, pitch, distance (optional)
+		sound[] = {"x\cmf\addons\framework\sounds\china\music_china_march.ogg", 6, 1, 3000};
+		titles[] = {};
+	};
+	class music_metal
+	{
+		// how the sound is referred to in the editor (e.g. trigger effects)
+		name = "music_metal";
+		// filename, volume, pitch, distance (optional)
+		sound[] = {"x\cmf\addons\framework\sounds\china\music_metal.ogg", 6, 1, 3000};
+		titles[] = {};
+	};
+	class music_my_country
+	{
+		// how the sound is referred to in the editor (e.g. trigger effects)
+		name = "music_my_country";
+		// filename, volume, pitch, distance (optional)
+		sound[] = {"x\cmf\addons\framework\sounds\china\music_my_country.ogg", 6, 1, 3000};
+		titles[] = {};
+	};
+	class music_soothe_1
+	{
+		// how the sound is referred to in the editor (e.g. trigger effects)
+		name = "music_soothe_1";
+		// filename, volume, pitch, distance (optional)
+		sound[] = {"x\cmf\addons\framework\sounds\china\music_soothe_1.ogg", 6, 1, 3000};
+		titles[] = {};
+	};
+	class music_soothe_2
+	{
+		// how the sound is referred to in the editor (e.g. trigger effects)
+		name = "music_soothe_2";
+		// filename, volume, pitch, distance (optional)
+		sound[] = {"x\cmf\addons\framework\sounds\china\music_soothe_2.ogg", 6, 1, 3000};
+		titles[] = {};
+	};
+	class music_victory
+	{
+		// how the sound is referred to in the editor (e.g. trigger effects)
+		name = "music_victory";
+		// filename, volume, pitch, distance (optional)
+		sound[] = {"x\cmf\addons\framework\sounds\china\music_victory.ogg", 6, 1, 3000};
+		titles[] = {};
+	};
+	class music_yalu
+	{
+		// how the sound is referred to in the editor (e.g. trigger effects)
+		name = "music_yalu";
+		// filename, volume, pitch, distance (optional)
+		sound[] = {"x\cmf\addons\framework\sounds\china\music_yalu.ogg", 6, 1, 3000};
+		titles[] = {};
+	};
+	class voc_brave_soldiers_cn
+	{
+		// how the sound is referred to in the editor (e.g. trigger effects)
+		name = "voc_brave_soldiers_cn";
+		// filename, volume, pitch, distance (optional)
+		sound[] = {"x\cmf\addons\framework\sounds\china\voc_brave_soldiers_cn.ogg", 6, 1, 3000};
+		titles[] = {};
+	};
+	class voc_foreign_invaders_cn
+	{
+		// how the sound is referred to in the editor (e.g. trigger effects)
+		name = "voc_foreign_invaders_cn";
+		// filename, volume, pitch, distance (optional)
+		sound[] = {"x\cmf\addons\framework\sounds\china\voc_foreign_invaders_cn.ogg", 6, 1, 3000};
+		titles[] = {};
+	};
+	class voc_pitiful_invaders_cn
+	{
+		// how the sound is referred to in the editor (e.g. trigger effects)
+		name = "voc_pitiful_invaders_cn";
+		// filename, volume, pitch, distance (optional)
+		sound[] = {"x\cmf\addons\framework\sounds\china\voc_pitiful_invaders_cn.ogg", 6, 1, 3000};
+		titles[] = {};
+	};
+	class voc_pitiful_invaders_en
+	{
+		// how the sound is referred to in the editor (e.g. trigger effects)
+		name = "voc_pitiful_invaders_en";
+		// filename, volume, pitch, distance (optional)
+		sound[] = {"x\cmf\addons\framework\sounds\china\voc_pitiful_invaders_en.ogg", 6, 1, 3000};
+		titles[] = {};
+	};
+	class voc_short_insults_cn
+	{
+		// how the sound is referred to in the editor (e.g. trigger effects)
+		name = "voc_short_insults_cn";
+		// filename, volume, pitch, distance (optional)
+		sound[] = {"x\cmf\addons\framework\sounds\china\voc_short_insults_cn.ogg", 6, 1, 3000};
+		titles[] = {};
+	};
+	class voc_short_insults_en
+	{
+		// how the sound is referred to in the editor (e.g. trigger effects)
+		name = "voc_short_insults_en";
+		// filename, volume, pitch, distance (optional)
+		sound[] = {"x\cmf\addons\framework\sounds\china\voc_short_insults_en.ogg", 6, 1, 3000};
 		titles[] = {};
 	};
 };

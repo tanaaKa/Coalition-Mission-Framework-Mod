@@ -58,7 +58,7 @@ playersAlive = [];
 ] call DiscordEmbedBuilder_fnc_buildSqf;
 	
 // Basic check for spcls so this isn't printing to AAR
-if (isNull BLU_PL || isNull IND_PL || isNull OPF_PL) exitWith {};
+if (getText (getMissionConfig "Header" >> "gameType") isEqualTo "CMFSPCL") exitWith {};
 
 // AAR - Leader Orbat
 [ 
