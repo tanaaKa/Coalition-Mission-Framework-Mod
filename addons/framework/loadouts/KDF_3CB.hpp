@@ -14,7 +14,7 @@
 
 #ifdef CAMO_BACKPACK
 #else
-#define CAMO_BACKPACK "UK3CB_KDF_O_B_Sidor_RIF_OLI","UK3CB_KDF_O_B_Sidor_RIF_OLI"
+#define CAMO_BACKPACK "UK3CB_KDF_O_B_Sidor_RIF_OLI"
 #endif
 
 #ifdef CAMO_HEADGEAR
@@ -31,7 +31,7 @@
 
 #ifdef RIFLE_MAG
 #else
-#define RIFLE_MAG "potato_magazine_545x39_30rnd_reload_tracer_Yellow:6","potato_magazine_545x39_30rnd_tracer_Yellow:4"
+#define RIFLE_MAG "rhs_30Rnd_545x39_7N6M_plum_AK:6","rhs_30Rnd_545x39_AK_plum_green:4"
 #endif
 
 #ifdef RIFLE_ATTACHMENTS
@@ -67,7 +67,7 @@
 
 #ifdef GLRIFLE_MAG_SMOKE
 #else
-#define GLRIFLE_MAG_SMOKE "1Rnd_Smoke_Grenade_shell:6","1Rnd_SmokeRed_Grenade_shell:4",GLRIFLE_MAG_FLARE
+#define GLRIFLE_MAG_SMOKE "1Rnd_Smoke_Grenade_shell:6","1Rnd_SmokeRed_Grenade_shell:4","1Rnd_SmokePurple_Grenade_shell:4",GLRIFLE_MAG_FLARE
 #endif
 
 #ifdef GLRIFLE_MAG_HE
@@ -78,7 +78,7 @@
 // Carbine
 #ifdef CARBINE
 #else
-#define CARBINE "rhs_weap_ak74n_2"
+#define CARBINE "rhs_weap_aks74_2"
 #endif
 
 #ifdef CARBINE_MAG
@@ -88,12 +88,12 @@
 // AR
 #ifdef AR
 #else
-#define AR "arifle_RPK12_F"
+#define AR "UK3CB_RPK_74N_PLUM"
 #endif
 
 #ifdef AR_MAG
 #else
-#define AR_MAG "potato_magazine_762x39_75rnd_tracer_Yellow:7"
+#define AR_MAG "UK3CB_RPK74_60rnd_545x39_GM:7"
 #endif
 // AT
 #ifdef AT
@@ -103,17 +103,17 @@
 
 #ifdef AT_MAG
 #else
-#define AT_MAG ""
+#define AT_MAG 
 #endif
 // MMG
 #ifdef MMG
 #else
-#define MMG "rhs_weap_pkp"
+#define MMG "rhs_weap_pkm"
 #endif
 
 #ifdef MMG_MAG
 #else
-#define MMG_MAG "potato_box_762x54_100rnd_tracer_Yellow:5"
+#define MMG_MAG "rhs_100Rnd_762x54mmR_green:5"
 #endif
 
 #ifdef MMG_ATT
@@ -124,12 +124,12 @@
 // MAT
 #ifdef MAT
 #else
-#define MAT "launch_RPG32_green_F"
+#define MAT "rhs_weap_rpg7"
 #endif
 
 #ifdef MAT_MAG
 #else
-#define MAT_MAG "RPG32_F:2","RPG32_HE_F:1"
+#define MAT_MAG "rhs_rpg7_PG7VL_mag:2","rhs_rpg7_OG7V_mag:1"
 #endif
 
 #ifdef MAT_MAG2
@@ -202,7 +202,7 @@
 // Sniper Rifle
 #ifdef SNIPER
 #else
-#define SNIPER "CUP_srifle_SVD"
+#define SNIPER "UK3CB_SVD_OLD"
 #endif
 
 #ifdef SNIPER_MAG
@@ -212,22 +212,22 @@
 
 #ifdef SNIPER_ATTACHMENTS
 #else
-#define SNIPER_ATTACHMENTS "cup_optic_pso_1_1"
+#define SNIPER_ATTACHMENTS "rhs_acc_pso1m2"
 #endif
 // Spotter Rifle
 #ifdef SPOTTER
 #else
-#define SPOTTER "CUP_arifle_AK74M_railed"
+#define SPOTTER "rhs_weap_ak74n_2"
 #endif
 
 #ifdef SPOTTER_MAG
 #else
-#define SPOTTER_MAG "CUP_30Rnd_545x39_AK74M_M:10"
+#define SPOTTER_MAG "rhs_30Rnd_545x39_7N6M_plum_AK:10"
 #endif
 
 #ifdef SPOTTER_ATTACHMENTS
 #else
-#define SPOTTER_ATTACHMENTS "cup_optic_acog2"
+#define SPOTTER_ATTACHMENTS "rhs_acc_1p29"
 #endif
 // SMG
 #ifdef SMG

@@ -173,7 +173,7 @@
   #undef HMG_MAG
 #endif
 #ifdef HAT
-  #undef HMG
+  #undef HAT
 #endif
 #ifdef HAT_TRI_HI
   #undef HAT_TRI_HI
@@ -186,6 +186,9 @@
 #endif
 #ifdef GOG
   #undef GOG
+#endif
+#ifdef NODS
+  #undef NODS
 #endif
 #ifdef PILOT_UNIFORM
   #undef PILOT_UNIFORM

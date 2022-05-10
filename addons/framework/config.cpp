@@ -79,6 +79,7 @@ class CfgMPGameTypes
 #include "misc\acrebeep\CfgAcreSounds.hpp"
 #include "logging\CfgDiscordRichPresence.hpp"
 #include "stamina\CfgMovesFatigue.hpp"
+#include "CfgCMFLoadouts.hpp"
 #include "ui\Displays.hpp"
 #include "JIP\f_JIP_common.h"
 #include "JIP\f_JIP_grpPicker.h"
