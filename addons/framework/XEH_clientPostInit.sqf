@@ -38,6 +38,7 @@ diag_log "[CMF]: Starting CMF PostInit Client";
 		player removeAction JST_SSHeal;
 	};
 	
+	call CMF_fnc_AddLoadoutModule;
 	// Welcome message
 	call CMF_fnc_initWelcome;
 	
