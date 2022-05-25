@@ -2,7 +2,7 @@ class CfgMovesFatigue
 {
 	// staminaDuration is the total stamina available to a unit
 	// default 60
-	staminaDuration = 75; 
+	staminaDuration = 70; 
 	
 	// staminaRestoration is the total time to recover a stamina bar
 	// default 30
