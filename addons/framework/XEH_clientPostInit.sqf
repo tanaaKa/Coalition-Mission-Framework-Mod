@@ -44,7 +44,7 @@ diag_log "[CMF]: Starting CMF PostInit Client";
 		player enableStamina false;
 	} else {
 		player enableStamina true;
-		if !(isNull "JST_SSHeal") then 
+		if !(isNil "JST_SSHeal") then 
 		{
 			player removeAction JST_SSHeal;
 		};

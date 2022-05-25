@@ -228,7 +228,10 @@ JST_fnc_playersGoHot =
 	[] spawn JST_fnc_removeAdminAction;
 	[] spawn JST_fnc_removeLeaderActions;
 	player enableStamina true;
-	player removeAction JST_SSHeal;
+	if !(isNil "JST_SSHeal") then 
+	{
+		player removeAction JST_SSHeal;
+	};
 	/* if (useSpawners) then {
 		{
 			private _factory = missionNameSpace getVariable [_x, objNull];
