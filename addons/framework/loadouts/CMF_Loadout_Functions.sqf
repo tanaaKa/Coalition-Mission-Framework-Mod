@@ -90,7 +90,7 @@ _action = ["gearSelect", "Select Gear", "", {call CMF_fnc_LeaderSetGear}, {true}
 
 //Local Exec ||| Adds the Zeus Module to change the gearscript for each side
 CMF_fnc_AddLoadoutModule = {
-["CMF Loadoutss", "Select Loadout",
+["CMF Loadouts", "Select Loadout",
     {
 _ModLoadouts = "true" configClasses (ConfigFile >> "CfgCMFLoadouts") apply {configName _x}; 
 _ModLoadouts sort true;
