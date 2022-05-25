@@ -13,42 +13,13 @@
 diag_log "[CMF]: Starting Readyup Library";
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
-//		Local Operations at start
-////////////////////////////////////////////////////////////////////////////////////////////////////////
-if (!isServer) then
-{
-    // Cutscene for the start of the game
-    [] spawn
-    {
-        cutText ["Server initializing. Please wait.", "BLACK", 10];
-        //player enableSimulation false; // Disable simulation to prevent moving
-
-        sleep 10; 
-        cutText ["Server Initialized. Read your briefing!", "PLAIN"];
-        //player enableSimulation true; // Reenable sim to move
-        player enableStamina false; // disables stamina during SS
-        [] spawn JST_fnc_addSafeStartHeal;
-    };
-}
-else
-{
-    [] spawn
-    {
-        player enableStamina false; // disables stamina during SS
-        [] spawn JST_fnc_addSafeStartHeal;
-    };
-};
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////
 //		Function library
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // Add safe start heal option ||| LOCAL
 JST_fnc_addSafeStartHeal =
 {
-	if (time < 600) then {
-		JST_SSHeal = player addaction ["<t color='#0B6623'>Treat Yo Self (heal)</t>","\x\cmf\addons\framework\ssheal\heal.sqf",[],-1,true,false,"","_target == player"];
-	};
+	JST_SSHeal = player addaction ["<t color='#0B6623'>Treat Yo Self (heal)</t>","\x\cmf\addons\framework\ssheal\heal.sqf",[],-1,true,false,"","_target == player"];
 };
 
 // Add admin force start action ||| LOCAL
@@ -374,7 +345,6 @@ JST_fnc_ReadyUp =
 	{
 		[format ["Now beginning mission: %1", _title], "sessionLog"] call A3Log;
 	};
-	gameLive = true; publicVariable "gameLive";
 };
 
 diag_log "[CMF]: Readyup Library Complete";

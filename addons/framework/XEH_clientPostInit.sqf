@@ -4,8 +4,14 @@ if (_version isEqualTo "") exitWith {};
 diag_log "[CMF]: Starting CMF PostInit Client";
 
 [] spawn {	
+	// Cutscene for the start of the game
+	[1,["Initializing","BLACK"]] remoteExec ["cutText", player]; // it only works if we remoteexec it. idk
+
 	// Set weapons to safe on spawn in
 	player action ["SwitchWeapon", player, player, 299];
+
+	// Disable player while initializing
+	player enableSimulation false;
 
 	// Disable random animals
 	enableEnvironment [false, true];
@@ -18,7 +24,6 @@ diag_log "[CMF]: Starting CMF PostInit Client";
 
 	// Client only scripts and event handlers
 	call CMF_fnc_localEHs;
-	call CMF_fnc_addArsenal;
 	call CMF_fnc_fdsInit;
 	//call CMF_fnc_factoryaction; -- Pending rewrite
 	call CMF_fnc_limitVD;
@@ -33,10 +38,21 @@ diag_log "[CMF]: Starting CMF PostInit Client";
 	};
 	
 	// Persistant game started stuff
-	if (gameLive) then {
+	if !(gameLive) then {
+		call CMF_fnc_addArsenal;
+		call JST_fnc_addSafeStartHeal;
+		player enableStamina false;
+	} else {
 		player enableStamina true;
-		player removeAction JST_SSHeal;
+		if !(isNull "JST_SSHeal") then 
+		{
+			player removeAction JST_SSHeal;
+		};
 	};
+
+	// Enable player
+	player enableSimulation true;
+	[1,["","PLAIN"]] remoteExec ["cutText", player];
 	
 	call CMF_fnc_AddLoadoutModule;
 	// Welcome message

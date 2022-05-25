@@ -51,11 +51,4 @@ class Extended_InitPost_EventHandlers
 			init = "(_this select 0) disableTIEquipment true;"; 
 		};
 	};
-	class Plane 
-	{
-		class cmf_nothermals 
-		{ 
-			init = "(_this select 0) disableTIEquipment true;"; 
-		};
-	};
 };
