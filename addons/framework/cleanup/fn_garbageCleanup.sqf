@@ -51,6 +51,7 @@ _nul = [] spawn {
 			};
 		} forEach JST_garbage_list;
 		UIsleep 5;
+		
 		{
 			private _item = _x;
 			private _inAlready = JST_garbage_list findIf {(_x select 0) isEqualTo _item};

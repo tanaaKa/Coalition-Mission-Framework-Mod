@@ -61,7 +61,7 @@ if (_maType isEqualTo 2) then { // 'advanced' gearscript
 };
 
 // Add arsenal action to player self-interact
-_action = ["miniarsenal","Customize Loadout","",{[player, player, false] call ace_arsenal_fnc_openBox},{true}] call ace_interact_menu_fnc_createAction;
+_action = ["miniarsenal","Mini Arsenal","",{[player, player, false] call ace_arsenal_fnc_openBox},{true}] call ace_interact_menu_fnc_createAction;
 [player, 1, ["ACE_SelfActions","ACE_Equipment"], _action, true] call ace_interact_menu_fnc_addActionToObject;
 
 // Eventhandler for missing items in uniform
