@@ -61,7 +61,7 @@ class CfgMainMenuSpotlight // RscDisplayMain >> Spotlight works but is considere
 		textIsQuote = 0;
 		picture = "x\cmf\addons\menu\data\image.paa";
 		video = "x\cmf\addons\menu\data\video.ogv";
-		action = "0 = [_this, 'arma.coalitiongroup.net', '2302', 'torch'] execVM 'x\cmf\addons\menu\scripts\joinServer.sqf';";
+		action = "0 = [_this, '135.148.136.167', '2302', 'torch'] execVM 'x\cmf\addons\menu\scripts\joinServer.sqf';";
 		actionText = "Connect to Session";
 		condition = "true";
 	};
