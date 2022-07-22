@@ -3,7 +3,13 @@ if (_version isEqualTo "") exitWith {};
 
 diag_log "[CMF]: Starting CMF PostInit Client";
 
-[] spawn {	
+[] spawn {
+	// Wait until the player inits
+	waitUntil {!isNull player && time > 0};
+	
+	// Grab mission name for use later
+	private _missionName = getText (missionConfigFile >> "MissionSQM" >> "Mission" >> "Intel" >> "briefingName");
+
 	// Cutscene for the start of the game
 	[1,["Initializing","BLACK"]] remoteExec ["cutText", player]; // it only works if we remoteexec it. idk
 
@@ -11,7 +17,7 @@ diag_log "[CMF]: Starting CMF PostInit Client";
 	player action ["SwitchWeapon", player, player, 299];
 
 	// Disable player while initializing
-	player enableSimulation false;
+	//player enableSimulation false;
 
 	// Disable random animals
 	enableEnvironment [false, true];
@@ -39,6 +45,22 @@ diag_log "[CMF]: Starting CMF PostInit Client";
 	
 	// Persistant game started stuff
 	if !(gameLive) then {
+		// Add a crash-during-load check for the first ten minutes of safe start
+		if (serverTime < 600) exitWith 
+		{
+			call CMF_fnc_addArsenal;
+			call JST_fnc_addSafeStartHeal;
+			player enableStamina false;
+		};
+
+		// If player is a JIP and has not connected prior (aka the player did not crash), kick him back to slotting
+		if (groupId (group player) isEqualTo "BLU JIP" || groupId (group player) isEqualTo "OPF JIP" || groupId (group player) isEqualTo "IND JIP" && (profileNamespace getVariable "cmf_hasPlayed") isNotEqualTo _missionName) exitWith 
+		{
+			[1,["JIPPING is not enabled during safe start\n\nGrab a regular slot in the slotting screen","BLACK"]] remoteExec ["cutText", player];
+			uiSleep 4;
+			endMission "LOSER";
+		};
+
 		call CMF_fnc_addArsenal;
 		call JST_fnc_addSafeStartHeal;
 		player enableStamina false;
@@ -50,13 +72,22 @@ diag_log "[CMF]: Starting CMF PostInit Client";
 		};
 	};
 
+	// Add deploy to JIP
+	// Checks to see if the JIP options was added elsewhere first
+	if (groupID group player find "JIP" > -1 && isNil "F3_JIP_reinforcementOptionsAction") then {
+		F3_JIP_reinforcementOptionsAction = player addaction ["<t color='#dddd00'>"+ "JIP MENU" + "</t>","x\cmf\addons\framework\JIP\f_JIP_reinforcementOptions.sqf",[],6,true,false,"","_target == player"];
+	};
+
 	// Enable player
-	player enableSimulation true;
+	//player enableSimulation true;
 	[1,["","PLAIN"]] remoteExec ["cutText", player];
 	
 	call CMF_fnc_AddLoadoutModule;
 	// Welcome message
 	call CMF_fnc_initWelcome;
+
+	// Mark player as connected in this mission
+	profileNamespace setVariable ["cmf_hasPlayed", _missionName];
 	
 	// Initialize stamina system - MUST BE CALLED LAST due to scheduled environment
 	call CMF_fnc_staminaHandler;
