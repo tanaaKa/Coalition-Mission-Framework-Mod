@@ -11,10 +11,16 @@ GrpPickInit =
     USEBUTTON ctrlEnable false;
     GrpList = [];
     GrpCount = 0;
+    // Old mission support to set vars if they're missing
+    MAX_SIZE_SQUAD = getMissionConfigValue ["potato_missionTesting_SquadSize", 12];
+    MAX_SIZE_TEAM1 = getMissionConfigValue ["potato_missionTesting_Team1Size", 5];
+    MAX_SIZE_TEAM2 = getMissionConfigValue ["potato_missionTesting_Team2Size", 5];
+
     {
         private "_grp";
         _grp = _x;
 		_grpNum = (count units _grp);
+        
         if (side(_grp) isEqualTo side(player) && {(faction (leader _grp) isEqualTo faction player ) && (alive (leader _grp)) && !(_grp isEqualTo group player)}) then
         {
             GrpList set [GrpCount, _grp];
@@ -54,9 +60,18 @@ GrpPicker_Pick =
     private "_grp";
     _grp = GrpList select (_data - 1);
 	_grpNum = (count units _grp);
-	if (_grpNum >= 6) then {
-		hint "That group is full! Please  pick another.";
-		systemChat "[CMF JIP] ERROR: Group is full. Pick another";
+    maxSize = 5; //default
+    if (groupID _grp find "A1" > -1 || groupID _grp find "B1" > -1 || groupID _grp find "C1" > -1 || groupID _grp find "D1" > -1 || isNil "potato_missionTesting_SquadInOneGroup") then { // Check for individual team joins
+        maxSize = parseNumber MAX_SIZE_TEAM1;
+    } else {
+        maxSize = parseNumber MAX_SIZE_TEAM2;
+    };
+    if (getMissionConfigValue "potato_missionTesting_SquadInOneGroup") then { // Check for squad in one group
+        maxSize = parseNumber MAX_SIZE_SQUAD;
+    };
+	if (_grpNum >= maxSize) then {
+		hint "That group is full! Please pick another.";
+		systemChat "[CMF JIP] ERROR: Group is full. Pick another or if all groups are full, back out and take a normal slot.";
 	} else {
 		closeDialog 0;
 		player setVariable ["f_var_JIP_grp", _grp];
