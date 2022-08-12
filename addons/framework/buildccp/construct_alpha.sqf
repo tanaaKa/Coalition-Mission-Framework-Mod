@@ -71,7 +71,6 @@ params["_site"];
 	_ccp addItemCargoGlobal ["kat_Painkiller", 2];
 	_ccp addItemCargoGlobal ["Attachable_Helistretcher", 1];
 
-
 	// Add ACE interact to call reinforcements
 	//_reinforceAction = ["reinforceCCP","Call for Reinforcements","",{_target execVM "scripts\buildccp\reinforcements.sqf";},{true},{}] call ace_interact_menu_fnc_createAction;
 	//[_ccp, 0, ["ACE_MainActions"], _reinforceAction] remoteExecCall ["ace_interact_menu_fnc_addActionToObject",0]; 
