@@ -39,15 +39,43 @@ params["_site"];
 	_ccp addItemCargoGlobal ["ACE_tourniquet", 10];
 	_ccp addItemCargoGlobal ["ACE_elasticBandage", 50];
 	_ccp addItemCargoGlobal ["ACE_packingBandage",50];
-	_ccp addItemCargoGlobal ["ACE_adenosine", 10];
+	_ccp addItemCargoGlobal ["ACE_adenosine", 20];
 	_ccp addItemCargoGlobal ["ACE_splint", 20];
 	_ccp addItemCargoGlobal ["ACE_surgicalKit",2];
 	_ccp addItemCargoGlobal ["ACE_Chemlight_HiRed", 2]; 
 	_ccp addItemCargoGlobal ["ACE_Chemlight_HiYellow", 2]; 
 	_ccp addItemCargoGlobal ["ACE_Chemlight_HiWhite", 2];
+	_ccp addItemCargoGlobal ["ace_marker_flags_black", 2];
+	_ccp addItemCargoGlobal ["ace_marker_flags_red", 2];
+	_ccp addItemCargoGlobal ["ace_marker_flags_yellow", 2];
+	_ccp addItemCargoGlobal ["ace_marker_flags_white", 2];
 	_ccp setDir _dir;
 	_ccp allowdamage false;
-	
+
+	//Adds KAT medical - Blame phil
+	_ccp addItemCargoGlobal ["kat_accuvac", 4];
+	_ccp addItemCargoGlobal ["kat_Pulseoximeter", 5];
+	_ccp addItemCargoGlobal ["kat_stethoscope", 5];
+	_ccp addItemCargoGlobal ["kat_X_AED", 2];
+	_ccp addItemCargoGlobal ["kat_AED", 2];
+	_ccp addItemCargoGlobal ["kat_IV_16", 50];
+	_ccp addItemCargoGlobal ["kat_IO_FAST", 25];
+	_ccp addItemCargoGlobal ["kat_aatKit", 50];
+	_ccp addItemCargoGlobal ["kat_chestseal", 50];
+	_ccp addItemCargoGlobal ["kat_larynx", 10];
+	_ccp addItemCargoGlobal ["kat_guedel", 10];
+	_ccp addItemCargoGlobal ["kat_lidocaine", 25];
+	_ccp addItemCargoGlobal ["kat_naloxone", 25];
+	_ccp addItemCargoGlobal ["kat_nitroglycerin", 25];
+	_ccp addItemCargoGlobal ["kat_norepinephrine", 25];
+	_ccp addItemCargoGlobal ["kat_phenylephrine", 25];
+	_ccp addItemCargoGlobal ["kat_amiodarone", 25];
+	_ccp addItemCargoGlobal ["kat_atropine", 25];
+	_ccp addItemCargoGlobal ["kat_TXA", 30];
+	_ccp addItemCargoGlobal ["kat_Carbonate", 10];
+	_ccp addItemCargoGlobal ["kat_Painkiller", 10];
+	_ccp addItemCargoGlobal ["Attachable_Helistretcher", 4];
+
 	// Add ACE interact to call reinforcements
 	//_reinforceAction = ["reinforceCCP","Call for Reinforcements","",{_target execVM "scripts\buildccp\reinforcements.sqf";},{true},{}] call ace_interact_menu_fnc_createAction;
 	//[_ccp, 0, ["ACE_MainActions"], _reinforceAction] remoteExecCall ["ace_interact_menu_fnc_addActionToObject",0]; 
