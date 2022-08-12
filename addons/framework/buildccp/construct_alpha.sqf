@@ -65,9 +65,7 @@ params["_site"];
 	_ccp addItemCargoGlobal ["kat_amiodarone", 5];
 	_ccp addItemCargoGlobal ["kat_atropine", 5];
 	_ccp addItemCargoGlobal ["kat_TXA", 10];
-	_ccp addItemCargoGlobal ["kat_chestseal", 20];
 	_ccp addItemCargoGlobal ["kat_Carbonate", 2];
-	_ccp addItemCargoGlobal ["kat_Painkiller", 2];
 	_ccp addItemCargoGlobal ["kat_Painkiller", 2];
 	_ccp addItemCargoGlobal ["Attachable_Helistretcher", 1];
 
