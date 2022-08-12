@@ -42,7 +42,31 @@ params["_site"];
 	_ccp addItemCargoGlobal ["ACE_Chemlight_HiWhite", 2];
 	_ccp setDir _dir;
 	_ccp allowdamage false;
-	
+
+	//Adds KAT medical - Blame phil
+	_ccp addItemCargoGlobal ["kat_accuvac", 1];
+	_ccp addItemCargoGlobal ["kat_Pulseoximeter", 2];
+	_ccp addItemCargoGlobal ["kat_stethoscope", 2];
+	_ccp addItemCargoGlobal ["kat_AED", 1];
+	_ccp addItemCargoGlobal ["kat_IV_16", 25];
+	_ccp addItemCargoGlobal ["kat_IO_FAST", 10];
+	_ccp addItemCargoGlobal ["kat_aatKit", 20];
+	_ccp addItemCargoGlobal ["kat_chestseal", 20];
+	_ccp addItemCargoGlobal ["kat_larynx", 5];
+	_ccp addItemCargoGlobal ["kat_lidocaine", 10];
+	_ccp addItemCargoGlobal ["kat_naloxone", 5];
+	_ccp addItemCargoGlobal ["kat_nitroglycerin", 5];
+	_ccp addItemCargoGlobal ["kat_norepinephrine", 5];
+	_ccp addItemCargoGlobal ["kat_phenylephrine", 5];
+	_ccp addItemCargoGlobal ["kat_amiodarone", 5];
+	_ccp addItemCargoGlobal ["kat_atropine", 5];
+	_ccp addItemCargoGlobal ["kat_TXA", 10];
+	_ccp addItemCargoGlobal ["kat_chestseal", 20];
+	_ccp addItemCargoGlobal ["kat_Carbonate", 2];
+	_ccp addItemCargoGlobal ["kat_Painkiller", 2];
+	_ccp addItemCargoGlobal ["kat_Painkiller", 2];
+	_ccp addItemCargoGlobal ["Attachable_Helistretcher", 1];
+
 	// Add ACE interact to call reinforcements
 	//_reinforceAction = ["reinforceCCP","Call for Reinforcements","",{_target execVM "scripts\buildccp\reinforcements.sqf";},{true},{}] call ace_interact_menu_fnc_createAction;
 	//[_ccp, 0, ["ACE_MainActions"], _reinforceAction] remoteExecCall ["ace_interact_menu_fnc_addActionToObject",0]; 
