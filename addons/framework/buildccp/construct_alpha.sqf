@@ -47,8 +47,9 @@ params["_site"];
 	_ccp setDir _dir;
 	_ccp allowdamage false;
 
-	//Adds KAT medical - Blame phil
-	_ccp addItemCargoGlobal ["kat_accuvac", 1];
+	//Adds KAT medical if KAT is present - Blame phil
+	if (isClass(configFile >> "CfgPatches" >> "kat")) then {
+  	_ccp addItemCargoGlobal ["kat_accuvac", 1];
 	_ccp addItemCargoGlobal ["kat_Pulseoximeter", 2];
 	_ccp addItemCargoGlobal ["kat_stethoscope", 2];
 	_ccp addItemCargoGlobal ["kat_AED", 1];
@@ -68,6 +69,7 @@ params["_site"];
 	_ccp addItemCargoGlobal ["kat_Carbonate", 2];
 	_ccp addItemCargoGlobal ["kat_Painkiller", 2];
 	_ccp addItemCargoGlobal ["Attachable_Helistretcher", 1];
+	};
 
 	// Add ACE interact to call reinforcements
 	//_reinforceAction = ["reinforceCCP","Call for Reinforcements","",{_target execVM "scripts\buildccp\reinforcements.sqf";},{true},{}] call ace_interact_menu_fnc_createAction;
