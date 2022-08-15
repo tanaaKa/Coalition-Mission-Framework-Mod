@@ -53,29 +53,30 @@ params["_site"];
 	_ccp allowdamage false;
 
 	//Adds KAT medical if KAT is present - Blame phil
-	if (isClass(configFile >> "CfgPatches" >> "kat")) then {
-  	_ccp addItemCargoGlobal ["kat_accuvac", 4];
-	_ccp addItemCargoGlobal ["kat_Pulseoximeter", 5];
-	_ccp addItemCargoGlobal ["kat_stethoscope", 5];
-	_ccp addItemCargoGlobal ["kat_X_AED", 2];
-	_ccp addItemCargoGlobal ["kat_AED", 2];
-	_ccp addItemCargoGlobal ["kat_IV_16", 50];
-	_ccp addItemCargoGlobal ["kat_IO_FAST", 25];
-	_ccp addItemCargoGlobal ["kat_aatKit", 50];
-	_ccp addItemCargoGlobal ["kat_chestseal", 50];
-	_ccp addItemCargoGlobal ["kat_larynx", 10];
-	_ccp addItemCargoGlobal ["kat_guedel", 10];
-	_ccp addItemCargoGlobal ["kat_lidocaine", 25];
-	_ccp addItemCargoGlobal ["kat_naloxone", 25];
-	_ccp addItemCargoGlobal ["kat_nitroglycerin", 25];
-	_ccp addItemCargoGlobal ["kat_norepinephrine", 25];
-	_ccp addItemCargoGlobal ["kat_phenylephrine", 25];
-	_ccp addItemCargoGlobal ["kat_amiodarone", 25];
-	_ccp addItemCargoGlobal ["kat_atropine", 25];
-	_ccp addItemCargoGlobal ["kat_TXA", 30];
-	_ccp addItemCargoGlobal ["kat_Carbonate", 10];
-	_ccp addItemCargoGlobal ["kat_Painkiller", 10];
-	_ccp addItemCargoGlobal ["Attachable_Helistretcher", 4];
+	if (isClass(configFile >> "CfgPatches" >> "kat_main")) then 
+	{
+  		_ccp addItemCargoGlobal ["kat_accuvac", 4];
+		_ccp addItemCargoGlobal ["kat_Pulseoximeter", 5];
+		_ccp addItemCargoGlobal ["kat_stethoscope", 5];
+		_ccp addItemCargoGlobal ["kat_X_AED", 2];
+		_ccp addItemCargoGlobal ["kat_AED", 2];
+		_ccp addItemCargoGlobal ["kat_IV_16", 50];
+		_ccp addItemCargoGlobal ["kat_IO_FAST", 25];
+		_ccp addItemCargoGlobal ["kat_aatKit", 50];
+		_ccp addItemCargoGlobal ["kat_chestseal", 50];
+		_ccp addItemCargoGlobal ["kat_larynx", 10];
+		_ccp addItemCargoGlobal ["kat_guedel", 10];
+		_ccp addItemCargoGlobal ["kat_lidocaine", 25];
+		_ccp addItemCargoGlobal ["kat_naloxone", 25];
+		_ccp addItemCargoGlobal ["kat_nitroglycerin", 25];
+		_ccp addItemCargoGlobal ["kat_norepinephrine", 25];
+		_ccp addItemCargoGlobal ["kat_phenylephrine", 25];
+		_ccp addItemCargoGlobal ["kat_amiodarone", 25];
+		_ccp addItemCargoGlobal ["kat_atropine", 25];
+		_ccp addItemCargoGlobal ["kat_TXA", 30];
+		_ccp addItemCargoGlobal ["kat_Carbonate", 10];
+		_ccp addItemCargoGlobal ["kat_Painkiller", 10];
+		_ccp addItemCargoGlobal ["Attachable_Helistretcher", 4];
 	};
 
 	// Add ACE interact to call reinforcements
