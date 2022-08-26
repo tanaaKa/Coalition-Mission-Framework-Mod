@@ -29,7 +29,7 @@ params["_site"];
 	_ccp = "MASH" createVehicle _pos;
 	_ccp addItemCargoGlobal ["ACE_epinephrine", 20];
 	_ccp addItemCargoGlobal ["ACE_morphine", 20];
-	_ccp addItemCargoGlobal ["ACE_adenosine", 5];
+	_ccp addItemCargoGlobal ["ACE_adenosine", 10];
 	_ccp addItemCargoGlobal ["ACE_Bodybag", 10];
 	_ccp addItemCargoGlobal ["ACE_bloodIV", 10];
 	_ccp addItemCargoGlobal ["ACE_plasmaIV", 10];
@@ -40,9 +40,38 @@ params["_site"];
 	_ccp addItemCargoGlobal ["ACE_Chemlight_HiRed", 2]; 
 	_ccp addItemCargoGlobal ["ACE_Chemlight_HiYellow", 2]; 
 	_ccp addItemCargoGlobal ["ACE_Chemlight_HiWhite", 2];
+	_ccp addItemCargoGlobal ["ace_marker_flags_black", 1];
+	_ccp addItemCargoGlobal ["ace_marker_flags_red", 1];
+	_ccp addItemCargoGlobal ["ace_marker_flags_yellow", 1];
+	_ccp addItemCargoGlobal ["ace_marker_flags_white", 1];
 	_ccp setDir _dir;
 	_ccp allowdamage false;
-	
+
+	//Adds KAT medical if KAT is present - Blame phil
+	if (isClass(configFile >> "CfgPatches" >> "kat_main")) then 
+	{
+		_ccp addItemCargoGlobal ["kat_accuvac", 1];
+		_ccp addItemCargoGlobal ["kat_Pulseoximeter", 2];
+		_ccp addItemCargoGlobal ["kat_stethoscope", 2];
+		_ccp addItemCargoGlobal ["kat_AED", 1];
+		_ccp addItemCargoGlobal ["kat_IV_16", 25];
+		_ccp addItemCargoGlobal ["kat_IO_FAST", 10];
+		_ccp addItemCargoGlobal ["kat_aatKit", 20];
+		_ccp addItemCargoGlobal ["kat_chestseal", 20];
+		_ccp addItemCargoGlobal ["kat_larynx", 5];
+		_ccp addItemCargoGlobal ["kat_lidocaine", 10];
+		_ccp addItemCargoGlobal ["kat_naloxone", 5];
+		_ccp addItemCargoGlobal ["kat_nitroglycerin", 5];
+		_ccp addItemCargoGlobal ["kat_norepinephrine", 5];
+		_ccp addItemCargoGlobal ["kat_phenylephrine", 5];
+		_ccp addItemCargoGlobal ["kat_amiodarone", 5];
+		_ccp addItemCargoGlobal ["kat_atropine", 5];
+		_ccp addItemCargoGlobal ["kat_TXA", 10];
+		_ccp addItemCargoGlobal ["kat_Carbonate", 2];
+		_ccp addItemCargoGlobal ["kat_Painkiller", 2];
+		_ccp addItemCargoGlobal ["Attachable_Helistretcher", 1];
+	};
+
 	// Add ACE interact to call reinforcements
 	//_reinforceAction = ["reinforceCCP","Call for Reinforcements","",{_target execVM "scripts\buildccp\reinforcements.sqf";},{true},{}] call ace_interact_menu_fnc_createAction;
 	//[_ccp, 0, ["ACE_MainActions"], _reinforceAction] remoteExecCall ["ace_interact_menu_fnc_addActionToObject",0]; 

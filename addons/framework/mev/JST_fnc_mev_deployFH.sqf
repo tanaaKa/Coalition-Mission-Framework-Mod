@@ -31,6 +31,34 @@ if (count _pos > 1) then
 		_fh addItemCargoGlobal ["ACE_Chemlight_HiRed", 2]; 
 		_fh addItemCargoGlobal ["ACE_Chemlight_HiYellow", 2]; 
 		_fh addItemCargoGlobal ["ACE_Chemlight_HiWhite", 2];
+
+		//Adds KAT medical if KAT is present - Blame phil
+		if (isClass(configFile >> "CfgPatches" >> "kat_main")) then
+		{
+  			_fh addItemCargoGlobal ["kat_accuvac", 4];
+			_fh addItemCargoGlobal ["kat_Pulseoximeter", 5];
+			_fh addItemCargoGlobal ["kat_stethoscope", 5];
+			_fh addItemCargoGlobal ["kat_X_AED", 2];
+			_fh addItemCargoGlobal ["kat_AED", 2];
+			_fh addItemCargoGlobal ["kat_IV_16", 50];
+			_fh addItemCargoGlobal ["kat_IO_FAST", 25];
+			_fh addItemCargoGlobal ["kat_aatKit", 50];
+			_fh addItemCargoGlobal ["kat_chestseal", 50];
+			_fh addItemCargoGlobal ["kat_larynx", 10];
+			_fh addItemCargoGlobal ["kat_guedel", 10];
+			_fh addItemCargoGlobal ["kat_lidocaine", 25];
+			_fh addItemCargoGlobal ["kat_naloxone", 25];
+			_fh addItemCargoGlobal ["kat_nitroglycerin", 25];
+			_fh addItemCargoGlobal ["kat_norepinephrine", 25];
+			_fh addItemCargoGlobal ["kat_phenylephrine", 25];
+			_fh addItemCargoGlobal ["kat_amiodarone", 25];
+			_fh addItemCargoGlobal ["kat_atropine", 25];
+			_fh addItemCargoGlobal ["kat_TXA", 30];
+			_fh addItemCargoGlobal ["kat_Carbonate", 10];
+			_fh addItemCargoGlobal ["kat_Painkiller", 10];
+			_fh addItemCargoGlobal ["Attachable_Helistretcher", 2];
+		};
+		
 	}
 	else
 	{
