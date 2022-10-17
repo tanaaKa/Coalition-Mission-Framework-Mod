@@ -3,7 +3,7 @@ class CfgPatches
 {
 	class coal_menu
 	{
-		requiredaddons[] = {"CBA_Main"};
+		requiredaddons[] = {"CBA_Main", "cwr3_core"};
 		requiredversion = 1;
 		units[] = {};
 		weapons[] = {};
