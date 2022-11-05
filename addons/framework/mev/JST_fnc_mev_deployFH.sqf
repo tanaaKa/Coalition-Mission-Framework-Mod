@@ -35,6 +35,8 @@ if (count _pos > 1) then
 		//Adds KAT medical if KAT is present - Blame phil
 		if (isClass(configFile >> "CfgPatches" >> "kat_main")) then
 		{
+  			_fh addItemCargoGlobal ["kat_accuvac", 4];
+			_fh addItemCargoGlobal ["kat_Pulseoximeter", 5];
 			_fh addItemCargoGlobal ["kat_stethoscope", 5];
 			_fh addItemCargoGlobal ["kat_X_AED", 2];
 			_fh addItemCargoGlobal ["kat_AED", 2];
