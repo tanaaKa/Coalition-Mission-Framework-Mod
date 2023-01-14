@@ -104,6 +104,7 @@ class CfgFunctions
 			class staminaHandler{};
 			class stamina{};
 		};
+		/*
 		class statsTracking
 		{
 			file = "\x\cmf\addons\framework\statsTracking";
@@ -112,7 +113,7 @@ class CfgFunctions
 			class updateStatArray {};
 		};
 		// TODO: Implement these
-		/* class GameModeCON
+		class GameModeCON
 		{
 			file = "\x\cmf\addons\framework\gamemodes\connection";
 			class client_connection{};
