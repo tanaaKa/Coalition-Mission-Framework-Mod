@@ -104,6 +104,13 @@ class CfgFunctions
 			class staminaHandler{};
 			class stamina{};
 		};
+		class statsTracking
+		{
+			file = "\x\cmf\addons\framework\statsTracking";
+			class statsInitLocal{postInit = 1;};
+			class statsInitServer{postInit = 1;};
+			class updateStatArray {};
+		};
 		// TODO: Implement these
 		/* class GameModeCON
 		{
@@ -128,17 +135,17 @@ class CfgFunctions
 			file = "\x\cmf\addons\framework\gamemodes\neutralsector";
 			class neutralInit{};
 		};
-		class GameModeRUSH
-		{
-			file = "\x\cmf\addons\framework\gamemodes\rush";
-			class client_rush{};
-			class server_rush{};
-		};
 		class GameModeUL
 		{
 			file = "\x\cmf\addons\framework\gamemodes\uplink";
 			class client_uplink{};
 			class server_uplink{};
+		}; 
+		class GameModeRUSH
+		{
+			file = "\x\cmf\addons\framework\gamemodes\rush";
+			class client_rush{};
+			class server_rush{};
 		}; */
 	};
 };
