@@ -39,7 +39,7 @@ if (isDedicated) then {
 			,BLU_DSL,BLU_D1_FTL,BLU_D2_FTL
 		];
 		{
-			if !(isNull _x) then 
+			if !(!isNull _x || !isNil _x) then 
 			{
 				[format ["%1: %2", _x, name _x], "sessionLog"] call A3Log;
 			};
@@ -59,7 +59,7 @@ if (isDedicated) then {
 			,OPF_DSL,OPF_D1_FTL,OPF_D2_FTL
 		];
 		{
-			if !(isNull _x) then 
+			if !(!isNull _x || !isNil _x) then 
 			{
 				[format ["%1: %2", _x, name _x], "sessionLog"] call A3Log;
 			};
@@ -79,7 +79,7 @@ if (isDedicated) then {
 			,IND_DSL,IND_D1_FTL,IND_D2_FTL
 		];
 		{
-			if !(isNull _x) then 
+			if (!isNull _x || !isNil _x) then 
 			{
 				[format ["%1: %2", _x, name _x], "sessionLog"] call A3Log;
 			};
