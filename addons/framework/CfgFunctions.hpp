@@ -104,14 +104,19 @@ class CfgFunctions
 			class staminaHandler{};
 			class stamina{};
 		};
-		/*
 		class statsTracking
 		{
 			file = "\x\cmf\addons\framework\statsTracking";
 			class statsInitLocal{postInit = 1;};
 			class statsInitServer{postInit = 1;};
 			class updateStatArray {};
+			class localShotsFired {};
+			class respawnStats {};
+			class entityKilled {};
+			class handleDisconnect {};
+			class handleMissionEnd {};
 		};
+		/*
 		// TODO: Implement these
 		class GameModeCON
 		{
