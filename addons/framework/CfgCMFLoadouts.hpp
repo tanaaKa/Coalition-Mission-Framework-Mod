@@ -19,28 +19,6 @@ class CfgCMFLoadouts {
 	// Shared defines
 	#include "loadouts\common.hpp" // DO NOT COMMENT OUT, WILL BREAK EVERYTHING
 
-	// MTP BAF
-	class BAF_MTP_CUP
-	{
-		#include "loadouts\undef.hpp"
-		#include "loadouts\blu_gear.hpp"
-		#include "loadouts\BAF_MTP_CUP.hpp"
-	};
-	// Desert BAF
-	class BAF_DDPM_CUP 
-	{
-		#include "loadouts\undef.hpp"
-		#include "loadouts\blu_gear.hpp"
-		#include "loadouts\BAF_DDPM_CUP.hpp"
-	};
-	// Woodland BAF
-	class BAF_DPM_CUP
-	{
-		#include "loadouts\undef.hpp"
-		#include "loadouts\blu_gear.hpp"
-		#include "loadouts\BAF_DPM_CUP.hpp"
-	};
-
 	// Desert USMC
 	class USMC_MPD_RHS
 	{
@@ -71,22 +49,6 @@ class CfgCMFLoadouts {
 		#include "loadouts\undef.hpp"
 		#include "loadouts\ind_gear.hpp"
 		#include "loadouts\CDF_PARA_RHS.hpp"
-	};
-	
-	// Buneswher DES
-	class BUND_TROPE_CUP 
-	{
-		#include "loadouts\undef.hpp"
-		#include "loadouts\blu_gear.hpp"
-		#include "loadouts\BUND_TROPE_CUP.hpp"
-	};
-	
-	// Buneswher WD
-	class BUND_FLEK_CUP 
-	{
-		#include "loadouts\undef.hpp"
-		#include "loadouts\blu_gear.hpp"
-		#include "loadouts\BUND_FLEK_CUP.hpp"
 	};
 	
 	// NATO MTP/Sand
@@ -151,12 +113,5 @@ class CfgCMFLoadouts {
 		#include "loadouts\undef.hpp"
 		#include "loadouts\opf_gear.hpp"
 		#include "loadouts\RUS_MSV_RHS.hpp"
-	};
-	// RUS RATNIK Summer CUP 
-	class RATNIK_SUM_CUP 
-	{
-		#include "loadouts\undef.hpp"
-		#include "loadouts\opf_gear.hpp"
-		#include "loadouts\RATNIK_SUM_CUP.hpp"
 	};
 };
