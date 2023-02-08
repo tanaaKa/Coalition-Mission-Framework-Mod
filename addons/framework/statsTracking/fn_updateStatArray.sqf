@@ -7,7 +7,7 @@
 	Params:
 	* _Input  -> Inputted Integer/string, gets added to the individual players array on the server.
 	* _Array_Pos -> Where to place _Input in the individual players array on the server.
-	* _Player -> Physical player array that we're modifying.
+	* _Player_UID -> Physical player array that we're modifying.
 	
 	Optional Params:
 	* _isNewArray -> Boolean that tells us if we need to check if player needs an array.
