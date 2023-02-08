@@ -11,17 +11,17 @@
 
 waitUntil {not isNull player};
 
-shotsFired = 0;
+Shots_Fired = 0;
 
 if (typeOf player isEqualTo "potato_spectate_playableSpectator" || typeOf player isEqualTo "VirtualCurator_F" || (getText (missionConfigFile >> "cmfVers") isEqualTo "") || (getText (getMissionConfig "Header" >> "gameType") isEqualTo "CMFSPCL")) exitWith {};
 
 [0, 0, (getPlayerUID player), true] remoteExec ["CMF_fnc_updateStatArray", 2];
 
-player setVariable ["playerUID", (getPlayerUID player)];
+player setVariable ["Player_UID", (getPlayerUID player)];
 
 player addEventHandler ["FiredMan", {
 	params ["_unit", "_weapon", "_muzzle", "_mode", "_ammo", "_magazine", "_projectile", "_vehicle"];
-	shotsFired = shotsFired + 1;
+	[] call CMF_fnc_localShotsFired;
 }];
 
 switch true do
@@ -63,9 +63,9 @@ switch true do
 [
 	{!alive player},
 	{
-		params ["_playerUID"];
-		[shotsFired, 9, _playerUID] remoteExec ["CMF_fnc_updateStatArray", 2];
-		shotsFired = 0;
+		params ["_Player_UID"];
+		[Shots_Fired, 9, _Player_UID] remoteExec ["CMF_fnc_updateStatArray", 2];
+		Shots_Fired = 0;
 	}, 
 	[
 		(getPlayerUID player) 

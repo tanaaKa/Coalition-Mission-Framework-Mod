@@ -14,6 +14,6 @@ if (typeOf _unit isEqualTo "potato_spectate_spectator" || typeOf _unit isEqualTo
 
 [1, 10, _uid] call CMF_fnc_updateStatArray;
 
-if (!isNil "shotsFired") then {
-	[shotsFired, 9, _playerUID] remoteExec ["CMF_fnc_updateStatArray", 2];
+if (!isNil "Shots_Fired") then {
+	[Shots_Fired, 9, _Player_UID] remoteExec ["CMF_fnc_updateStatArray", 2];
 };
