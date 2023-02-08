@@ -110,7 +110,6 @@ class CfgFunctions
 			class statsInitLocal{postInit = 1;};
 			class statsInitServer{postInit = 1;};
 			class updateStatArray {};
-			class localShotsFired {};
 			class respawnStats {};
 			class entityKilled {};
 			class handleDisconnect {};

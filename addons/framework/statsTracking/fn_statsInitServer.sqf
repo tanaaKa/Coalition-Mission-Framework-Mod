@@ -2,7 +2,7 @@
 
 	Filename:  fn_statsInitServer.sqf 
 	Locality: Runs on server
-	Description: Adds mission event handlers and defines Players_Data_Array.
+	Description: Adds mission event handlers and defines playersDataArray.
 	
 	Params:
 	N/A
@@ -11,7 +11,7 @@
 
 if (!isServer || (getText (missionConfigFile >> "cmfVers") isEqualTo "") || (getText (getMissionConfig "Header" >> "gameType") isEqualTo "CMFSPCL")) exitWith {};
 
-Players_Data_Array = createHashMap;
+playersDataArray = createHashMap;
 
 addMissionEventHandler ["EntityRespawned", {
 	params ["_newEntity", "_oldEntity"];
