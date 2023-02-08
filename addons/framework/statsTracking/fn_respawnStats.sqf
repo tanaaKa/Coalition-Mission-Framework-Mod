@@ -12,21 +12,21 @@
 params ["_newEntity", "_oldEntity"];
 
 if (typeOf _newEntity isEqualTo "potato_spectate_spectator") exitWith {
-	_Player_Time_Alive = (CBA_missionTime - tnk_ssTime);
-	[_Player_Time_Alive, 2, (getPlayerUID _newEntity)] call CMF_fnc_updateStatArray;
+	_PlayerTimeAlive = (CBA_missionTime - tnk_ssTime);
+	[_PlayerTimeAlive, 2, (getPlayerUID _newEntity)] call CMF_fnc_updateStatArray;
 };
 
-_newEntity addEventHandler ["FiredMan", {
+player addEventHandler ["FiredMan", {
 	params ["_unit", "_weapon", "_muzzle", "_mode", "_ammo", "_magazine", "_projectile", "_vehicle"];
-	[] call CMF_fnc_localShotsFired;
+	shotsFired = shotsFired + 1;
 }];
 
 [
 	{!alive player},
 	{
-		params ["_Player_UID"];
-		[Shots_Fired, 9, _Player_UID] remoteExec ["CMF_fnc_updateStatArray", 2];
-		Shots_Fired = 0;
+		params ["_playerUID"];
+		[shotsFired, 9, _playerUID] remoteExec ["CMF_fnc_updateStatArray", 2];
+		shotsFired = 0;
 	}, 
 	[
 		(getPlayerUID player)
