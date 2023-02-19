@@ -38,12 +38,13 @@ private _unitRole = toLower _typeOf select [9];
 // Main driver for role assignment to hash map
 switch true do
 {
-
-	case (_unitRole in ["pilot","helicrew"]):{
+	case (_unitRole in ["pilot","helicrew"]):
+	{
 		["pilot_roles", 0, _localPlayerID] remoteExec ["CMF_fnc_updateStatArray", 2];
 	};
 	
-	case (_unitRole in ["vicd","vicl","vicc"]):{
+	case (_unitRole in ["vicd","vicl","vicc"]):
+	{
 		["tanker_roles", 0, _localPlayerID] remoteExec ["CMF_fnc_updateStatArray", 2];
 	};
 
@@ -51,19 +52,23 @@ switch true do
 		["inf_specialty_roles", 0, _localPlayerID] remoteExec ["CMF_fnc_updateStatArray", 2];
 	};
 	
-	case (_unitRole isEqualTo "ftl"):{
+	case (_unitRole isEqualTo "ftl"):
+	{
 		["inf_ftl_roles", 0, _localPlayerID] remoteExec ["CMF_fnc_updateStatArray", 2];
 	};
 	
-	case (_unitRole in ["plm","sm"]):{
+	case (_unitRole in ["plm","sm"]):
+	{
 		["inf_medical_roles", 0, _localPlayerID] remoteExec ["CMF_fnc_updateStatArray", 2];
 	};
 	
-	case (_unitRole isEqualTo "ftl"):{
+	case (_unitRole isEqualTo "ftl"):
+	{
 		["inf_sl_roles", 0, _localPlayerID] remoteExec ["CMF_fnc_updateStatArray", 2];
 	};
 
-	case (_unitRole in ["plt","coy"]):{
+	case (_unitRole in ["plt","coy"]):
+	{
 		["inf_pl_roles", 0, _localPlayerID] remoteExec ["CMF_fnc_updateStatArray", 2];
 	};
 
