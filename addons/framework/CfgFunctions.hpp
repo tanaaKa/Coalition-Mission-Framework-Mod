@@ -107,8 +107,8 @@ class CfgFunctions
 		class statsTracking
 		{
 			file = "\x\cmf\addons\framework\statsTracking";
-			class statsInitLocal{postInit = 1;};
-			class statsInitServer{postInit = 1;};
+			class statsInitLocal{};
+			class statsInitServer{};
 			class updateStatArray {};
 			class respawnStats {};
 			class entityKilled {};

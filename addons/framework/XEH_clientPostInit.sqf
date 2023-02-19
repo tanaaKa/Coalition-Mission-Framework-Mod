@@ -29,10 +29,10 @@ diag_log "[CMF]: Starting CMF PostInit Client";
 	disableRemoteSensors true;
 
 	// Client only scripts and event handlers
-	call CMF_fnc_localEHs;
-	call CMF_fnc_fdsInit;
-	//call CMF_fnc_factoryaction; -- Pending rewrite
-	call CMF_fnc_limitVD;
+	[] spawn CMF_fnc_localEHs;
+	[] spawn CMF_fnc_fdsInit;
+	//[] spawn CMF_fnc_factoryaction; -- Pending rewrite
+	[] spawn CMF_fnc_limitVD;
 
 	// Medical system choice for mission maker
 	waitUntil {!isNil "medicalLoaded"};
@@ -48,8 +48,8 @@ diag_log "[CMF]: Starting CMF PostInit Client";
 		// Add a crash-during-load check for the first ten minutes of safe start
 		if (serverTime < 600) exitWith 
 		{
-			call CMF_fnc_addArsenal;
-			call JST_fnc_addSafeStartHeal;
+			[] spawn CMF_fnc_addArsenal;
+			[] spawn JST_fnc_addSafeStartHeal;
 			player enableStamina false;
 		};
 
@@ -61,8 +61,8 @@ diag_log "[CMF]: Starting CMF PostInit Client";
 			endMission "LOSER";
 		};
 
-		call CMF_fnc_addArsenal;
-		call JST_fnc_addSafeStartHeal;
+		[] spawn CMF_fnc_addArsenal;
+		[] spawn JST_fnc_addSafeStartHeal;
 		player enableStamina false;
 	} else {
 		player enableStamina true;
@@ -82,15 +82,18 @@ diag_log "[CMF]: Starting CMF PostInit Client";
 	//player enableSimulation true;
 	[1,["","PLAIN"]] remoteExec ["cutText", player];
 	
-	call CMF_fnc_AddLoadoutModule;
+	[] spawn CMF_fnc_AddLoadoutModule;
 	// Welcome message
-	call CMF_fnc_initWelcome;
+	[] spawn CMF_fnc_initWelcome;
 
 	// Mark player as connected in this mission
 	profileNamespace setVariable ["cmf_hasPlayed", _missionName];
+
+	// Begin player stat tracking
+	[] spawn CMF_fnc_statsInitLocal;
 	
-	// Initialize stamina system - MUST BE CALLED LAST due to scheduled environment
-	call CMF_fnc_staminaHandler;
+	// Initialize stamina system
+	[] spawn CMF_fnc_staminaHandler;
 };
 
 diag_log "[CMF]: Completed CMF PostInit Client";

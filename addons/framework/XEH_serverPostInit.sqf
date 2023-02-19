@@ -2,14 +2,9 @@
 _version = getText (missionConfigFile >> "cmfVers");
 if (_version isEqualTo "") exitWith {};
 
-[] spawn {
-	//waitUntil {!isNil "initRan"};
-
-	// Server-only scripts and event handlers	
-	call CMF_fnc_readyUp;
-	call CMF_fnc_garbageCleanup;
-	//call CMF_fnc_sessionLog;
-	call CMF_fnc_patchInit;
-	call CMF_fnc_webhookBrief;
-	call CMF_fnc_serverEHs;
-};
+[] spawn CMF_fnc_readyUp;
+[] spawn CMF_fnc_garbageCleanup;
+[] spawn CMF_fnc_patchInit;
+[] spawn CMF_fnc_webhookBrief;
+[] spawn CMF_fnc_serverEHs;
+[] spawn CMF_fnc_statsInitServer;
