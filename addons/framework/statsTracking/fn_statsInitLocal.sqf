@@ -33,8 +33,7 @@ player addEventHandler ["FiredMan", {
 	shotsFired = shotsFired + 1;
 }];
 
-private _typeOf = typeOf player;  
-private _unitRole = toLower _typeOf select [9]; 
+private _unitRole = toLower (typeOf player) select [9]; 
 // Main driver for role assignment to hash map
 switch true do
 {
