@@ -27,13 +27,6 @@ if (!isServer
 	[_playerTimeAlive, 2, (getPlayerUID _x)] remoteExec ["CMF_fnc_updateStatArray", 2];
 } forEach allPlayers;
 
-// Get game type
-if (getText (getMissionConfig "Header" >> "gameType") isEqualTo "CMFTVT") then {
-	_tvt = true;
-} else {
-	_tvt = false;
-}
-
 // Connect to database
 "extDB3" callExtension "9:ADD_DATABASE:coalition";
 "extDB3" callExtension "9:ADD_DATABASE_PROTOCOL:coalition:SQL:SQL";
@@ -89,17 +82,19 @@ if (getText (getMissionConfig "Header" >> "gameType") isEqualTo "CMFTVT") then {
 	// Update total time alive
 	"extDB3" callExtension format ["0:SQL:UPDATE a3stats SET time_alive = time_alive + %1 WHERE steamid = %2",_timeAlive,_playerUID];
 
+	// Update shot count
+	if (_shotsFired > 0) then {
+		"extDB3" callExtension format ["0:SQL:UPDATE a3stats SET shots_fired = shots_fired + %1 WHERE steamid = %2",_shotsFired,_playerUID];
+	};
+	
 	// Update stats based on game mode, if any
-	if (_tvt) then {
-		if (_tvtKills > 0 || _tvtDeaths > 0) then {
-			"extDB3" callExtension format ["0:SQL:UPDATE a3stats SET tvt_kills = tvt_kills + %1 WHERE steamid = %2",_tvtKills,_playerUID];
-			"extDB3" callExtension format ["0:SQL:UPDATE a3stats SET tvt_deaths = tvt_deaths + %1 WHERE steamid = %2",_tvtDeaths,_playerUID];
-		};
-	} else {
-		if (_coopKills > 0 || _coopDeaths > 0) then {
-			"extDB3" callExtension format ["0:SQL:UPDATE a3stats SET coop_kills = coop_kills + %1 WHERE steamid = %2",_coopKills,_playerUID];
-			"extDB3" callExtension format ["0:SQL:UPDATE a3stats SET coop_deaths = coop_deaths + %1 WHERE steamid = %2",_coopDeaths,_playerUID];
-		};
+	if (_tvtKills > 0 || _tvtDeaths > 0) then {
+		"extDB3" callExtension format ["0:SQL:UPDATE a3stats SET tvt_kills = tvt_kills + %1 WHERE steamid = %2",_tvtKills,_playerUID];
+		"extDB3" callExtension format ["0:SQL:UPDATE a3stats SET tvt_deaths = tvt_deaths + %1 WHERE steamid = %2",_tvtDeaths,_playerUID];
+	};
+	if (_coopKills > 0 || _coopDeaths > 0) then {
+		"extDB3" callExtension format ["0:SQL:UPDATE a3stats SET coop_kills = coop_kills + %1 WHERE steamid = %2",_coopKills,_playerUID];
+		"extDB3" callExtension format ["0:SQL:UPDATE a3stats SET coop_deaths = coop_deaths + %1 WHERE steamid = %2",_coopDeaths,_playerUID];
 	};
 
 	// Update friendly fires, if any

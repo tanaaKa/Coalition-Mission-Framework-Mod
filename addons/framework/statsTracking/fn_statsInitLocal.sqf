@@ -15,6 +15,7 @@
 if (typeOf player isEqualTo "potato_spectate_playableSpectator" || 
 	typeOf player isEqualTo "VirtualCurator_F" || 
 	(getText (missionConfigFile >> "cmfVers") isEqualTo "") || 
+	!hasInterface || 
 	(getText (getMissionConfig "Header" >> "gameType") isEqualTo "CMFSPCL")) exitWith {};
 
 // Initialize new stat tracking hash map for player 
@@ -23,7 +24,7 @@ _localPlayerID = getPlayerUID player;
 
 // Set player UID via variable
 // This is needed because dead bodies don't carry player IDs
-player setVariable ["playerUID", _localPlayerID];
+player setVariable ["playerUID", _localPlayerID, true];
 systemChat format ["Local player id: %1", _localPlayerID];
 
 // Shot fired EH
