@@ -7,6 +7,9 @@
 	Params:
 	N/A
 
+	Usage:
+	[] spawn CMF_fnc_handleMissionEnd;
+
 */
 
 if (!isServer 
@@ -24,8 +27,20 @@ if (!isServer
 	[_playerTimeAlive, 2, (getPlayerUID _x)] remoteExec ["CMF_fnc_updateStatArray", 2];
 } forEach allPlayers;
 
+// Get game type
+if (getText (getMissionConfig "Header" >> "gameType") isEqualTo "CMFTVT") then {
+	_tvt = true;
+} else {
+	_tvt = false;
+}
+
+// Connect to database
+"extDB3" callExtension "9:ADD_DATABASE:coalition";
+"extDB3" callExtension "9:ADD_DATABASE_PROTOCOL:coalition:SQL:SQL";
+
+// Update database values
 {	
-	
+	// Assign variables from hashmap
 	_playerUID				= _x;// Str | Player Steam ID
 	_roleStatus				= _y select 0;// Str | String of type of role selected
 	_missionsAttended 		= _y select 1;// Int | Will always be 1
@@ -38,12 +53,8 @@ if (!isServer
 	_civsKilled				= _y select 8;// Int | This is how many non-potato based AI a player has killed
 	_shotsFired				= _y select 9;// Int | amount of shots fired by player
 	_playerLeftMidMission	= _y select 10;// Int | 1 == true | 0 == false	
-
-	//----------------------- DATABASE CODE HERE -------------------------\\
-
-	"extDB3" callExtension "9:ADD_DATABASE:coalition";
-	"extDB3" callExtension "9:ADD_DATABASE_PROTOCOL:coalition:SQL:SQL";
 	
+	// Update specific sql entries
 	switch _roleStatus do
 	{
 		case "inf_pl_roles":{
@@ -71,4 +82,40 @@ if (!isServer
 			"extDB3" callExtension format ["0:SQL:UPDATE a3rolestats SET tanker_roles = tanker_roles + 1 WHERE steamid = %1",_playerUID];
 		};
 	};
+
+	// Add mission attended
+	"extDB3" callExtension format ["0:SQL:UPDATE a3stats SET missions_attended = missions_attended + 1 WHERE steamid = %1",_playerUID];
+
+	// Update total time alive
+	"extDB3" callExtension format ["0:SQL:UPDATE a3stats SET time_alive = time_alive + %1 WHERE steamid = %2",_timeAlive,_playerUID];
+
+	// Update stats based on game mode, if any
+	if (_tvt) then {
+		if (_tvtKills > 0 || _tvtDeaths > 0) then {
+			"extDB3" callExtension format ["0:SQL:UPDATE a3stats SET tvt_kills = tvt_kills + %1 WHERE steamid = %2",_tvtKills,_playerUID];
+			"extDB3" callExtension format ["0:SQL:UPDATE a3stats SET tvt_deaths = tvt_deaths + %1 WHERE steamid = %2",_tvtDeaths,_playerUID];
+		};
+	} else {
+		if (_coopKills > 0 || _coopDeaths > 0) then {
+			"extDB3" callExtension format ["0:SQL:UPDATE a3stats SET coop_kills = coop_kills + %1 WHERE steamid = %2",_coopKills,_playerUID];
+			"extDB3" callExtension format ["0:SQL:UPDATE a3stats SET coop_deaths = coop_deaths + %1 WHERE steamid = %2",_coopDeaths,_playerUID];
+		};
+	};
+
+	// Update friendly fires, if any
+	if (_friendlyFireEvents > 0) then {
+		"extDB3" callExtension format ["0:SQL:UPDATE a3stats SET ff_events = ff_events + %1 WHERE steamid = %2",_friendlyFireEvents,_playerUID];
+	};
+
+	// Update civs killed, if any
+	if (_civsKilled > 0) then {
+		"extDB3" callExtension format ["0:SQL:UPDATE a3stats SET civs_killed = civs_killed + %1 WHERE steamid = %2",_civsKilled,_playerUID];
+	};
+
+	// Update leave status, if left mission
+	if (_playerLeftMidMission isEqualTo 1) then {
+		"extDB3" callExtension format ["0:SQL:UPDATE a3stats SET leaves = leaves + %1 WHERE steamid = %2",_playerLeftMidMission,_playerUID];
+	};
 } forEach playersDataArray;
+
+"[CMF] Stats finished updating" remoteExec ["systemChat", 0];
