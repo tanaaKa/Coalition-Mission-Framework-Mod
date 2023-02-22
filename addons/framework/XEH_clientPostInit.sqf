@@ -6,6 +6,11 @@ diag_log "[CMF]: Starting CMF PostInit Client";
 [] spawn {
 	// Wait until the player inits
 	waitUntil {!isNull player && time > 0};
+
+	// Verify player is registered - MP check to avoid issues in editor
+	if (isMultiplayer && dbConnected) then {
+		[player] call CMF_fnc_verifyRegistered;
+	};
 	
 	// Grab mission name for use later
 	private _missionName = getText (missionConfigFile >> "MissionSQM" >> "Mission" >> "Intel" >> "briefingName");
@@ -29,10 +34,10 @@ diag_log "[CMF]: Starting CMF PostInit Client";
 	disableRemoteSensors true;
 
 	// Client only scripts and event handlers
-	[] spawn CMF_fnc_localEHs;
-	[] spawn CMF_fnc_fdsInit;
+	call CMF_fnc_localEHs;
+	call CMF_fnc_fdsInit;
 	//[] spawn CMF_fnc_factoryaction; -- Pending rewrite
-	[] spawn CMF_fnc_limitVD;
+	call CMF_fnc_limitVD;
 
 	// Medical system choice for mission maker
 	waitUntil {!isNil "medicalLoaded"};
@@ -48,21 +53,16 @@ diag_log "[CMF]: Starting CMF PostInit Client";
 		// Add a crash-during-load check for the first ten minutes of safe start
 		if (serverTime < 600) exitWith 
 		{
-			[] spawn CMF_fnc_addArsenal;
-			[] spawn JST_fnc_addSafeStartHeal;
+			call CMF_fnc_addArsenal;
+			call JST_fnc_addSafeStartHeal;
 			player enableStamina false;
 		};
 
 		// If player is a JIP and has not connected prior (aka the player did not crash), kick him back to slotting
-		if (groupId (group player) isEqualTo "BLU JIP" || groupId (group player) isEqualTo "OPF JIP" || groupId (group player) isEqualTo "IND JIP" && (profileNamespace getVariable "cmf_hasPlayed") isNotEqualTo _missionName) exitWith 
-		{
-			[1,["JIPPING is not enabled during safe start\n\nGrab a regular slot in the slotting screen","BLACK"]] remoteExec ["cutText", player];
-			uiSleep 4;
-			endMission "LOSER";
-		};
+		[_missionName] call CMF_fnc_JIPCheck;
 
-		[] spawn CMF_fnc_addArsenal;
-		[] spawn JST_fnc_addSafeStartHeal;
+		call CMF_fnc_addArsenal;
+		call JST_fnc_addSafeStartHeal;
 		player enableStamina false;
 	} else {
 		player enableStamina true;
@@ -82,18 +82,18 @@ diag_log "[CMF]: Starting CMF PostInit Client";
 	//player enableSimulation true;
 	[1,["","PLAIN"]] remoteExec ["cutText", player];
 	
-	[] spawn CMF_fnc_AddLoadoutModule;
+	call CMF_fnc_AddLoadoutModule;
 	// Welcome message
-	[] spawn CMF_fnc_initWelcome;
+	call CMF_fnc_initWelcome;
 
 	// Mark player as connected in this mission
 	profileNamespace setVariable ["cmf_hasPlayed", _missionName];
 
 	// Begin player stat tracking
-	[] spawn CMF_fnc_statsInitLocal;
+	call CMF_fnc_statsInitLocal;
 	
-	// Initialize stamina system
-	[] spawn CMF_fnc_staminaHandler;
+	// Initialize stamina system - must be last due to scheduler
+	call CMF_fnc_staminaHandler;
 };
 
 diag_log "[CMF]: Completed CMF PostInit Client";
