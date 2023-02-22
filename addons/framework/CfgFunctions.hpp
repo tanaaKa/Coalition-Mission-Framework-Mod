@@ -36,6 +36,7 @@ class CfgFunctions
 			class rpEnd{};
 			class rpStart{};
 			class playerGroupNames{};
+			class aarDB{};
 		};
 		class patches
 		{
@@ -97,6 +98,7 @@ class CfgFunctions
 			file = "\x\cmf\addons\framework\misc\welcome"; 
 			class initWelcome{};
 			class initJIP{};
+			class JIPCheck{};
 		};
 		class stamina
 		{
@@ -109,11 +111,14 @@ class CfgFunctions
 			file = "\x\cmf\addons\framework\statsTracking";
 			class statsInitLocal{};
 			class statsInitServer{};
-			class updateStatArray {};
-			class respawnStats {};
-			class entityKilled {};
-			class handleDisconnect {};
-			class handleMissionEnd {};
+			class updateStatArray{};
+			class respawnStats{};
+			class entityKilled{};
+			class handleDisconnect{};
+			class handleMissionEnd{};
+			class verifyRegistered{};
+			class initDB{};
+			class kickToLobby{};
 		};
 		/*
 		// TODO: Implement these
