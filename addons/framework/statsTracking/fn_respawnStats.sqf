@@ -16,6 +16,8 @@ if (typeOf _newEntity isEqualTo "potato_spectate_spectator") exitWith {
 	[_PlayerTimeAlive, 2, (getPlayerUID _newEntity)] call CMF_fnc_updateStatArray;
 };
 
+player setVariable ["playerUID", (getPlayerUID _newEntity), true];
+
 player addEventHandler ["FiredMan", {
 	params ["_unit", "_weapon", "_muzzle", "_mode", "_ammo", "_magazine", "_projectile", "_vehicle"];
 	shotsFired = shotsFired + 1;
