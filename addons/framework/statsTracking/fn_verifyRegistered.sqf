@@ -21,7 +21,7 @@ private _uid = getPlayerUID _unit;
 
 // Query db
 _query = "extDB3" callExtension format ["0:SQL:SELECT * FROM users WHERE steamid = %1",_uid];
-[format ["_query: %1",_query]] remoteExec ["systemChat", 0];
+//[format ["_query: %1",_query]] remoteExec ["systemChat", 0];
 
 // Boot if not registered
 if (_query isEqualTo _notRegistered) then {

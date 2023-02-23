@@ -26,12 +26,9 @@ try {
 		diag_log "[CMF] STATS - fn_initDB - connected to coalition database";
 
 		"[CMF] Connected to COALITION database" remoteExec ["systemChat", 0];
-
-		dbConnected = true; publicVariable "dbConnected";
 	};
 } catch {
 	"[CMF] Could not connect to COALITION database" remoteExec ["systemChat", 0];
-	dbConnected = false; publicVariable "dbConnected";
 }
 
 

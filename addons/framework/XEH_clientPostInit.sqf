@@ -8,8 +8,8 @@ diag_log "[CMF]: Starting CMF PostInit Client";
 	waitUntil {!isNull player && time > 0};
 
 	// Verify player is registered - MP check to avoid issues in editor
-	if (isMultiplayer && dbConnected) then {
-		[player] call CMF_fnc_verifyRegistered;
+	if (isMultiplayer) then {
+		[player] remoteExec ["CMF_fnc_verifyRegistered", 2];
 	};
 	
 	// Grab mission name for use later
