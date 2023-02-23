@@ -116,6 +116,7 @@ class CfgFunctions
 			class entityKilled{};
 			class handleDisconnect{};
 			class handleMissionEnd{};
+			class handleMissionEndLocal{};
 			class verifyRegistered{};
 			class initDB{};
 			class kickToLobby{};
