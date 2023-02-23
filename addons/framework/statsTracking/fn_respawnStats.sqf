@@ -12,8 +12,8 @@
 params ["_newEntity", "_oldEntity"];
 
 if (typeOf _newEntity isEqualTo "potato_spectate_spectator") exitWith {
-	_PlayerTimeAlive = (CBA_missionTime - tnk_ssTime);
-	[_PlayerTimeAlive, 2, (getPlayerUID _newEntity)] call CMF_fnc_updateStatArray;
+	_playerTimeAlive = (serverTime - missionStartTime);
+	[_playerTimeAlive, 2, (getPlayerUID _newEntity)] call CMF_fnc_updateStatArray;
 };
 
 player setVariable ["playerUID", (getPlayerUID _newEntity), true];

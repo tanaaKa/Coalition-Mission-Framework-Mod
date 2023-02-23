@@ -28,3 +28,6 @@ addMissionEventHandler ["EntityKilled",{
 	params ["_killed", "_killer", "_instigator"];
 	[_killed, _killer, _instigator] call CMF_fnc_entityKilled;
 }];
+
+missionStartTime = serverTime;
+publicVariable "missionStartTime";
