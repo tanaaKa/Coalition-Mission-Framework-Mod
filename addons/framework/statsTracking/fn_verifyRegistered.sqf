@@ -23,13 +23,17 @@ private _uid = getPlayerUID _unit;
 _query = "extDB3" callExtension format ["0:SQL:SELECT * FROM users WHERE steamid = %1",_uid];
 //[format ["_query: %1",_query]] remoteExec ["systemChat", 0];
 
-// Boot if not registered
-if (_query isEqualTo _notRegistered) then {
-	_kickMessage = "You must register at discord.gg/armacoalition to play here!";
-	[_kickMessage] remoteExec ["CMF_fnc_kickToLobby",_unit];
+switch (_query) do {
+	// Boot to lobby if not registered
+	case _notRegistered: 
+	{
+		_kickMessage = "You must register at discord.gg/armacoalition to play here!";
+		[_kickMessage,_unit] remoteExec ["CMF_fnc_kickToLobby",_unit];
 
-	[format ["%1: You must register at discord.gg/armacoalition to play here!",name _unit]] remoteExec ["systemChat", 0];
-} else {
-	"[CMF] Registration validated. Welcome (back) to COALITION." remoteExec ["systemChat", _unit];
-}
-
+		[format ["%1: You must register at discord.gg/armacoalition to play here!",name _unit]] remoteExec ["systemChat", 0];
+	};
+	default 
+	{
+		"[CMF] Registration validated. Welcome (back) to COALITION." remoteExec ["systemChat", _unit];
+	}
+};
