@@ -14,8 +14,8 @@
  *
  * Public: No
 */
-params["_kickMessage"];
+params["_kickMessage","_unit"];
 
-[1,[_kickMessage,"BLACK"]] remoteExec ["cutText", player];
+[1,[_kickMessage,"BLACK"]] remoteExec ["cutText", _unit];
 uiSleep 5;
 endMission "LOSER";
