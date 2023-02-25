@@ -5,10 +5,10 @@ diag_log "[CMF]: Starting CMF PostInit Client";
 
 [] spawn {
 	// Wait until the player inits
-	waitUntil {!isNull player && time > 0};
+	waitUntil {!isNull player && time > 0 && !isNil dbConnected};
 
 	// Verify player is registered - MP check to avoid issues in editor
-	if (isMultiplayer) then {
+	if (isMultiplayer && dbConnected) then {
 		[player] remoteExec ["CMF_fnc_verifyRegistered", 2];
 	};
 	
