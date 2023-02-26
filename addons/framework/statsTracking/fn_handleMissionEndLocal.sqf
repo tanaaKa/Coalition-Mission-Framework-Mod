@@ -14,9 +14,9 @@
 if (
 	!hasInterface || 
 	isServer || 
-	typeOf _x isEqualTo "potato_spectate_spectator" || 
-	typeOf _x isEqualTo "potato_spectate_playableSpectator" || 
-	typeOf _x isEqualTo "VirtualCurator_F"
+	typeOf player isEqualTo "potato_spectate_spectator" || 
+	typeOf player isEqualTo "potato_spectate_playableSpectator" || 
+	typeOf player isEqualTo "VirtualCurator_F"
 ) exitWith {};
 
 if (!isNil "shotsFired") then {
