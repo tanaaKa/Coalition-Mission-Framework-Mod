@@ -11,7 +11,13 @@
 
 params ["_newEntity", "_oldEntity"];
 
-if (typeOf _newEntity isEqualTo "potato_spectate_spectator") exitWith {
+// Just in case the function "ace_spectator_fnc_players" doesn't return anything
+_aceSpectatorArray = [];
+
+// Get all players in ace spectator as a array
+_aceSpectatorArray = [] call ace_spectator_fnc_players;
+
+if (typeOf _newEntity isEqualTo "potato_spectate_spectator" || player in _aceSpectatorArray) exitWith {
 	_playerTimeAlive = (serverTime - missionStartTime);
 	[_playerTimeAlive, 2, (getPlayerUID _newEntity)] call CMF_fnc_updateStatArray;
 };
