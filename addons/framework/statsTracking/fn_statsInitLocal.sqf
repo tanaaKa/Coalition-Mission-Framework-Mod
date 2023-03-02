@@ -11,13 +11,20 @@
 	[] spawn CMF_fnc_statsInitLocal;
 */
 
+// Just in case the function "ace_spectator_fnc_players" doesn't return anything
+_aceSpectatorArray = [];
+
+// Get all players in ace spectator as a array
+_aceSpectatorArray = [] call ace_spectator_fnc_players;
+
 // Exit if player is spectating or not a CMF mission
 if (typeOf player isEqualTo "potato_spectate_playableSpectator" || 
 	typeOf player isEqualTo "VirtualCurator_F" ||
 	!hasInterface || 
 	isServer || 
 	(getText (missionConfigFile >> "cmfVers") isEqualTo "") || 
-	(getText (getMissionConfig "Header" >> "gameType") isEqualTo "CMFSPCL")) exitWith {};
+	(getText (getMissionConfig "Header" >> "gameType") isEqualTo "CMFSPCL") ||
+	_newEntity in _aceSpectatorArray) exitWith {};
 
 // Initialize new stat tracking hash map for player 
 _localPlayerID = getPlayerUID player;

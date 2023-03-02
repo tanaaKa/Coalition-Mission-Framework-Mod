@@ -113,6 +113,7 @@ class CfgFunctions
 			class statsInitServer{};
 			class updateStatArray{};
 			class respawnStats{};
+			class respawnStatsLocal{};
 			class entityKilled{};
 			class handleDisconnect{};
 			class handleMissionEnd{};

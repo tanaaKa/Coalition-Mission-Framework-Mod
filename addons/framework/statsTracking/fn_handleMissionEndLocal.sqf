@@ -12,6 +12,9 @@
 
 */
 
+// Sleep so Player can boot into ACE Spectator and subsequently actually registers in the array that "ace_spectator_fnc_players" returns
+uiSleep 0.15;
+
 // Just in case the function "ace_spectator_fnc_players" doesn't return anything
 _aceSpectatorArray = [];
 
