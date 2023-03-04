@@ -18,6 +18,11 @@ if (
 	|| (getText (getMissionConfig "Header" >> "gameType") isEqualTo "CMFSPCL")
 ) exitWith {};
 
+if !(dbConnected) exitWith {
+	diag_log "[CMF] STATS - fn_handleMissionEnd - Skiiping stat reporting due to dbConnected = false";
+	"[CMF] Stat recording skipped since the DB is not connected" remoteExec ["systemChat", 0];
+};
+
 diag_log "[CMF] STATS - fn_handleMissionEnd - Beginning stat tracking reporting due to mission end";
 
 // Get still alive player data
