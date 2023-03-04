@@ -15,7 +15,7 @@ playersDataArray = createHashMap;
 
 addMissionEventHandler ["EntityRespawned", {
 	params ["_newEntity", "_oldEntity"];
-	[_unit] call CMF_fnc_respawnStats;
+	[_newEntity] spawn CMF_fnc_respawnStats;
 }];
 
 addMissionEventHandler ["HandleDisconnect", {
