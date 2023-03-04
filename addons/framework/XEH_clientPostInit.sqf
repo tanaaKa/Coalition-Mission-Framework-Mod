@@ -5,7 +5,7 @@ diag_log "[CMF]: Starting CMF PostInit Client";
 
 [] spawn {
 	// Wait until the player inits
-	waitUntil {!isNull player && time > 0 && !isNil dbConnected};
+	waitUntil {!isNull player && time > 0 && !isNil "dbConnected"};
 
 	// Verify player is registered - MP check to avoid issues in editor
 	if (isMultiplayer && dbConnected) then {
@@ -24,7 +24,7 @@ diag_log "[CMF]: Starting CMF PostInit Client";
 	// Disable player while initializing
 	//player enableSimulation false;
 
-	// Disable random animals
+	// Disable random animalsd
 	enableEnvironment [false, true];
 
 	// Set eye aperture setting to auto
