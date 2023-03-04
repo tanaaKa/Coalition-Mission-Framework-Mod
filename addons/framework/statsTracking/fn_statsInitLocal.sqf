@@ -24,7 +24,7 @@ if (typeOf player isEqualTo "potato_spectate_playableSpectator" ||
 	isServer || 
 	(getText (missionConfigFile >> "cmfVers") isEqualTo "") || 
 	(getText (getMissionConfig "Header" >> "gameType") isEqualTo "CMFSPCL") ||
-	_newEntity in _aceSpectatorArray) exitWith {};
+	player in _aceSpectatorArray) exitWith {};
 
 // Initialize new stat tracking hash map for player 
 _localPlayerID = getPlayerUID player;
