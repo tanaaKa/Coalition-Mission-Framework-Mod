@@ -10,7 +10,7 @@ class CfgWeapons {
 	
 	class ACRE_PRC77: ACRE_BaseRadio {
 		class ItemInfo: CBA_MiscItem_ItemInfo {
-            mass = 10;
+            mass = 1;
         }; 
 	};
 };
