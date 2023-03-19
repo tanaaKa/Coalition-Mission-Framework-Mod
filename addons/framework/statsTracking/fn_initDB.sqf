@@ -18,7 +18,7 @@
 try {
 	_connect = "extDB3" callExtension "9:ADD_DATABASE:coalition";
 	//[format ["_connect: %1",_connect]] remoteExec ["systemChat", 0];
-	if (_connect isEqualTo "[0,""Already Connected to Database""]") exitWith{"[CMF] Connected to COALITION database" remoteExec ["systemChat", 0];};
+	if (_connect isEqualTo "[0,""Already Connected to Database""]") exitWith{"[CMF] Connected to COALITION database" remoteExec ["systemChat", 0]; dbConnected = true; publicVariable "dbConnected";};
 	if (_connect isNotEqualTo "[1]") then {
 		throw "Can't connect to the COALITION database";
 	} else {
