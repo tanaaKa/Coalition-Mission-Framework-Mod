@@ -241,9 +241,10 @@ JST_fnc_playersGoHot =
 			};
 		} forEach ["vehfac1", "vehfac2", "vehfac3", "airfac1", "airfac2", "airfac3"];
 	}; */
-	// Reset markers on ready up
-	// Add check here to determine if markers are on first
-	//["potato_adminMenu_resetMarkers", [player], player] call CBA_fnc_targetEvent;
+	// Reset markers on ready up if enabled
+	if (potato_markers_groupAndUnitEnabled) then {
+		["potato_adminMenu_resetMarkers", [player], player] call CBA_fnc_targetEvent;
+	};
 };
 
 // Poll for admins at intervals, in case changes hands ||| SERVER
