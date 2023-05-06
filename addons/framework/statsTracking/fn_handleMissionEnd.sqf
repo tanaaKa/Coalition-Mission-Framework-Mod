@@ -19,7 +19,7 @@ if (
 ) exitWith {};
 
 if !(dbConnected) exitWith {
-	diag_log "[CMF] STATS - fn_handleMissionEnd - Skiiping stat reporting due to dbConnected = false";
+	diag_log "[CMF] STATS - fn_handleMissionEnd - Skipping stat reporting due to dbConnected = false";
 	"[CMF] Stat recording skipped since the DB is not connected" remoteExec ["systemChat", 0];
 };
 

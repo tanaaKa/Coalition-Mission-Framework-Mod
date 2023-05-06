@@ -82,7 +82,6 @@ diag_log "[CMF]: Starting CMF PostInit Client";
 	//player enableSimulation true;
 	[1,["","PLAIN"]] remoteExec ["cutText", player];
 	
-	call CMF_fnc_AddLoadoutModule;
 	// Welcome message
 	call CMF_fnc_initWelcome;
 

@@ -106,7 +106,7 @@ JST_fnc_handleCurrentLeaders =
 			missionNameSpace setVariable [(_x + "for_ready"), true];
 		};
 		
-		[_leader] remoteExec ["CMF_fnc_AddSetGearAction", _leader];
+		[_leader] remoteExec ["CMF_fnc_addSetGearAction", _leader];
 	} forEach ["blu", "ind", "op"];
 	JST_leaders
 };

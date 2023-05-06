@@ -122,6 +122,15 @@ class CfgFunctions
 			class initDB{};
 			class kickToLobby{};
 		};
+		class loadouts
+		{
+			file = "\x\cmf\addons\framework\loadouts\functions";
+			class loadoutInit{preinit = 1;};
+			class addLoadoutModule{};
+			class addSetGearAction{};
+			class leaderSetGear{};
+			class updateMiniArsenal{};
+		};
 		/*
 		// TODO: Implement these
 		class GameModeCON
