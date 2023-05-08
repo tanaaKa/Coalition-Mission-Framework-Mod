@@ -126,6 +126,7 @@ class CfgFunctions
 		{
 			file = "\x\cmf\addons\framework\loadouts\functions";
 			class loadoutInit{preinit = 1;};
+			class setLoadout{};
 			class addLoadoutModule{};
 			class addSetGearAction{};
 			class leaderSetGear{};

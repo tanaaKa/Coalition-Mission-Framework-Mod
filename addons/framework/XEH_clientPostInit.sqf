@@ -81,6 +81,9 @@ diag_log "[CMF]: Starting CMF PostInit Client";
 	// Enable player
 	//player enableSimulation true;
 	[1,["","PLAIN"]] remoteExec ["cutText", player];
+
+	// Zeus CMF Loadouts module
+	call CMF_fnc_addLoadoutModule;
 	
 	// Welcome message
 	call CMF_fnc_initWelcome;

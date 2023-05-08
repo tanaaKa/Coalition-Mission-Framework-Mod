@@ -1,4 +1,5 @@
 params["_side"];
+//systemChat format ["_Side: %1", _side];
 
 switch (toLower _side) do {
 	case "west":
@@ -7,6 +8,7 @@ switch (toLower _side) do {
 			[_x] call potato_assignGear_fnc_assignGearMan; 
 			call CMF_fnc_updateMiniArsenal;
 		} forEach units WEST;
+		//systemChat "Side west";
 	};
 	case "east":
 	{
@@ -14,6 +16,7 @@ switch (toLower _side) do {
 			[_x] call potato_assignGear_fnc_assignGearMan; 
 			call CMF_fnc_updateMiniArsenal;
 		} forEach units EAST; 
+		//systemChat "Side east";
 	};
 	case "independent":
 	{
@@ -21,6 +24,7 @@ switch (toLower _side) do {
 			[_x] call potato_assignGear_fnc_assignGearMan; 
 			call CMF_fnc_updateMiniArsenal;
 		} forEach units INDEPENDENT;
+		//systemChat "Side ind";
 	};
 
 	default 
