@@ -70,7 +70,7 @@ switch true do
 		["inf_medical_roles", 0, _localPlayerID] remoteExec ["CMF_fnc_updateStatArray", 2];
 	};
 	
-	case (_unitRole isEqualTo "ftl"):
+	case (_unitRole isEqualTo "sl"):
 	{
 		["inf_sl_roles", 0, _localPlayerID] remoteExec ["CMF_fnc_updateStatArray", 2];
 	};
