@@ -7,10 +7,10 @@
 
 // GEAR
 #define BASE_MEDICAL "ACE_elasticBandage:2","ACE_packingBandage:2","ACE_tourniquet:2","ACE_splint","kat_aatKit","kat_guedel","kat_chestSeal"
+#define CLS_MEDICAL "ACE_elasticBandage:8","ACE_packingBandage:8","ACE_tourniquet:4","ACE_splint:6","kat_aatKit:2","kat_guedel:2","kat_chestSeal:2","kat_Painkiller"
 #define MEDIC_MEDICAL "ACE_packingBandage:20","ACE_elasticBandage:20","ACE_splint:8","ACE_tourniquet:6","ACE_plasmaIV_500:4","kat_accuvac","kat_Pulseoximeter","kat_larynx:2","kat_aatKit:10","kat_guedel:5","kat_stethoscope","kat_chestSeal:10","kat_IO_FAST:5","kat_IV_16:15","ACE_morphine:8","ACE_epinephrine:8","ACE_adenosine:8","kat_Carbonate","kat_Painkiller","kat_nitroglycerin:4","kat_norepinephrine:4","kat_phenylephrine:4","kat_TXA:8","kat_atropine:4","kat_amiodarone:4","kat_naloxone","kat_lidocaine:4"
 #define BASE_TOOLS "ACE_MapTools","ACE_IR_Strobe_item:2","ACE_Flashlight_XL50","ACE_SpraypaintRed","ACE_CableTie:2"
 #define BASE_LEADER_TOOLS "ACE_personalAidKit","ACE_Fortify","ACE_microDAGR"
-#define BASE_NODS ""
 #define BASE_LINKED "ItemMap","ItemCompass","ItemWatch"
 #define BASE_LEADER_LINKED ""
 #define BASE_FRAG "HandGrenade:2"
@@ -25,6 +25,8 @@
 #define MINE_DETECTOR "ACE_VMM3"
 #define BINOS "Binocular"
 #define RANGE_FINDER "ACE_Vector"
+#define LASER "Laserdesignator_03"
+#define LASER_BATTERY "Laserbatteries"
 #define BASE_BALLISTICS "ACE_ATragMX","ACE_Kestrel4500"
 #define BASE_ARTILLERY "ACE_artilleryTable",BASE_BALLISTICS
 #define VZ99 "potato_vz99_carryWeapon"
@@ -60,6 +62,7 @@
 #define F_MED "GreekHead_A3_06","GreekHead_A3_11","GreekHead_A3_02","GreekHead_A3_12","GreekHead_A3_13","GreekHead_A3_02","GreekHead_A3_03","WhiteHead_06","WhiteHead_03","WhiteHead_02" 
 // Mixed - All
 #define F_MN F_C,F_M,F_P,F_A,F_G
+
 
 /* VOICES */
 #define FARSI "Male01PER","Male02PER","Male03PER"
