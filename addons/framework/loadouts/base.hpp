@@ -1,3 +1,15 @@
+//All Crew
+#define CREW_BACKPACK "B_Battle_Belt_XL_F"
+#define CREW_VEST CAMO_VEST
+//Jet Pilot
+#define JET_UNIFORM PILOT_UNIFORM
+#define JET_HEADGEAR "H_PilotHelmetFighter_B"
+//Heli Crew
+#define HELI_UNIFORM PILOT_UNIFORM
+#define HELI_HEADGEAR PILOT_HEADGEAR
+//Armor Crew
+#define ARMOR_UNIFORM CAMO_UNIFORM
+#define ARMOR_HEADGEAR CREW_HEADGEAR
 
 // Ammo Truck - Blu
 class B_Truck_01_ammo_F {
@@ -64,10 +76,10 @@ class ftl: rifleman {// FTL
   items[] += {LEADER_TOOLS,RADIO_MR};
   linkedItems[] += {LEADER_LINKED,BINOS};
 };
+};
 class sl: ftl {// SL
   handguns[] = {PISTOL};
   magazines[] += {PISTOL_MAG};
-  linkedItems[] = {LINKED,LEADER_LINKED,RANGE_FINDER};
   items[] += {RADIO_LR};
 };
 class plt: sl {// Platoon Leader
@@ -83,18 +95,22 @@ class uav: rifleman { //UAV
   linkedItems[] += {SIDE_UAV_TERMINAL};
 };
 class fac: coy {// FAC
-  magazines[] = {GLRIFLE_MAG,SIDE_FAC_GRENADES,"Laserbatteries",PISTOL_MAG};
-  linkedItems[] = {LINKED,LEADER_LINKED,"CUP_LRTV"};
+  magazines[] = {GLRIFLE_MAG,SIDE_FAC_GRENADES,LASER_BATTERY,PISTOL_MAG};
+  linkedItems[] = {LINKED,LEADER_LINKED,LASER};
 };
 
 
 //Medics
+class rifleman_03: Fic_Soldier_Carbine {// CLS
+  backpackItems[] = {CLS_MEDICAL};
+};
 class sm: Fic_Soldier_Carbine {// Medic
   magazines[] = {CARBINE_MAG,MEDIC_GRENADES};
   backpackItems[] = {MEDIC_MEDICAL};
-  items[] += {RADIO_MR,RADIO_LR};
+  items[] += {RADIO_MR};
 };
 class plm: sm {// Platoon Medic
+  items[] += {RADIO_LR};
 };
 class cm: plm {// Company Medic
 };
@@ -103,9 +119,9 @@ class cm: plm {// Company Medic
 //Infantry
 class ar: rifleman {// AR
   weapons[] = {AR};
+  attachments[] = {AR_ATTACHMENTS};
   magazines[] = {AR_MAG,PISTOL_MAG,BASE_GRENADES};
   handguns[] = {PISTOL};
-  attachments[] += {AR_ATTACHMENTS};
 };
 class aar: rifleman {// AAR
   backpackItems[] += {AR_MAG};
@@ -125,23 +141,29 @@ class rifleman_02: rifleman {// Grenadier
 class Fic_Spotter: rifleman { //Base Spotter
   linkedItems[] += {RANGE_FINDER};
 };
+class Fic_Weapons_SL: ftl { //Base Spotter
+  handguns[] = {PISTOL};
+  magazines[] += {PISTOL_MAG};
+  linkedItems[] = {LINKED,LEADER_LINKED,RANGE_FINDER};
+  items[] += {RADIO_LR};
+};
 
 //MMG
-class mmgl: sl {// MMG Lead
+class mmgl: Fic_Weapons_SL {// MMG Lead
   backpack[] = {CARRYALL};
   magazines[] += {MMG_MAG};
 };
 class mmgg: ar {// MMG Gunner
   weapons[] = {MMG};
   magazines[] = {MMG_MAG,PISTOL_MAG,BASE_GRENADES};
-  attachments[] = {MMG_ATT};
+  attachments[] = {};
 };
 class mmgag: Fic_Spotter {// MMG Spotter/Ammo Bearer
   backpackItems[] += {MMG_MAG};
 };
 
 //MAT
-class matl: sl {// MAT Lead
+class matl: Fic_Weapons_SL {// MAT Lead
   backpack[] = {CARRYALL};
   magazines[] += {MAT_MAG};
 };
@@ -159,19 +181,19 @@ class matag: Fic_Spotter {// MAT Spotter/Ammo Bearer
 };
 
 //HMG
-class hmgl: sl {// HMG Lead
+class hmgl: Fic_Weapons_SL {// HMG Lead
   weapons[] = {RIFLE};
   magazines[] = {RIFLE_MAG,LEADER_GRENADES,PISTOL_MAG,HMG_MAG};
   backpack[] = {CARRYALL};
   launchers[] = {HMG_TRI_LO};
   items[] += {BASE_BALLISTICS};
 };
-class hmgg: rifleman {// HMG Gunner
+class hmgg: Fic_Soldier_Carbine {// HMG Gunner
   backpack[] = {CARRYALL};
   magazines[] += {HMG_MAG};
   launchers[] = {HMG};
 };
-class hmgag: rifleman {// HMG Spotter
+class hmgag: Fic_Spotter {// HMG Spotter
   backpack[] = {CARRYALL};
   magazines[] += {HMG_MAG};
   launchers[] = {HMG_TRI_HI};
@@ -179,7 +201,7 @@ class hmgag: rifleman {// HMG Spotter
 };
 
 //HAT
-class hatl: sl {// HAT Lead
+class hatl: Fic_Weapons_SL {// HAT Lead
   weapons[] = {RIFLE};
   backpackItems[] = {};
   magazines[] = {RIFLE_MAG,LEADER_GRENADES,PISTOL_MAG,HAT_MAG};
@@ -187,43 +209,43 @@ class hatl: sl {// HAT Lead
   launchers[] = {HAT_TRI_LO};
   items[] += {BASE_MEDICAL};
 };
-class hatg: rifleman {// HAT Gunner
+class hatg: Fic_Soldier_Carbine {// HAT Gunner
   backpack[] = {CARRYALL};
   magazines[] += {HAT_MAG};
   launchers[] = {HAT};
 };
-class hatag: rifleman {// HAT Spotter
+class hatag: Fic_Spotter {// HAT Spotter
   backpack[] = {CARRYALL};
   magazines[] += {HAT_MAG};
   launchers[] = {HAT_TRI_HI};
 };
 
 //SAM
-class msaml: sl {// SAM Lead
+class msaml: Fic_Weapons_SL {// SAM Lead
   backpack[] = {CARRYALL};
   magazines[] += {SAM_MAG2};
 };
 class msamg: Fic_Soldier_Carbine {// SAM Gunner
-  SAM_GEAR("B_Battle_Belt_XL_F", SAM_MAG)
+  SAM_GEAR(CARRYALL, SAM_MAG)
   launchers[] = {SAM};
 };
 class msamag: Fic_Spotter {// SAM Spotter/Ammo Bearer
-  SAM_GEAR("B_Battle_Belt_XL_F", SAM_MAG2)
+  SAM_GEAR(CARRYALL, SAM_MAG2)
 };
 
 //Mortar
-class mtrl: sl {// Mortar Lead
+class mtrl: Fic_Weapons_SL {// Mortar Lead
   items[] += {BASE_ARTILLERY};
 };
 class mtrg: Fic_Soldier_Carbine {// Mortar Gunner
-  MORTAR_GEAR(MTR_TUBE)
+  MORTAR_GEAR("B_Mortar_01_weapon_F")
 };
 class mtrag: Fic_Spotter {// Assistant Mortar
-  MORTAR_GEAR(MTR_PLATE)
+  MORTAR_GEAR("B_Mortar_01_support_F")
 };
 
 //Artillery
-class artl: sl {// Artillery Leader
+class artl: Fic_Weapons_SL {// Artillery Leader
   backpack[] = {CARRYALL};
   backpackItems[] += {BASE_ARTILLERY};
 };
@@ -232,10 +254,10 @@ class artg: rifleman {// Artillery Gunner
 };
 
 //Sniper Team
-class spotter: Fic_Spotter {// Spotter
+class stl: Fic_Spotter {// Scout Team Lead
   weapons[] = {SPOTTER};
   magazines[] = {SPOTTER_MAG,BASE_GRENADES};
-  items[] += {RADIO_MR,BASE_BALLISTICS};
+  items[] += {RADIO_MR,BASE_BALLISTICS,"ACE_RangeCard"};
   linkedItems[] += {LEADER_LINKED};
   attachments[] = {SPOTTER_ATTACHMENTS};
 };
@@ -246,30 +268,47 @@ class sniper: spotter {// Sniper
   linkedItems[] = {LINKED};
   attachments[] = {SNIPER_ATTACHMENTS};
 };
+class spotter: Fic_Spotter {// Scout
+  weapons[] = {SPOTTER};
+  magazines[] = {SPOTTER_MAG,BASE_GRENADES};
+  items[] += {BASE_BALLISTICS,"ACE_RangeCard"};
+  linkedItems[] = {LINKED};
+  attachments[] = {SPOTTER_ATTACHMENTS};
+};
 
-//Air
-class pilot {// Pilot
-  uniform[] = {PILOT_UNIFORM};
-  backpack[] = {PILOT_BACKPACK};
-  vest[] = {PILOT_VEST};
-  headgear[] = {PILOT_HEADGEAR};
-  weapons[] = {SMG};
-  magazines[] = {SMG_MAG,CREW_GRENADES};
+// Air
+class Fic_Crew_Base {// Aircrew Base;
+  backpack[] = {CREW_BACKPACK};
+  vest[] = {CREW_VEST};
+  handguns[] = {PISTOL};
+  magazines[] = {PISTOL_MAG,CREW_GRENADES};
   backpackItems[] = {SIDE_KEY,RADIO_LR};
   items[] = {BASE_MEDICAL,TOOLS,LEADER_TOOLS,RADIO_MR};
   linkedItems[] = {LINKED,LEADER_LINKED};
 };
+
+class pilot: Fic_Crew_Base {// Jet Pilot
+  uniform[] = {JET_UNIFORM};
+  headgear[] = {JET_HEADGEAR};
+};
 class helicrew: pilot {// Aircrew
+  uniform[] = {HELI_UNIFORM};
+  headgear[] = {HELI_HEADGEAR};
+  weapons[] = {SMG};
+  magazines[] += {SMG_MAG};
   backpackItems[] = {"Toolkit",SIDE_KEY};
 };
 class cc: helicrew {// Crew Chief
   backpackItems[] += {RADIO_MR};
 };
 
+
 //Armor
 class vicc: Fic_Soldier_Carbine {// Crew
-  headgear[] = {CREW_HEADGEAR};
-  magazines[] = {CARBINE_MAG,CREW_GRENADES};
+  uniform[] = {ARMOR_UNIFORM};
+  headgear[] = {ARMOR_HEADGEAR};
+  weapons[] = {SMG};
+  magazines[] = {SMG_MAG,CREW_GRENADES};
   backpackItems[] = {SIDE_KEY,RADIO_LR,RADIO_MR};
   linkedItems[] = {LINKED,LEADER_LINKED,BINOS};
   items[] += {BASE_MEDICAL};
