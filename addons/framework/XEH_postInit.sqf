@@ -1,8 +1,8 @@
 // Backwards support for older missions to prevent duplication
 _version = getText (missionConfigFile >> "cmfVers");
 systemChat format ["[CMF] Version: %1",_version];
-if (_version isEqualTo "") exitWith {systemChat "[CMF] Non-CMF2 mission detected. Reverting to mission files only.";};
-if (_version isNotEqualTo "CMF2 1.2.2") then {systemChat "[CMF] Old mission framework detected. Update to CMF 1.2.2 when possible.";};
+if (_version isEqualTo "") exitWith {systemChat "[CMF] Non-CMF mission detected. Reverting to mission files only.";};
+if (_version isNotEqualTo "CMF3 1.0.0") then {systemChat "[CMF] Old mission framework detected. Update to CMF3 1.0.0 when possible.";};
 
 diag_log "[CMF]: Starting CMF Post Init";
 
@@ -17,8 +17,7 @@ if (isNil "gameLive") then
 };
 
 [] spawn {
-	//waitUntil {!isNil "initRan"};
-	// Jesters medical rewrite	
+	// Jesters medical rewrite
 	// Define hospital models
 	JST_bluFH = "RU_WarfareBFieldhHospital";
 	JST_indFH = "RU_WarfareBFieldhHospital";

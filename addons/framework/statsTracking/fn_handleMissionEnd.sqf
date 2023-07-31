@@ -77,7 +77,7 @@ uiSleep 5;
 				"extDB3" callExtension format ["0:SQL:UPDATE a3rolestats SET inf_specialty_roles = inf_specialty_roles + 1 WHERE steamid = %1",_playerUID];
 			};
 			case "inf_medical_roles":{
-				"extDB3" callExtension format ["0:SQL:UPDATE a3rolestats SET inf_medical_roles = inf_medical_roles + 1 WHERE steamid = %1",_playerUID]; 
+				"extDB3" callExtension format ["0:SQL:UPDATE a3rolestats SET inf_medic_roles = inf_medic_roles + 1 WHERE steamid = %1",_playerUID]; 
 			};
 			case "pilot_roles":{
 				"extDB3" callExtension format ["0:SQL:UPDATE a3rolestats SET pilot_roles = pilot_roles + 1 WHERE steamid = %1",_playerUID]; 

@@ -242,7 +242,7 @@ class spotter: Fic_Spotter {// Spotter
 class sniper: spotter {// Sniper
   weapons[] = {SNIPER};
   magazines[] = {SNIPER_MAG,BASE_GRENADES};
-  items[] = {RADIO_SR,TOOLS,"ACE_RangeCard"};
+  items[] = {TOOLS,"ACE_RangeCard"};
   linkedItems[] = {LINKED};
   attachments[] = {SNIPER_ATTACHMENTS};
 };

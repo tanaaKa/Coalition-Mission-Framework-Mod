@@ -132,6 +132,25 @@ class CfgFunctions
 			class leaderSetGear{};
 			class updateMiniArsenal{};
 		};
+		class reinforcements
+		{
+			file = "\x\cmf\addons\framework\misc\reinf";
+			class forceBLU{};
+			class forceOPF{};
+		};
+		class JST
+		{
+			file = "\x\cmf\addons\framework\misc\JST";
+			class respawnVehicles{};
+			class serviceVehicles{};
+			class drawAO{};
+			class drawAOInit{};
+		};
+		class tnk
+		{
+			file = "\x\cmf\addons\framework\misc\tnk";
+			class setupRadios{};
+		};
 		/*
 		// TODO: Implement these
 		class GameModeCON

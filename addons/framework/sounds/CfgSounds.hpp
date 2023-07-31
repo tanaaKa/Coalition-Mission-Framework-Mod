@@ -449,4 +449,47 @@ class CfgSounds
 		sound[] = {"x\cmf\addons\framework\sounds\tts_emission\psy_voices_01.ogg", 5, 1, 50};
 		titles[] = {};
 	};
+	// THAMER SOUNDS 30JUL2023
+	class adhan
+	{
+		name = "adhan";
+		sound[] = {"x\cmf\addons\framework\sounds\thamer\adhan.ogg", 5, 1, 500};
+		titles[] = {};
+	};
+	class air_raid_siren
+	{
+		name = "air_raid_siren";
+		sound[] = {"x\cmf\addons\framework\sounds\thamer\Air_Raid_Siren.ogg", 5, 1, 500};
+		titles[] = {};
+	};
+	class bazar
+	{
+		name = "bazar";
+		sound[] = {"x\cmf\addons\framework\sounds\thamer\bazar.ogg", 5, 1, 500};
+		titles[] = {};
+	};
+	class church
+	{
+		name = "church";
+		sound[] = {"x\cmf\addons\framework\sounds\thamer\church.ogg", 5, 1, 500};
+		titles[] = {};
+	};
+	class forest_night
+	{
+		name = "forest_night";
+		sound[] = {"x\cmf\addons\framework\sounds\thamer\forest_night.ogg", 5, 1, 500};
+		titles[] = {};
+	};
+	class sandstorm
+	{
+		name = "sandstorm";
+		sound[] = {"x\cmf\addons\framework\sounds\thamer\sandstorm.ogg", 5, 1, 500};
+		titles[] = {};
+	};
+	class windy
+	{
+		name = "windy";
+		sound[] = {"x\cmf\addons\framework\sounds\thamer\windy.ogg", 5, 1, 500};
+		titles[] = {};
+	};
 };
