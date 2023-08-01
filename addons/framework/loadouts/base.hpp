@@ -226,10 +226,11 @@ class msaml: Fic_Weapons_SL {// SAM Lead
   magazines[] += {SAM_MAG2};
 };
 class msamg: Fic_Soldier_Carbine {// SAM Gunner
-  SAM_GEAR(CARRYALL, SAM_MAG)
+  SAM_GEAR("B_Battle_Belt_XL_F", SAM_MAG)
   launchers[] = {SAM};
 };
 class msamag: Fic_Spotter {// SAM Spotter/Ammo Bearer
+  SAM_GEAR("B_Battle_Belt_XL_F", SAM_MAG2)
   SAM_GEAR(CARRYALL, SAM_MAG2)
 };
 
@@ -238,10 +239,10 @@ class mtrl: Fic_Weapons_SL {// Mortar Lead
   items[] += {BASE_ARTILLERY};
 };
 class mtrg: Fic_Soldier_Carbine {// Mortar Gunner
-  MORTAR_GEAR("B_Mortar_01_weapon_F")
+  MORTAR_GEAR(MTR_TUBE)
 };
 class mtrag: Fic_Spotter {// Assistant Mortar
-  MORTAR_GEAR("B_Mortar_01_support_F")
+  MORTAR_GEAR(MTR_PLATE)
 };
 
 //Artillery
@@ -303,6 +304,8 @@ class cc: helicrew {// Crew Chief
 
 //Armor
 class vicc: Fic_Soldier_Carbine {// Crew
+  backpack[] = {CREW_BACKPACK};
+  vest[] = {CREW_VEST};
   uniform[] = {ARMOR_UNIFORM};
   headgear[] = {ARMOR_HEADGEAR};
   weapons[] = {SMG};

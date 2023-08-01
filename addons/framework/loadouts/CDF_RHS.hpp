@@ -138,7 +138,7 @@
 // HAT
 #ifdef HAT
 #else
-#define HAT "ace_compat_rhs_afrf3_nsv_carry"
+#define HAT "ace_compat_rhs_afrf3_kornet_carry"
 #endif
 #ifdef HAT_MAG
 #else
@@ -146,11 +146,11 @@
 #endif
 #ifdef HAT_TRI_LO
 #else
-#define HAT_TRI_LO ""
+#define HAT_TRI_LO "ace_csw_kordCarryTripodLow"
 #endif
 #ifdef HAT_TRI_HI
 #else
-#define HAT_TRI_HI ""
+#define HAT_TRI_HI "ace_csw_kordCarryTripod"
 #endif
 // SAM
 #ifdef SAM
