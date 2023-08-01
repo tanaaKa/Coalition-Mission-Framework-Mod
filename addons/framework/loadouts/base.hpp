@@ -261,19 +261,17 @@ class stl: Fic_Spotter {// Scout Team Lead
   linkedItems[] += {LEADER_LINKED};
   attachments[] = {SPOTTER_ATTACHMENTS};
 };
-class sniper: spotter {// Sniper
-  weapons[] = {SNIPER};
-  magazines[] = {SNIPER_MAG,BASE_GRENADES};
-  items[] = {RADIO_SR,TOOLS,"ACE_RangeCard"};
-  linkedItems[] = {LINKED};
-  attachments[] = {SNIPER_ATTACHMENTS};
-};
 class spotter: Fic_Spotter {// Scout
   weapons[] = {SPOTTER};
   magazines[] = {SPOTTER_MAG,BASE_GRENADES};
   items[] += {BASE_BALLISTICS,"ACE_RangeCard"};
   linkedItems[] = {LINKED};
   attachments[] = {SPOTTER_ATTACHMENTS};
+};
+class sniper: spotter {// Sniper
+  weapons[] = {SNIPER};
+  magazines[] = {SNIPER_MAG,BASE_GRENADES};
+  attachments[] = {SNIPER_ATTACHMENTS};
 };
 
 // Air
