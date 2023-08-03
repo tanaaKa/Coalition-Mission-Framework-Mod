@@ -70,6 +70,8 @@ params["_site"];
 		_ccp addItemCargoGlobal ["kat_Carbonate", 2];
 		_ccp addItemCargoGlobal ["kat_Painkiller", 2];
 		_ccp addItemCargoGlobal ["Attachable_Helistretcher", 1];
+		_ccp addItemCargoGlobal ["kat_BVM", 5];
+		_ccp addItemCargoGlobal ["kat_oxygenTank_150_Item", 4];
 	};
 
 	// Add ACE interact to call reinforcements
