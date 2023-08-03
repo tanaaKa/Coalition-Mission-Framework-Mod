@@ -1,8 +1,9 @@
 // Backwards support for older missions to prevent duplication
+_newestVer = "CMF3 1.0.4";
 _version = getText (missionConfigFile >> "cmfVers");
 systemChat format ["[CMF] Version: %1",_version];
 if (_version isEqualTo "") exitWith {systemChat "[CMF] Non-CMF mission detected. Reverting to mission files only.";};
-if (_version isNotEqualTo "CMF3 1.0.0") then {systemChat "[CMF] Old mission framework detected. Update to CMF3 1.0.0 when possible.";};
+if (_version isNotEqualTo _newestVer) then {systemChat format ["[CMF] Old mission framework detected. Update to %1 when possible.",_newestVer]};
 
 diag_log "[CMF]: Starting CMF Post Init";
 
