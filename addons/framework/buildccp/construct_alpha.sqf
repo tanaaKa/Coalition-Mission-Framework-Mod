@@ -20,7 +20,7 @@ params["_site"];
 	_dir = getDir _site;
 	_grid = mapGridPosition _pos; // Define grid position of player for hint
 	_name = name player; // Define name of player for hint
-	_hintString = format ["The Alpha CCP has been established at GR#%1 by %2",_grid,_name]; // Predefine hint
+	_hintString = format ["A CCP has been established at GR#%1 by %2",_grid,_name]; // Predefine hint
 
 	// Delete backpack pile.
 	deleteVehicle _site;
