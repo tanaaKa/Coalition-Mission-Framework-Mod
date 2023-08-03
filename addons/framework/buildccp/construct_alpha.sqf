@@ -99,11 +99,11 @@ params["_site"];
 	// Creates a marker for the new physical MASH
 	{
 		if (side _x isEqualTo side player) then {
-			_marker = createMarkerLocal [format["A CCP %1", time], _ccp];
+			_marker = createMarkerLocal [format["CCP %1", time], _ccp];
 			_marker setMarkerShapeLocal "ICON";
 			_marker setMarkerTypeLocal "loc_hospital";
 			_marker setMarkerColorLocal "ColorWhite";
-			_marker setMarkerTextLocal "A CCP";
+			_marker setMarkerTextLocal "CCP";
 		};
 	} forEach allPlayers;
 	
