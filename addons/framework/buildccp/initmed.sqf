@@ -20,6 +20,10 @@ private _medics =
 	,"OPF_PLM","OPF_2PLM"
 	,"IND_PLM","IND_2PLM"
 	,"BLU_ComMed","OPF_ComMed","IND_ComMed"
+	,"BLU_ComMed1","OPF_ComMed1","IND_ComMed1"
+	,"BLU_ComMed2","OPF_ComMed2","IND_ComMed2"
+	,"BLU_ComMed3","OPF_ComMed3","IND_ComMed3"
+	,"BLU_ComMed4","OPF_ComMed4","IND_ComMed4"
 ];
 					
 private _playerClass = vehicleVarName player;
@@ -43,7 +47,7 @@ if (_playerClass in _medics) then {
 		[player] call tnk_add_med_mo;
 	};
 	//Alpha medics
-	if (_playerClass in ["BLU_ComMed","OPF_ComMed","IND_ComMed"]) then {
+	if (_playerClass in ["BLU_ComMed","BLU_ComMed1","BLU_ComMed2","BLU_ComMed3","BLU_ComMed4","OPF_ComMed","OPF_ComMed1","OPF_ComMed2","OPF_ComMed3","OPF_ComMed4","IND_ComMed","IND_ComMed1","IND_ComMed2","IND_ComMed3","IND_ComMed4"]) then {
 		tnk_add_med_a = {
 			//Assign
 			CCP_Unpack_Action_A = ["unpackCCP","Unpack CCP","",{[] execVM "x\cmf\addons\framework\buildccp\unpack_alpha.sqf";},{true}] call ace_interact_menu_fnc_createAction;
