@@ -14,6 +14,11 @@
 //
 ///////////////////////////////////////////////////////////////
 // Vars for picking medic class
+private _medicalofficer = 
+[	"BLU_PLM","BLU_2PLM"
+	,"OPF_PLM","OPF_2PLM"
+	,"IND_PLM","IND_2PLM"
+];
 private _medics = 
 [
 	"BLU_PLM","BLU_2PLM"
@@ -28,9 +33,8 @@ private _medics =
 					
 private _playerClass = vehicleVarName player;
 
-if (_playerClass in _medics) then {
 	//Medical Officers
-	if (_playerClass in ["BLU_PLM","BLU_2PLM","OPF_PLM","OPF_2PLM","IND_PLM","IND_2PLM"]) then {
+	if (_playerClass in _medicalofficer) then {
 		tnk_add_med_mo = {
 			//Assign
 			FH_Unpack_Action = ["unpackCCP","Unpack Field Hospital","",{[] execVM "x\cmf\addons\framework\buildccp\unpack_platoon.sqf";},{true}] call ace_interact_menu_fnc_createAction;
@@ -47,7 +51,7 @@ if (_playerClass in _medics) then {
 		[player] call tnk_add_med_mo;
 	};
 	//Alpha medics
-	if (_playerClass in ["BLU_ComMed","BLU_ComMed1","BLU_ComMed2","BLU_ComMed3","BLU_ComMed4","OPF_ComMed","OPF_ComMed1","OPF_ComMed2","OPF_ComMed3","OPF_ComMed4","IND_ComMed","IND_ComMed1","IND_ComMed2","IND_ComMed3","IND_ComMed4"]) then {
+	if (_playerClass in _medics) then {
 		tnk_add_med_a = {
 			//Assign
 			CCP_Unpack_Action_A = ["unpackCCP","Unpack CCP","",{[] execVM "x\cmf\addons\framework\buildccp\unpack_alpha.sqf";},{true}] call ace_interact_menu_fnc_createAction;
@@ -58,4 +62,3 @@ if (_playerClass in _medics) then {
 		};
 		[player] call tnk_add_med_a;
 	};
-};
