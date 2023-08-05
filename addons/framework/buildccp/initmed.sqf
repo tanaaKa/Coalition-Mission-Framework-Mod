@@ -15,16 +15,14 @@
 ///////////////////////////////////////////////////////////////
 // Vars for picking medic class
 private _medicalofficer = 
-[	"BLU_PLM","BLU_2PLM"
+[	
+	"BLU_PLM","BLU_2PLM"
 	,"OPF_PLM","OPF_2PLM"
 	,"IND_PLM","IND_2PLM"
 ];
 private _medics = 
 [
-	"BLU_PLM","BLU_2PLM"
-	,"OPF_PLM","OPF_2PLM"
-	,"IND_PLM","IND_2PLM"
-	,"BLU_ComMed","OPF_ComMed","IND_ComMed"
+	"BLU_ComMed","OPF_ComMed","IND_ComMed"
 	,"BLU_ComMed1","OPF_ComMed1","IND_ComMed1"
 	,"BLU_ComMed2","OPF_ComMed2","IND_ComMed2"
 	,"BLU_ComMed3","OPF_ComMed3","IND_ComMed3"
