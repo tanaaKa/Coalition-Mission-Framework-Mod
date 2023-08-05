@@ -66,6 +66,16 @@ switch (_role) do {
 		
 		Always stick with your color team and identify when your team will need 40mm support in the form of smokes or HE.";
 	};
+	case "rifleman_03":
+	{
+		_roleT = "Rifleman (CLS)";
+		_brief = "";
+		_roleNotes = "You are the Combat Life Saver for your squad with extra first aid supply.<br/><br/>
+		
+		Remember you are not a medic. For walking wounded patch them and give them a motrin. Watch them for anything more serious.<br/><br/>
+
+		For anyone unconscious AKA Category 1 or 2 casualties call a medic. Fix the holes. Stop the bleeding. Hold security for the medic if needed.";
+	};
 	//Squads
 	case "sl":
 	{
