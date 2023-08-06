@@ -20,7 +20,7 @@ params["_site"];
 	_dir = getDir _site;
 	_grid = mapGridPosition _pos; // Define grid position of player for hint
 	_name = name player; // Define name of player for hint
-	_hintString = format ["The Alpha CCP has been established at GR#%1 by %2",_grid,_name]; // Predefine hint
+	_hintString = format ["A CCP has been established at GR#%1 by %2",_grid,_name]; // Predefine hint
 
 	// Delete backpack pile.
 	deleteVehicle _site;
@@ -70,6 +70,8 @@ params["_site"];
 		_ccp addItemCargoGlobal ["kat_Carbonate", 2];
 		_ccp addItemCargoGlobal ["kat_Painkiller", 2];
 		_ccp addItemCargoGlobal ["Attachable_Helistretcher", 1];
+		_ccp addItemCargoGlobal ["kat_BVM", 5];
+		_ccp addItemCargoGlobal ["kat_oxygenTank_150_Item", 4];
 	};
 
 	// Add ACE interact to call reinforcements
@@ -97,11 +99,11 @@ params["_site"];
 	// Creates a marker for the new physical MASH
 	{
 		if (side _x isEqualTo side player) then {
-			_marker = createMarkerLocal [format["A CCP %1", time], _ccp];
+			_marker = createMarkerLocal [format["CCP %1", time], _ccp];
 			_marker setMarkerShapeLocal "ICON";
 			_marker setMarkerTypeLocal "loc_hospital";
 			_marker setMarkerColorLocal "ColorWhite";
-			_marker setMarkerTextLocal "A CCP";
+			_marker setMarkerTextLocal "CCP";
 		};
 	} forEach allPlayers;
 	

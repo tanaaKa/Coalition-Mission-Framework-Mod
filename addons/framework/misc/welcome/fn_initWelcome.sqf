@@ -30,9 +30,9 @@ switch (_role) do {
 	{
 		_roleT = "Fireteam Leader";
 		_brief = "";
-		_roleNotes = "You are the leader of a five man team that's divided into two color teams.<br/><br/>
+		_roleNotes = "You are the leader of a 3-4 man team.<br/><br/>
 		
-		It is your job to disseminate information delivered by your squad leader and turn it into team orders for both your color teams.";
+		It is your job to disseminate information delivered by your squad leader and turn it into team orders.";
 	};
 	case "ar":
 	{
@@ -48,15 +48,15 @@ switch (_role) do {
 		_brief = "";
 		_roleNotes = "You are the assistant to the automatic rifleman and carry extra ammunition for the weapon itself as well as binoculars for spotting.<br/><br/>
 		
-		Always stick with your color team member and always be spotting targets for him when engaging the enemy with the AR. Do not be afraid to adjust his fire when engaging.";
+		Always stick with your gunner and always be spotting targets for him when engaging the enemy with the AR. Do not be afraid to adjust his fire when engaging.";
 	};
 	case "lat":
 	{
 		_role = "Rifleman (Anti-Tank)";
 		_brief = "";
-		_roleNotes = "You are the anti vehicle rifleman for your fireteam.<br/><br/>
+		_roleNotes = "You are one of the anti vehicle rifleman for your squad.<br/><br/>
 		
-		Always stick with your color team and engage any armor that is deemed a threat to your fireteam. Always remember to yell 'CLEAR BACKBLAST!' and 'ROCKET' prior to firing your launcher.";
+		Always stick with your color team and engage any armor that is deemed a threat squad. Always remember to yell 'CLEAR BACKBLAST!' and 'ROCKET' prior to firing your launcher.";
 	};
 	case "rifleman_02":
 	{
@@ -64,22 +64,32 @@ switch (_role) do {
 		_brief = "";
 		_roleNotes = "You are a 40mm force multiplier for your fireteam with extra grenades to suppress the enemy or provide smoke for dangerous crossings.<br/><br/>
 		
-		Always stick with your color team and identify when your fireteam will need 40mm support in the form of smokes or HE.";
+		Always stick with your color team and identify when your team will need 40mm support in the form of smokes or HE.";
+	};
+	case "rifleman_03":
+	{
+		_roleT = "Rifleman (CLS)";
+		_brief = "";
+		_roleNotes = "You are the Combat Life Saver for your squad with extra first aid supply.<br/><br/>
+		
+		Remember you are not a medic. For walking wounded patch them and give them a motrin. Watch them for anything more serious.<br/><br/>
+
+		For anyone unconscious AKA Category 1 or 2 casualties call a medic. Fix the holes. Stop the bleeding. Hold security for the medic if needed.";
 	};
 	//Squads
 	case "sl":
 	{
 		_roleT = "Squad Leader";
 		_brief = "";
-		_roleNotes = "You are the leader of a squad of 12-14 infantry. Your primary role is to disseminate orders given to you by your platoon leader so that it's relevant to your squads movement.<br/><br/>
+		_roleNotes = "You are the leader of a squad of 8 infantry. Your primary role is to disseminate orders given to you by your platoon leader so that it's relevant to your squads movement.<br/><br/>
 		
 		Remember to always feed information down to your fireteam leaders and request information from them when possible.";
 	};
 	case "sm":
 	{
-		_roleT = "Squad Medic";
+		_roleT = "Combat Medic";
 		_brief = "";
-		_roleNotes = "You are the sole provider of medical support for 12-14 infantry. Take care of their wounds and always assess them before providing treatment.<br/><br/>
+		_roleNotes = "You are part of a medical support team for a platoon of 34 infantry. Take care of their wounds and always assess them before providing treatment.<br/><br/>
 		
 		Always take control of situations by providing clear orders to infantry in order to recover and process casualties.";
 	};
@@ -98,7 +108,9 @@ switch (_role) do {
 		_brief = "";
 		_roleNotes = "You are the medical officer in charge of all medics within the platoon.<br/><br/>
 		
-		Ensure they and their squads medical supply needs are met pre-plan when and where you want field hospitals or CCPs if they're in use.";
+		Plan where they will be to ensure they and their medical supplies are where the rest of the platoon needs them when the time comes. Pre-plan when and where you want field hospitals or CCPs if they're in use.<br/><br/>
+		
+		Remember to utilize your medical net to track casualties and dispatch additional medics and supplies as needed";
 	};
 	case "fac":
 	{
@@ -145,7 +157,7 @@ switch (_role) do {
 		_brief = "";
 		_roleNotes = "You are the First Sergeant the right hand of COY.<br/><br/>
 		
-		Your entire job is to take some of the burden of leadership off of COY. You should help coordinate things such as resupply points. Make sure convoys have formations.Or even oversee fortifications. Whatever task COY cannot do himself but shouldnt be put directly onto a platoon leaders burden if possible ";
+		Your entire job is to take some of the burden of leadership off of COY. You should help coordinate things such as resupply points. Make sure convoys have formations. Or even oversee fortifications. Whatever task COY cannot do himself but shouldnt be put directly onto a platoon leaders burden if possible ";
 	};
 	// Specialties
 	case "demo":
@@ -180,7 +192,7 @@ switch (_role) do {
 		_brief = "";
 		_roleNotes = "You are in charge of a precision rifle and magnified optic.<br/><br/>
 		
-        You will work with your spotter to engage high value targets or targets of oppertunity. You should also provide overwatch and intel for friendlies. <br/><br/>";
+        	You will work with your spotter to engage high value targets or targets of oppertunity. You should also provide overwatch and intel for friendlies. <br/><br/>";
 	};
 	case "spotter":
 	{
@@ -342,19 +354,27 @@ switch (_role) do {
 	{
 		_roleT = "Pilot";
 		_brief = "";
-		//_roleNotes = "";
+		_roleNotes = "You are commander of an airframe in charge of coordinating with other Pilots/leaders and if present a ground based JTAC or FAC.<br/><br/>
+		
+		You will be responsible for the safety of the airframe and any additional souls aboard the craft.<br/><br/>
+
+		Additionally you are expected to utilize any weapon systems that may be present in coordination with friendlies on the ground as needed.";
 	};
 	case "helicrew":
 	{
 		_roleT = "Helicopter Crew";
 		_brief = "";
-		//_roleNotes = "";
+		_roleNotes = "You are a crewmen on an aircraft<br/><br/>
+
+		You are will be working with the pilot to ensure the airframe's transport and or weapon capabilities are utilized effectively.";
 	};
 	case "cc":
 	{
 		_roleT = "Helicopter Crew Chief";
 		_brief = "";
-		//_roleNotes = "";
+		_roleNotes = "You are A Helicopter Crew Chief responsible for the mechanical health and other mundane task aboard the bird.<br/><br/>
+
+		You are here to assist the pilot by spotting him during tough landings. Handling extra radio traffic. Or even field repairing the bird.";
 	};
 	default
 	{

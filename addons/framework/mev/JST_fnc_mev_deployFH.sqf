@@ -57,6 +57,8 @@ if (count _pos > 1) then
 			_fh addItemCargoGlobal ["kat_Carbonate", 10];
 			_fh addItemCargoGlobal ["kat_Painkiller", 10];
 			_fh addItemCargoGlobal ["Attachable_Helistretcher", 2];
+			_fh addItemCargoGlobal ["kat_BVM", 5];
+			_fh addItemCargoGlobal ["kat_oxygenTank_300_Item", 10];
 		};
 		
 	}
