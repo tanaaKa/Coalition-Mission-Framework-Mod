@@ -14,13 +14,13 @@
 //
 ///////////////////////////////////////////////////////////////
 // Vars for picking medic class
-private _medicalofficer = 
+_medicalofficer = 
 [	
 	"BLU_PLM","BLU_2PLM"
 	,"OPF_PLM","OPF_2PLM"
 	,"IND_PLM","IND_2PLM"
 ];
-private _medics = 
+_medics = 
 [
 	"BLU_ComMed","OPF_ComMed","IND_ComMed"
 	,"BLU_ComMed1","OPF_ComMed1","IND_ComMed1"
@@ -29,7 +29,7 @@ private _medics =
 	,"BLU_ComMed4","OPF_ComMed4","IND_ComMed4"
 ];
 					
-private _playerClass = vehicleVarName player;
+_playerClass = vehicleVarName player;
 
 //Medical Officers
 if (_playerClass in _medicalofficer) then {
