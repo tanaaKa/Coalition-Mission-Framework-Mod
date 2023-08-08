@@ -76,7 +76,6 @@ class ftl: rifleman {// FTL
   items[] += {LEADER_TOOLS,RADIO_MR};
   linkedItems[] += {LEADER_LINKED,BINOS};
 };
-};
 class sl: ftl {// SL
   handguns[] = {PISTOL};
   magazines[] += {PISTOL_MAG};
@@ -230,7 +229,6 @@ class msamg: Fic_Soldier_Carbine {// SAM Gunner
   launchers[] = {SAM};
 };
 class msamag: Fic_Spotter {// SAM Spotter/Ammo Bearer
-  SAM_GEAR("B_Battle_Belt_XL_F", SAM_MAG2)
   SAM_GEAR(CARRYALL, SAM_MAG2)
 };
 
