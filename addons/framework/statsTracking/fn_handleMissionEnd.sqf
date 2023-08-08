@@ -87,50 +87,50 @@ uiSleep 5;
 			};
 		}; 
 
-		uiSleep 0.05;
+		uiSleep 0.5;
 
 		// Add mission attended
-		"extDB3" callExtension format ["0:SQL:UPDATE a3stats SET missions_attended = missions_attended + 1 WHERE steamid = %1",_playerUID]; uiSleep 0.05;
+		"extDB3" callExtension format ["0:SQL:UPDATE a3stats SET missions_attended = missions_attended + 1 WHERE steamid = %1",_playerUID]; uiSleep 0.5;
 
 		// Update total time alive
 		if (_timeAlive > 0) then {
-			"extDB3" callExtension format ["0:SQL:UPDATE a3stats SET time_alive = time_alive + %1 WHERE steamid = %2",_timeAlive,_playerUID]; uiSleep 0.05;
+			"extDB3" callExtension format ["0:SQL:UPDATE a3stats SET time_alive = time_alive + %1 WHERE steamid = %2",_timeAlive,_playerUID]; uiSleep 0.5;
 			diag_log format ["[CMF] STATS - fn_handleMissionEnd - Finished updating shotsFired. Total seconds: %1",_timeAlive];
 		};
 		
 		// Update shot count
 		if (_shotsFired > 0) then {
-			"extDB3" callExtension format ["0:SQL:UPDATE a3stats SET shots_fired = shots_fired + %1 WHERE steamid = %2",_shotsFired,_playerUID]; uiSleep 0.05;
+			"extDB3" callExtension format ["0:SQL:UPDATE a3stats SET shots_fired = shots_fired + %1 WHERE steamid = %2",_shotsFired,_playerUID]; uiSleep 0.5;
 			diag_log format ["[CMF] STATS - fn_handleMissionEnd - Finished updating shotsFired. Count: %1",_shotsFired];
 		};
 		
 		// Update stats based on game mode, if any
 		if (_tvtKills > 0 || _tvtDeaths > 0) then {
-			"extDB3" callExtension format ["0:SQL:UPDATE a3stats SET tvt_kills = tvt_kills + %1 WHERE steamid = %2",_tvtKills,_playerUID]; uiSleep 0.05;
-			"extDB3" callExtension format ["0:SQL:UPDATE a3stats SET tvt_deaths = tvt_deaths + %1 WHERE steamid = %2",_tvtDeaths,_playerUID]; uiSleep 0.05;
+			"extDB3" callExtension format ["0:SQL:UPDATE a3stats SET tvt_kills = tvt_kills + %1 WHERE steamid = %2",_tvtKills,_playerUID]; uiSleep 0.5;
+			"extDB3" callExtension format ["0:SQL:UPDATE a3stats SET tvt_deaths = tvt_deaths + %1 WHERE steamid = %2",_tvtDeaths,_playerUID]; uiSleep 0.5;
 			diag_log format ["[CMF] STATS - fn_handleMissionEnd - Finished updating TVT stats. Total kills: %1 Total deaths: %2",_tvtKills,_tvtDeaths];
 		};
 		if (_coopKills > 0 || _coopDeaths > 0) then {
-			"extDB3" callExtension format ["0:SQL:UPDATE a3stats SET coop_kills = coop_kills + %1 WHERE steamid = %2",_coopKills,_playerUID]; uiSleep 0.05;
-			"extDB3" callExtension format ["0:SQL:UPDATE a3stats SET coop_deaths = coop_deaths + %1 WHERE steamid = %2",_coopDeaths,_playerUID]; uiSleep 0.05;
+			"extDB3" callExtension format ["0:SQL:UPDATE a3stats SET coop_kills = coop_kills + %1 WHERE steamid = %2",_coopKills,_playerUID]; uiSleep 0.5;
+			"extDB3" callExtension format ["0:SQL:UPDATE a3stats SET coop_deaths = coop_deaths + %1 WHERE steamid = %2",_coopDeaths,_playerUID]; uiSleep 0.5;
 			diag_log format ["[CMF] STATS - fn_handleMissionEnd - Finished updating COOP stats. Total kills: %1 Total deaths: %2",_coopKills,_coopDeaths];
 		};
 
 		// Update friendly fires, if any
 		if (_friendlyFireEvents > 0) then {
-			"extDB3" callExtension format ["0:SQL:UPDATE a3stats SET ff_events = ff_events + %1 WHERE steamid = %2",_friendlyFireEvents,_playerUID]; uiSleep 0.05;
+			"extDB3" callExtension format ["0:SQL:UPDATE a3stats SET ff_events = ff_events + %1 WHERE steamid = %2",_friendlyFireEvents,_playerUID]; uiSleep 0.5;
 			diag_log format ["[CMF] STATS - fn_handleMissionEnd - Finished updating friendly fire events. Count: %1",_friendlyFireEvents];
 		};
 
 		// Update civs killed, if any
 		if (_civsKilled > 0) then {
-			"extDB3" callExtension format ["0:SQL:UPDATE a3stats SET civs_killed = civs_killed + %1 WHERE steamid = %2",_civsKilled,_playerUID]; uiSleep 0.05;
+			"extDB3" callExtension format ["0:SQL:UPDATE a3stats SET civs_killed = civs_killed + %1 WHERE steamid = %2",_civsKilled,_playerUID]; uiSleep 0.5;
 			diag_log format ["[CMF] STATS - fn_handleMissionEnd - Finished updating civ kill events. Count: %1",_civsKilled];
 		};
 
 		// Update leave status, if left mission
 		if (_playerLeftMidMission isEqualTo 1) then {
-			"extDB3" callExtension format ["0:SQL:UPDATE a3stats SET leaves = leaves + %1 WHERE steamid = %2",_playerLeftMidMission,_playerUID]; uiSleep 0.05;
+			"extDB3" callExtension format ["0:SQL:UPDATE a3stats SET leaves = leaves + %1 WHERE steamid = %2",_playerLeftMidMission,_playerUID]; uiSleep 0.5;
 			diag_log format ["[CMF] STATS - fn_handleMissionEnd - Marked player as a leaver",_playerLeftMidMission];
 		};
 
