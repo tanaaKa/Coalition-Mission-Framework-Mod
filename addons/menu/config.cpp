@@ -53,7 +53,7 @@ class RscActivePicture: RscActiveText
 	colorActive[] = {1,1,1,1};
 };
 
-class CfgMainMenuSpotlight // RscDisplayMain >> Spotlight works but is considered obsolete since SPOTREP #00064
+class CfgMainMenuSpotlight // Replaced joinServer.sqf with connectToServer command, keeping old code in place but commented out for now in case command breaks/doesnt work
 {
 	class SessionServer
 	{
@@ -61,7 +61,8 @@ class CfgMainMenuSpotlight // RscDisplayMain >> Spotlight works but is considere
 		textIsQuote = 0;
 		picture = "x\cmf\addons\menu\data\image.paa";
 		video = "x\cmf\addons\menu\data\video.ogv";
-		action = "0 = [_this, '135.148.136.167', '2302', 'torch'] execVM 'x\cmf\addons\menu\scripts\joinServer.sqf';";
+		//action = "0 = [_this, '135.148.136.167', '2302', 'torch'] execVM 'x\cmf\addons\menu\scripts\joinServer.sqf';";
+		action = "connectToServer ['135.148.136.167', 2302, 'torch']";
 		actionText = "Connect to Session";
 		condition = "true";
 	};
@@ -74,18 +75,6 @@ class RscDisplayMain: RscStandardDisplay
 	scriptPath = "GUI";
 	onLoad = "[""onLoad"",_this,""RscDisplayMain"",'GUI'] call  (uinamespace getvariable 'BIS_fnc_initDisplay')";
 	onUnload = "[""onUnload"",_this,""RscDisplayMain"",'GUI'] call  (uinamespace getvariable 'BIS_fnc_initDisplay')";
-	/* class Spotlight
-	{
-		class SessionServer {
-			text = "COALITION Session";
-			textIsQuote = 0;
-			picture = "\coal_menu\data\logo.paa";
-			video = "\coal_menu\data\video.ogv";
-			action = "0 = [_this, '149.56.106.43', '2302', 'torch'] execVM '\coal_menu\scripts\fnc_joinServer.sqf';";
-			actionText = "Connect to Session";
-			condition = "true";
-		};
-	}; */
 	class ControlsBackground
 	{
 		class MouseArea: RscText
